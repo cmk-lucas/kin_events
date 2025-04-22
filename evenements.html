@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue d'Événements</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Header Amélioré -->
+<header class="bg-white/80 backdrop-blur-md shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <h1 class="text-3xl font-extrabold text-blue-600 tracking-wide">
+      Kin<span class="text-gray-900">Events</span>
+    </h1>
+
+    <!-- Navigation Desktop -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Accueil</a>
+      <a href="evenements.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Événements</a>
+      <a href="astuce.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Trucs & Astuces</a>
+      <a href="abaout.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">À propos</a>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <button id="menuBtn" class="md:hidden text-blue-600 focus:outline-none" aria-label="Menu mobile">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Navigation Mobile -->
+  <div id="mobileMenu" class="md:hidden hidden px-6 pt-2 pb-4 bg-white border-t border-gray-200 animate-fade-in-down space-y-2">
+    <a href="#home" class="block text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
+    <a href="#events" class="block text-gray-700 hover:text-blue-600 transition-colors">Événements</a>
+    <a href="#tips" class="block text-gray-700 hover:text-blue-600 transition-colors">Trucs & Astuces</a>
+    <a href="#about" class="block text-gray-700 hover:text-blue-600 transition-colors">À propos</a>
+  </div>
+
+  <style>
+    @keyframes fade-in-down {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-down {
+      animation: fade-in-down 0.3s ease-out;
+    }
+  </style>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      menuBtn.classList.toggle("open");
+    });
+  </script>
+</header>
+   <!-- En-tête -->
+<section class="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 text-white py-12">
+    <div class="max-w-7xl mx-auto text-center px-4">
+        <h1 class="text-4xl font-extrabold tracking-tight leading-tight text-white mb-4 transform transition-transform duration-300 hover:scale-105">Catalogue d'Événements</h1>
+        <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto text-gray-200">
+            Découvrez des événements passionnants à venir et réservez votre place dès maintenant pour ne rien manquer !
+        </p>
+        <a href="#events"
+            class="bg-yellow-500 text-blue-900 font-semibold py-3 px-8 rounded-full shadow-md transition-all duration-300 hover:bg-yellow-400 hover:shadow-xl transform hover:scale-105">
+            Explorer les Événements
+        </a>
+    </div>
+</section>
+
+    <!-- Filtres de recherche -->
+<section class="bg-gray-100 py-10">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Filtrer les Événements</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <select id="filterCategory" class="p-3 rounded-lg border border-gray-300">
+                <option value="">Toutes les catégories</option>
+                <option value="Hip-Hop">Hip-Hop</option>
+                <option value="Rock">Rock</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Gala">Gala</option>
+            </select>
+            <select id="filterPrice" class="p-3 rounded-lg border border-gray-300">
+                <option value="">Tous les prix</option>
+                <option value="lt5000">Moins de 5000 CDF</option>
+                <option value="5000-8000">5000 - 8000 CDF</option>
+                <option value="gt8000">Plus de 8000 CDF</option>
+            </select>
+            <input type="date" id="filterDate" class="p-3 rounded-lg border border-gray-300" />
+            <input type="text" id="filterLieu" placeholder="Lieu (ex: Kinshasa)" class="p-3 rounded-lg border border-gray-300" />
+        </div>
+    </div>
+</section>
+
+   <!-- Catalogue des événements -->
+<section id="events" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl font-extrabold text-center text-blue-700 mb-14">Nos Événements</h2>
+  
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Boucle sur les événements (ici 3 exemples) -->
+        <!-- ÉVÉNEMENT 1 -->
+        <article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+          data-category="Hip-Hop"
+          data-price="5000"
+          data-date="2025-05-10"
+          data-lieu="Kinshasa">
+          <!-- Badge -->
+          <span class="absolute top-4 left-4 bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">🔥 Nouveau</span>
+          
+          <!-- Image -->
+          <img src="img/A2.jpg" alt="Soirée Hip-Hop" class="w-full h-52 object-cover group-hover:scale-110 group-hover:opacity-90 transition-transform duration-300">
+  
+          <!-- Contenu -->
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-blue-600 mb-2">🎤 Soirée Hip-Hop</h3>
+            <p class="text-gray-600 text-base mb-4">Un battle de danse, des DJ sets explosifs et une ambiance urbaine inoubliable.</p>
+  
+            <div class="flex items-center justify-between mt-6">
+              <span class="text-lg font-bold text-yellow-500">5000 CDF</span>
+              <div class="flex space-x-2">
+                <a href="detail.html" class="bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition transform hover:scale-105">Détails</a>
+                <button class="reserve-btn bg-yellow-500 text-blue-900 font-semibold py-2 px-4 rounded-xl hover:bg-yellow-400 transition transform hover:scale-105">
+                  Réserver
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <!-- ÉVÉNEMENT 2 -->
+        <article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+          data-category="Rock"
+          data-price="6000"
+          data-date="2025-05-12"
+          data-lieu="Kinshasa">
+          <span class="absolute top-4 left-4 bg-green-100 text-green-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">🎉 Populaire</span>
+          <img src="img/A3.jpg" alt="Concert Rock" class="w-full h-52 object-cover group-hover:scale-110 group-hover:opacity-90 transition-transform duration-300">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-blue-600 mb-2">🎸 Concert Rock</h3>
+            <p class="text-gray-600 text-base mb-4">Une soirée énergique avec des groupes de rock locaux et internationaux. Préparez-vous à headbanger !</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="text-lg font-bold text-yellow-500">6000 CDF</span>
+              <div class="flex space-x-2">
+                <a href="detail.html" class="bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition transform hover:scale-105">Détails</a>
+                <button class="reserve-btn bg-yellow-500 text-blue-900 font-semibold py-2 px-4 rounded-xl hover:bg-yellow-400 transition transform hover:scale-105">
+                  Réserver
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <!-- ÉVÉNEMENT 3 -->
+        <article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+          data-category="Jazz"
+          data-price="10000"
+          data-date="2025-05-15"
+          data-lieu="Kinshasa">
+          <span class="absolute top-4 left-4 bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">✨ Exclusif</span>
+          <img src="img/A4.jpg" alt="Gala de Charité" class="w-full h-52 object-cover group-hover:scale-110 group-hover:opacity-90 transition-transform duration-300">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-blue-600 mb-2">🎩 Gala de Charité</h3>
+            <p class="text-gray-600 text-base mb-4">Un événement élégant pour soutenir une noble cause. Dîner de gala, enchères et plus encore !</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="text-lg font-bold text-yellow-500">10000 CDF</span>
+              <div class="flex space-x-2">
+                <a href="detail.html" class="bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition transform hover:scale-105">Détails</a>
+                <button class="reserve-btn bg-yellow-500 text-blue-900 font-semibold py-2 px-4 rounded-xl hover:bg-yellow-400 transition transform hover:scale-105">
+                  Réserver
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+    <!-- Modale de confirmation -->
+<div id="confirmationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="bg-white p-8 rounded-2xl shadow-lg max-w-sm w-full text-center">
+      <h3 class="text-xl font-bold text-blue-700 mb-4">Réservation Confirmée 🎉</h3>
+      <p class="text-gray-600 mb-6">Merci d'avoir réservé. Nous vous attendons avec impatience !</p>
+      <button onclick="closeModal()" class="bg-blue-600 text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition">Fermer</button>
+    </div>
+  </div>
+  
+  <script>
+    function openModal() {
+      document.getElementById("confirmationModal").classList.remove("hidden");
+    }
+  
+    function closeModal() {
+      document.getElementById("confirmationModal").classList.add("hidden");
+    }
+  
+    // Écouteurs pour tous les boutons "Réserver"
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".reserve-btn").forEach(button => {
+        button.addEventListener("click", () => {
+          openModal();
+        });
+      });
+    });
+  </script>
+  
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>&copy; 2025 Tous droits réservés</p>
+        </div>
+    </footer>
+    <script>
+        const filters = {
+            category: '',
+            price: '',
+            date: '',
+            lieu: ''
+        };
+    
+        const eventCards = document.querySelectorAll('[data-category]');
+    
+        function applyFilters() {
+            eventCards.forEach(card => {
+                const cat = card.dataset.category.toLowerCase();
+                const price = parseInt(card.dataset.price);
+                const date = card.dataset.date;
+                const lieu = card.dataset.lieu.toLowerCase();
+    
+                const matchCategory = !filters.category || cat === filters.category;
+                const matchPrice = !filters.price || (
+                    (filters.price === "lt5000" && price < 5000) ||
+                    (filters.price === "5000-8000" && price >= 5000 && price <= 8000) ||
+                    (filters.price === "gt8000" && price > 8000)
+                );
+                const matchDate = !filters.date || date === filters.date;
+                const matchLieu = !filters.lieu || lieu.includes(filters.lieu);
+    
+                card.style.display = (matchCategory && matchPrice && matchDate && matchLieu) ? "block" : "none";
+            });
+        }
+    
+        document.getElementById('filterCategory').addEventListener('change', (e) => {
+            filters.category = e.target.value.toLowerCase();
+            applyFilters();
+        });
+    
+        document.getElementById('filterPrice').addEventListener('change', (e) => {
+            filters.price = e.target.value;
+            applyFilters();
+        });
+    
+        document.getElementById('filterDate').addEventListener('change', (e) => {
+            filters.date = e.target.value;
+            applyFilters();
+        });
+    
+        document.getElementById('filterLieu').addEventListener('input', (e) => {
+            filters.lieu = e.target.value.toLowerCase();
+            applyFilters();
+        });
+    </script>
+    
+</body>
+
+</html>

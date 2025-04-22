@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trucs & Astuces - KinEvents</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 font-roboto">
+  <!-- Header Amélioré -->
+<header class="bg-white/80 backdrop-blur-md shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <h1 class="text-3xl font-extrabold text-blue-600 tracking-wide">
+        Kin<span class="text-gray-900">Events</span>
+      </h1>
+  
+      <!-- Navigation Desktop -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Accueil</a>
+        <a href="evenements.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Événements</a>
+        <a href="astuce.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Trucs & Astuces</a>
+        <a href="abaout.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">À propos</a>
+      </nav>
+  
+      <!-- Menu Mobile -->
+      <button id="menuBtn" class="md:hidden text-blue-600 focus:outline-none" aria-label="Menu mobile">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  
+    <!-- Navigation Mobile -->
+    <div id="mobileMenu" class="md:hidden hidden px-6 pt-2 pb-4 bg-white border-t border-gray-200 animate-fade-in-down space-y-2">
+      <a href="#home" class="block text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
+      <a href="#events" class="block text-gray-700 hover:text-blue-600 transition-colors">Événements</a>
+      <a href="#tips" class="block text-gray-700 hover:text-blue-600 transition-colors">Trucs & Astuces</a>
+      <a href="#about" class="block text-gray-700 hover:text-blue-600 transition-colors">À propos</a>
+    </div>
+  
+    <style>
+      @keyframes fade-in-down {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      .animate-fade-in-down {
+        animation: fade-in-down 0.3s ease-out;
+      }
+    </style>
+  
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+  
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        menuBtn.classList.toggle("open");
+      });
+    </script>
+  </header>
+    <!-- Main Content -->
+    <main class="py-20 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto text-center mb-20 px-6">
+            <h1
+                class="text-5xl font-extrabold text-blue-800 mb-6 transform transition duration-300 ease-in-out hover:text-blue-600">
+                Trucs & Astuces
+            </h1>
+            <p class="text-xl text-gray-700 mb-6 max-w-3xl mx-auto leading-relaxed">
+                Découvrez nos conseils exclusifs et pratiques pour tirer le meilleur parti de chaque événement à
+                Kinshasa et optimiser votre expérience sur KinEvents. 🎉
+                Que vous soyez un habitué ou un novice, ces astuces vous garantiront des moments inoubliables !
+            </p>
+            <div class="relative flex justify-center items-center mb-10">
+                <span class="absolute inset-0 border-t-2 border-blue-500 transform scale-x-75"></span>
+                <span class="relative text-lg font-semibold text-blue-600 uppercase tracking-wider">
+                    Explorez, vivez, partagez !
+                </span>
+            </div>
+            <div class="text-center">
+                <a href="#astuces"
+                    class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-500 transition-all duration-200 transform hover:scale-105">
+                    Commencez votre aventure
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Astuces pour les événements -->
+        <section class="max-w-7xl mx-auto mb-24 px-6">
+            <h2 class="text-4xl font-extrabold text-blue-800 mb-10 text-center tracking-wide">
+                Astuces pour profiter pleinement des événements à Kinshasa
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+                <div
+                    class="bg-white rounded-xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4 transition-all duration-300 ease-in-out">
+                        Arrivez tôt !
+                    </h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Les événements populaires à Kinshasa peuvent être bondés, donc arriver tôt vous permettra de
+                        profiter pleinement et d'éviter la foule à l'entrée.
+                    </p>
+                </div>
+                <div
+                    class="bg-white rounded-xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4 transition-all duration-300 ease-in-out">
+                        Préparez-vous pour la météo
+                    </h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        La météo peut changer rapidement. Assurez-vous d'emporter de l'eau, des vêtements adaptés à la
+                        météo et des chaussures confortables pour marcher.
+                    </p>
+                </div>
+                <div
+                    class="bg-white rounded-xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4 transition-all duration-300 ease-in-out">
+                        Utilisez les cartes de l'événement
+                    </h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        KinEvents fournit des cartes interactives pour chaque événement. Utilisez-les pour trouver
+                        facilement les points d'intérêt, les stands et les services sur place.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Astuces pour utiliser KinEvents -->
+        <section class="max-w-7xl mx-auto mb-24 px-6">
+            <h2 class="text-4xl font-extrabold text-blue-800 mb-10 text-center tracking-wide">
+                Astuces pour maximiser votre expérience sur KinEvents
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+                <div
+                    class="bg-white rounded-xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4 transition-all duration-300 ease-in-out">
+                        Créez un compte
+                    </h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Créer un compte vous permet de suivre vos événements préférés, de recevoir des notifications
+                        personnalisées, et de partager vos expériences avec d'autres utilisateurs pour une immersion
+                        totale.
+                    </p>
+                </div>
+                <div
+                    class="bg-white rounded-xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4 transition-all duration-300 ease-in-out">
+                        Recevez des alertes
+                    </h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Activez les alertes pour ne jamais manquer une mise à jour importante. Que ce soit des
+                        changements de programme ou des offres spéciales, restez informé pour profiter pleinement de
+                        chaque événement.
+                    </p>
+                </div>
+                <div
+                    class="bg-white rounded-xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4 transition-all duration-300 ease-in-out">
+                        Partagez avec vos amis
+                    </h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Invitez vos amis à rejoindre vos événements préférés via les réseaux sociaux ou un lien direct.
+                        Plus on est de fous, plus on rit ! Partagez l'expérience et faites-en un moment inoubliable.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Call to Action -->
+        <section
+            class="bg-gradient-to-r from-blue-600 to-teal-500 py-20 text-center text-white rounded-xl shadow-2xl transform transition-all hover:scale-105">
+            <h2 class="text-4xl font-extrabold mb-4 tracking-wide">
+                Prêt à vivre l'événement ?
+            </h2>
+            <p class="text-lg mb-6 leading-relaxed max-w-2xl mx-auto">
+                Rejoignez-nous et faites partie de la communauté KinEvents. Explorez les événements incontournables,
+                profitez de moments inoubliables et découvrez chaque jour les meilleures expériences à Kinshasa !
+            </p>
+            <a href="evenements.html"
+                class="bg-white text-blue-600 py-4 px-8 rounded-full font-semibold text-xl hover:bg-gray-100 hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105">
+                Explorer les événements
+            </a>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-6 text-center">
+        <p class="text-sm text-gray-500">© 2025 KinEvents. Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>
