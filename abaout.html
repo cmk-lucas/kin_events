@@ -86,42 +86,55 @@
 
 
         <!-- Vidéo Présentation -->
-        <section class="max-w-5xl mx-auto mb-24 px-4">
+        <section class="max-w-5xl mx-auto mb-24 px-4" aria-label="Vidéo de présentation KinEvents">
             <div
-                class="relative overflow-hidden rounded-2xl shadow-2xl transform transition-transform duration-500 hover:scale-105 group">
-                <iframe class="w-full aspect-video rounded-2xl" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                class="relative overflow-hidden rounded-3xl shadow-2xl transform transition-transform duration-500 hover:scale-105 group">
+
+                <iframe class="w-full aspect-video rounded-3xl" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                     title="Vidéo de Présentation KinEvents"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
+                    allowfullscreen loading="lazy">
                 </iframe>
+
+                <!-- Overlay subtil au survol -->
                 <div
-                    class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition duration-300 pointer-events-none rounded-2xl">
+                    class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition duration-300 pointer-events-none rounded-3xl">
                 </div>
             </div>
-            <p class="text-center mt-6 text-gray-600 text-lg max-w-2xl mx-auto">
-                Découvrez en vidéo comment KinEvents rassemble les passionnés autour des moments forts de Kinshasa. 🎥✨
+
+            <p class="text-center mt-8 text-gray-700 text-lg max-w-2xl mx-auto leading-relaxed">
+                Plongez dans l’univers <span class="font-semibold text-blue-600">KinEvents</span> à travers cette vidéo
+                captivante.
+                Vivez l’énergie, les rencontres et les expériences uniques qui animent Kinshasa au quotidien. 🎥✨
             </p>
         </section>
 
 
+
         <!-- Section CEO -->
-        <section class="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl p-12 mb-24 px-6">
+        <section class="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl p-12 mb-24 px-6"
+            aria-label="Présentation du CEO">
             <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
+
                 <!-- Image CEO -->
-                <img src="img/A1.jpg" alt="Lucas M. Kiaku - CEO KinEvents"
+                <img src="img/A1.jpg" alt="Lucas M. Kiaku, Fondateur et CEO de KinEvents"
                     class="w-48 h-48 rounded-full object-cover border-4 border-blue-600 shadow-xl transition-transform duration-300 hover:scale-105" />
 
                 <!-- Texte CEO -->
                 <div class="text-center md:text-left">
                     <h2 class="text-5xl font-extrabold text-blue-700 mb-3">Lucas M. Kiaku</h2>
                     <p class="text-gray-700 italic text-lg mb-6">Fondateur & CEO de KinEvents</p>
+
                     <p class="text-gray-600 text-lg leading-relaxed">
-                        KinEvents n’est pas simplement une entreprise, c’est une vision pour une capitale plus vivante,
-                        connectée et vibrante. <br class="hidden sm:inline" />
-                        Chaque événement sur notre plateforme est une célébration de la culture, de l'énergie et de la
-                        créativité des Kinois(e)s. 🇨🇩<br />
-                        Mon objectif : offrir une expérience unique à chaque utilisateur, où l’authenticité de Kinshasa
-                        rencontre l’innovation numérique 💥.
+                        KinEvents n’est pas simplement une entreprise — c’est une vision pour transformer Kinshasa en
+                        une ville encore plus dynamique, connectée et culturelle. <br class="hidden sm:inline" />
+                        Chaque événement que nous mettons en avant est une vitrine de l’énergie, de la créativité et de
+                        la richesse de notre capitale. 🇨🇩
+                    </p>
+
+                    <p class="text-gray-600 text-lg leading-relaxed mt-4">
+                        Mon ambition ? Offrir à chaque utilisateur une expérience inoubliable, où l’authenticité Kinoise
+                        fusionne avec l’innovation digitale. 💥
                     </p>
                 </div>
             </div>
@@ -129,88 +142,111 @@
 
 
 
+
         <!-- Équipe -->
-        <section class="max-w-7xl mx-auto text-center mb-24 px-6">
+        <section class="max-w-7xl mx-auto text-center mb-24 px-6" aria-label="Équipe KinEvents">
             <h2 class="text-4xl font-extrabold text-gray-800 mb-12">Notre équipe de passionnés</h2>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-                <!-- Member 1 -->
+
+                <!-- Membre 1 -->
                 <div
-                    class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
-                    <img src="img/aron.jpg" class="w-28 h-28 rounded-full mx-auto mb-6 shadow-lg object-cover"
-                        alt="Aaron Muhindo.">
+                    class="bg-white rounded-2xl shadow-xl p-6 transition-all duration-300 transform hover:shadow-2xl hover:scale-105">
+                    <img src="img/aron.jpg" alt="Portrait de Aaron Muhindo"
+                        class="w-28 h-28 rounded-full mx-auto mb-6 shadow-lg object-cover">
                     <h3 class="text-xl font-semibold text-blue-700 mb-2">Aaron Muhindo</h3>
                     <p class="text-gray-600 text-sm mb-4">Design & Expérience utilisateur</p>
-                    <p class="text-gray-500 text-sm">Passionné par l’innovation, Aaron crée des interfaces qui ne sont
-                        pas juste jolies, mais aussi intuitives.</p>
+                    <p class="text-gray-500 text-sm">Créatif et visionnaire, Aaron conçoit des interfaces élégantes,
+                        intuitives et centrées sur l’humain.</p>
                 </div>
 
-
-
-                <!-- Member 2 -->
+                <!-- Membre 2 -->
                 <div
-                    class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
-                    <img src="img/davide.jpg" class="w-28 h-28 rounded-full mx-auto mb-6 shadow-lg object-cover" alt="david.">
+                    class="bg-white rounded-2xl shadow-xl p-6 transition-all duration-300 transform hover:shadow-2xl hover:scale-105">
+                    <img src="img/davide.jpg" alt="Portrait de David M."
+                        class="w-28 h-28 rounded-full mx-auto mb-6 shadow-lg object-cover">
                     <h3 class="text-xl font-semibold text-blue-700 mb-2">David M.</h3>
                     <p class="text-gray-600 text-sm mb-4">Communication & Marketing</p>
-                    <p class="text-gray-500 text-sm">Avec une passion pour les médias sociaux, david connecte KinEvents
-                        avec la communauté d’une manière authentique.</p>
+                    <p class="text-gray-500 text-sm">Stratégique et authentique, David fait rayonner KinEvents à travers
+                        des campagnes connectées à la communauté.</p>
                 </div>
 
-                <!-- Member 3 -->
+                <!-- Membre 3 -->
                 <div
-                    class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
-                    <img src="img/A2.jpg" class="w-28 h-28 rounded-full mx-auto mb-6 shadow-lg object-cover" alt="Jonathan K.">
+                    class="bg-white rounded-2xl shadow-xl p-6 transition-all duration-300 transform hover:shadow-2xl hover:scale-105">
+                    <img src="img/A2.jpg" alt="Portrait de Jonathan K."
+                        class="w-28 h-28 rounded-full mx-auto mb-6 shadow-lg object-cover">
                     <h3 class="text-xl font-semibold text-blue-700 mb-2">Jonathan K.</h3>
                     <p class="text-gray-600 text-sm mb-4">Développement Back-End</p>
-                    <p class="text-gray-500 text-sm">Jonathan veille à ce que tout fonctionne derrière les coulisses,
-                        construisant des systèmes robustes et fiables.</p>
+                    <p class="text-gray-500 text-sm">Architecte des coulisses, Jonathan bâtit des solutions solides pour
+                        assurer la performance et la sécurité de la plateforme.</p>
                 </div>
+
             </div>
         </section>
 
 
+
         <!-- Collaboration -->
-        <section class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-12 mb-24">
-            <h2 class="text-4xl font-extrabold text-blue-700 mb-8 text-center">Ensemble, créons des vibes 🔥</h2>
-            <p class="text-center text-gray-600 text-lg mb-10">Une idée, une collaboration ou une suggestion ? Nous
-                sommes là pour en discuter et construire quelque chose d'exceptionnel.</p>
+        <section
+            class="max-w-5xl mx-auto bg-gradient-to-br from-white via-blue-50 to-white rounded-3xl shadow-2xl p-12 mb-24">
+            <div class="text-center">
+                <h2 class="text-5xl font-extrabold text-blue-700 mb-6">Co-créons l’inattendu ✨</h2>
+                <p class="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+                    Une vision à partager ? Un projet à proposer ? <span
+                        class="text-blue-600 font-medium">KinEvents</span> est bien plus qu'une plateforme —
+                    c'est une communauté de passionnés qui bâtissent l’avenir de l’événementiel à Kinshasa 💡.
+                </p>
+            </div>
 
             <form class="space-y-6">
                 <!-- Nom complet -->
                 <input type="text" placeholder="Votre nom complet"
-                    class="w-full border border-gray-300 rounded-md px-6 py-4 focus:ring-2 focus:ring-blue-600 focus:outline-none shadow-md transition duration-300 hover:border-blue-500">
+                    class="w-full border border-gray-200 rounded-xl px-6 py-4 bg-white shadow-md focus:ring-2 focus:ring-blue-600 focus:outline-none transition duration-300 hover:border-blue-500">
 
                 <!-- Email -->
                 <input type="email" placeholder="Adresse email"
-                    class="w-full border border-gray-300 rounded-md px-6 py-4 focus:ring-2 focus:ring-blue-600 focus:outline-none shadow-md transition duration-300 hover:border-blue-500">
+                    class="w-full border border-gray-200 rounded-xl px-6 py-4 bg-white shadow-md focus:ring-2 focus:ring-blue-600 focus:outline-none transition duration-300 hover:border-blue-500">
 
                 <!-- Message -->
-                <textarea placeholder="Votre message ou idée 💡" rows="6"
-                    class="w-full border border-gray-300 rounded-md px-6 py-4 focus:ring-2 focus:ring-blue-600 focus:outline-none shadow-md transition duration-300 hover:border-blue-500"></textarea>
+                <textarea placeholder="Parlez-nous de votre idée, votre projet ou votre vision 🔥" rows="6"
+                    class="w-full border border-gray-200 rounded-xl px-6 py-4 bg-white shadow-md focus:ring-2 focus:ring-blue-600 focus:outline-none transition duration-300 hover:border-blue-500"></textarea>
 
-                <!-- Bouton de soumission -->
+                <!-- Bouton CTA -->
                 <button type="submit"
-                    class="w-full bg-blue-600 text-white font-semibold px-8 py-4 rounded-md hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none">
-                    Envoyer ma proposition
+                    class="w-full bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none shadow-lg">
+                    🚀 Proposer ma collaboration
                 </button>
             </form>
+
+            <!-- Encouragement final -->
+            <p class="text-center mt-8 text-gray-500 text-sm">
+                Ensemble, faisons vibrer Kinshasa avec des projets qui inspirent. On vous répond sous 48h ! 🙌
+            </p>
         </section>
+
 
 
         <!-- Vision -->
-        <section class="bg-blue-50 py-20 px-8">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl font-extrabold text-blue-800 mb-6">Notre vision pour Kinshasa</h2>
-                <p class="text-xl text-gray-700 leading-relaxed mb-8">
-                    Offrir à chaque Kinois(e) un accès simple, rapide et fiable aux meilleurs événements de la ville.
-                    KinEvents n'est pas seulement un agenda, c’est un véritable moteur de connexion, d'émotions et de
-                    vibes locales.
+        <section class="bg-gradient-to-br from-blue-50 via-white to-blue-100 py-24 px-6">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-5xl font-extrabold text-blue-800 mb-8 drop-shadow-sm">Notre vision pour Kinshasa 🌍</h2>
+                <p class="text-2xl text-gray-700 leading-relaxed mb-8 font-light">
+                    KinEvents, c’est plus qu’un agenda. C’est une passerelle entre les idées et les émotions, entre les
+                    rues animées et les grandes scènes,
+                    entre les rêves et leur réalisation.
                 </p>
-                <p class="text-blue-700 font-semibold text-lg">
-                    Rejoins le mouvement. Fais vibrer Kinshasa avec nous. 🌆💃
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">
+                    Nous croyons en une ville vivante, connectée et accessible à tous. Chaque Kinois(e) mérite de vibrer
+                    au rythme des meilleures expériences,
+                    sans effort ni complication.
+                </p>
+                <p class="text-blue-700 font-semibold text-xl">
+                    Rejoins le mouvement. Cocréons une capitale qui bouge, qui rayonne, qui inspire. 💫
                 </p>
             </div>
         </section>
+
 
     </main>
 
@@ -220,13 +256,37 @@
         <img src="https://img.icons8.com/color/96/000000/whatsapp--v1.png" alt="WhatsApp"
             class="w-16 h-16 shadow-lg rounded-full transition-transform transform hover:scale-110">
     </a>
-
     <!-- Footer -->
-    <footer class="bg-blue-50 border-t border-gray-200 py-8 text-center">
-        <p class="text-sm text-gray-500 mb-2">© 2025 KinEvents. Tous droits réservés.</p>
-        <p class="text-sm text-gray-600">Contactez-nous via WhatsApp : <a href="https://wa.me/243975118663"
-                class="text-blue-700 font-semibold">+243 975 118 663</a></p>
+    <footer class="bg-gradient-to-br from-blue-50 to-blue-100 border-t border-blue-200 py-10 px-6">
+        <div class="max-w-6xl mx-auto text-center space-y-4">
+            <p class="text-base text-gray-600">© 2025 <span class="font-semibold text-blue-700">KinEvents</span>. Tous
+                droits réservés.</p>
+
+            <p class="text-base text-gray-700">
+                Une question, une collaboration ou un événement à partager ?
+                <br class="sm:hidden">
+                Contactez-nous directement sur <a href="https://wa.me/243975118663" target="_blank"
+                    class="text-blue-700 font-semibold hover:underline transition duration-300">WhatsApp : +243 975 118
+                    663</a>
+            </p>
+
+            <div class="flex justify-center items-center gap-4 mt-4">
+                <a href="#" class="text-gray-500 hover:text-blue-600 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M22.23 5.924a8.641 8.641 0 01-2.357.646 4.107 4.107 0 001.805-2.27 8.235 8.235 0 01-2.605.978A4.1 4.1 0 0015.448 4a4.107 4.107 0 00-4.102 4.102c0 .32.04.632.105.929A11.635 11.635 0 013.19 4.894a4.091 4.091 0 001.27 5.479 4.087 4.087 0 01-1.86-.513v.052a4.103 4.103 0 003.289 4.019 4.113 4.113 0 01-1.854.07 4.104 4.104 0 003.833 2.85A8.232 8.232 0 012 19.545a11.616 11.616 0 006.29 1.84c7.547 0 11.675-6.254 11.675-11.674 0-.178-.003-.356-.012-.53a8.29 8.29 0 002.04-2.157l.001-.001z" />
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-blue-600 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.04c-5.523 0-10 4.477-10 10 0 4.988 3.657 9.122 8.438 9.879v-6.99H7.897v-2.89h2.541V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.459h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.99C18.343 21.162 22 17.028 22 12.04c0-5.523-4.477-10-10-10z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
     </footer>
+
 
 
 
