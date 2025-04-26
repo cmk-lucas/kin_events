@@ -93,48 +93,138 @@
   <section id="events" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-4xl font-extrabold text-center text-blue-700 mb-14">Nos Événements</h2>
-  
-      <!-- Section des cartes d'événements avec une grille responsive -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Boucle sur les événements -->
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Boucle sur les événements (ici 3 exemples) -->
+        <!-- ÉVÉNEMENT 1 -->
+        <article
+          class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+          data-category="Hip-Hop" data-price="5000" data-date="2025-05-10" data-lieu="Kinshasa">
+          <!-- Badge -->
+          <span
+            class="absolute top-4 left-4 bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">🔥
+            Nouveau</span>
+
+          <!-- Image -->
+          <img src="img/A2.jpg" alt="Soirée Hip-Hop"
+            class="w-full h-52 object-cover group-hover:scale-110 group-hover:opacity-90 transition-transform duration-300">
+
+          <!-- Contenu -->
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-blue-600 mb-2">🎤 Soirée Hip-Hop</h3>
+            <p class="text-gray-600 text-base mb-4">Un battle de danse, des DJ sets explosifs et une ambiance urbaine
+              inoubliable.</p>
+
+            <div class="flex items-center justify-between mt-6">
+              <span class="text-lg font-bold text-yellow-500">5000 CDF</span>
+              <div class="flex space-x-2">
+                <a href="detail.html"
+                  class="bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition transform hover:scale-105">Détails</a>
+                <button
+                  class="reserve-btn bg-yellow-500 text-blue-900 font-semibold py-2 px-4 rounded-xl hover:bg-yellow-400 transition transform hover:scale-105">
+                  Réserver
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ÉVÉNEMENT 2 -->
+        <article
+          class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+          data-category="Rock" data-price="6000" data-date="2025-05-12" data-lieu="Kinshasa">
+          <span
+            class="absolute top-4 left-4 bg-green-100 text-green-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">🎉
+            Populaire</span>
+          <img src="img/A3.jpg" alt="Concert Rock"
+            class="w-full h-52 object-cover group-hover:scale-110 group-hover:opacity-90 transition-transform duration-300">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-blue-600 mb-2">🎸 Concert Rock</h3>
+            <p class="text-gray-600 text-base mb-4">Une soirée énergique avec des groupes de rock locaux et
+              internationaux. Préparez-vous à headbanger !</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="text-lg font-bold text-yellow-500">6000 CDF</span>
+              <div class="flex space-x-2">
+                <a href="detail.html"
+                  class="bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition transform hover:scale-105">Détails</a>
+                <button
+                  class="reserve-btn bg-yellow-500 text-blue-900 font-semibold py-2 px-4 rounded-xl hover:bg-yellow-400 transition transform hover:scale-105">
+                  Réserver
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ÉVÉNEMENT 3 -->
+        <article
+          class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+          data-category="Jazz" data-price="10000" data-date="2025-05-15" data-lieu="Kinshasa">
+          <span
+            class="absolute top-4 left-4 bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">✨
+            Exclusif</span>
+          <img src="img/A4.jpg" alt="Gala de Charité"
+            class="w-full h-52 object-cover group-hover:scale-110 group-hover:opacity-90 transition-transform duration-300">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-blue-600 mb-2">🎩 Gala de Charité</h3>
+            <p class="text-gray-600 text-base mb-4">Un événement élégant pour soutenir une noble cause. Dîner de gala,
+              enchères et plus encore !</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="text-lg font-bold text-yellow-500">10000 CDF</span>
+              <div class="flex space-x-2">
+                <a href="detail.html"
+                  class="bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition transform hover:scale-105">Détails</a>
+                <button
+                  class="reserve-btn bg-yellow-500 text-blue-900 font-semibold py-2 px-4 rounded-xl hover:bg-yellow-400 transition transform hover:scale-105">
+                  Réserver
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
         <div id="eventList"></div>
-  
-        <script>
-          const eventList = document.getElementById('eventList');
-          let events = JSON.parse(localStorage.getItem('events')) || [];
-  
-          events.forEach(event => {
-            const eventCard = `
-              <article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
-                data-category="${event.category}" data-price="${event.price}" data-date="${event.date}" data-lieu="${event.lieu}">
-                <span class="absolute top-4 left-4 bg-green-100 text-green-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">${event.popular ? '🎉 Populaire' : ''}</span>
-                <img src="${event.image}" alt="${event.title}"
-                  class="w-full h-52 object-cover group-hover:scale-110 group-hover:opacity-90 transition-transform duration-300">
-                <div class="p-6">
-                  <h3 class="text-2xl font-bold text-blue-600 mb-2">${event.icon} ${event.title}</h3>
-                  <p class="text-gray-600 text-base mb-4">${event.description}</p>
-                  <div class="flex items-center justify-between mt-6">
-                    <span class="text-lg font-bold text-yellow-500">${event.price} CDF</span>
-                    <div class="flex space-x-2">
-                      <a href="detail.html"
-                        class="bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition transform hover:scale-105">Détails</a>
-                      <button
-                        class="reserve-btn bg-yellow-500 text-blue-900 font-semibold py-2 px-4 rounded-xl hover:bg-yellow-400 transition transform hover:scale-105">
-                        Réserver
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            `;
-            eventList.innerHTML += eventCard;
-          });
-        </script>
-  
+
+<script>
+  const eventList = document.getElementById('eventList');
+  let events = JSON.parse(localStorage.getItem('events')) || [];
+
+  events.forEach(event => {
+    const eventCard = `
+      <article
+        class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+        data-category="${event.category}" data-price="${event.price}" data-date="${event.date}" data-lieu="${event.lieu}">
+        <span
+          class="absolute top-4 left-4 bg-green-100 text-green-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">${event.popular ? '🎉 Populaire' : ''}</span>
+        <img src="${event.image}" alt="${event.title}"
+          class="w-full h-52 object-cover group-hover:scale-110 group-hover:opacity-90 transition-transform duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">${event.icon} ${event.title}</h3>
+          <p class="text-gray-600 text-base mb-4">${event.description}</p>
+          <div class="flex items-center justify-between mt-6">
+            <span class="text-lg font-bold text-yellow-500">${event.price} CDF</span>
+            <div class="flex space-x-2">
+              <a href="detail.html"
+                class="bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition transform hover:scale-105">Détails</a>
+              <button
+                class="reserve-btn bg-yellow-500 text-blue-900 font-semibold py-2 px-4 rounded-xl hover:bg-yellow-400 transition transform hover:scale-105">
+                Réserver
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+    `;
+    eventList.innerHTML += eventCard;
+  });
+</script>
+
       </div>
     </div>
   </section>
+
   
+
   <!-- Modale de confirmation -->
   <div id="confirmationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
     <div class="bg-white p-8 rounded-2xl shadow-lg max-w-sm w-full text-center">
