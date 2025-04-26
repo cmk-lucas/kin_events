@@ -148,146 +148,62 @@
 
 <!-- Commentaires et Évaluations Section -->
 <section class="py-20 bg-gray-100" id="comments">
-    <div class="max-w-4xl mx-auto px-4">
+  <div class="max-w-4xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-blue-700 text-center mb-12 animate-fade-in-up">Commentaires & Évaluations</h2>
-  
-      <!-- Formulaire -->
-      <div class="bg-white shadow-2xl rounded-3xl p-8 animate-fade-in-up">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Laissez un avis sur cet événement</h3>
-        <form id="commentForm" class="space-y-6">
-          <!-- Nom -->
-          <div>
-            <label for="name" class="block text-gray-700 font-medium mb-2">Nom :</label>
-            <input type="text" id="name" name="name"
-                   class="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500"
-                   placeholder="Entrez votre nom" required>
-          </div>
-  
-          <!-- Étoiles -->
-          <div>
-            <label class="block text-gray-700 font-medium mb-2">Note :</label>
-            <div class="flex space-x-2 text-3xl text-gray-300 cursor-pointer" id="star-rating">
-              <span data-value="1">★</span>
-              <span data-value="2">★</span>
-              <span data-value="3">★</span>
-              <span data-value="4">★</span>
-              <span data-value="5">★</span>
-            </div>
-            <input type="hidden" id="rating" name="rating" value="0" required>
-          </div>
-  
-          <!-- Commentaire -->
-          <div>
-            <label for="comment" class="block text-gray-700 font-medium mb-2">Commentaire :</label>
-            <textarea id="comment" name="comment" rows="5"
-                      class="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 resize-none"
-                      placeholder="Partagez votre expérience..." required></textarea>
-          </div>
-  
-          <!-- Bouton -->
-          <div class="text-right">
-            <button type="submit"
-                    class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-medium transition duration-300">
-              Envoyer
-            </button>
-          </div>
-        </form>
-      </div>
-  
+
       <!-- Liste des Commentaires -->
       <div id="commentList" class="bg-white shadow-2xl rounded-3xl p-8 mt-12 animate-fade-in-up space-y-6">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-8">Avis des Participants</h3>
-  
-        <!-- Commentaires générés dynamiquement ici -->
-      </div>
-    </div>
-  
-    <!-- Animations -->
-    <style>
-      @keyframes fade-in-up {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-  
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-  
-      .animate-fade-in-up {
-        animation: fade-in-up 0.8s ease-out both;
-      }
-    </style>
-  
-    <!-- JS -->
-    <script>
-      const stars = document.querySelectorAll('#star-rating span');
-      const ratingInput = document.getElementById('rating');
-  
-      // Système d'étoiles
-      stars.forEach((star, index) => {
-        star.addEventListener('click', () => {
-          ratingInput.value = star.dataset.value;
-          stars.forEach((s, i) => {
-            s.classList.toggle('text-yellow-400', i <= index);
-            s.classList.toggle('text-gray-300', i > index);
-          });
-        });
-  
-        star.addEventListener('mouseover', () => {
-          stars.forEach((s, i) => {
-            s.classList.toggle('text-yellow-300', i <= index);
-            s.classList.toggle('text-gray-300', i > index);
-          });
-        });
-  
-        star.addEventListener('mouseleave', () => {
-          const currentRating = parseInt(ratingInput.value);
-          stars.forEach((s, i) => {
-            s.classList.toggle('text-yellow-400', i < currentRating);
-            s.classList.toggle('text-gray-300', i >= currentRating);
-          });
-        });
-      });
-  
-      // Ajout dynamique des commentaires
-      const form = document.getElementById('commentForm');
-      const commentList = document.getElementById('commentList');
-  
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-  
-        const name = document.getElementById('name').value.trim();
-        const rating = parseInt(document.getElementById('rating').value);
-        const comment = document.getElementById('comment').value.trim();
-  
-        if (!name || !rating || !comment) return;
-  
-        const starsHTML = '★'.repeat(rating) + '☆'.repeat(5 - rating);
-  
-        const newComment = document.createElement('div');
-        newComment.className = 'border-b pb-6 animate-fade-in-up';
-        newComment.innerHTML = `
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-blue-700 font-semibold">${name}</span>
-            <span class="text-yellow-400 text-xl">${starsHTML}</span>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-8">Avis des Participants</h3>
+          
+          <!-- Commentaire 1 -->
+          <div class="border-b pb-6">
+              <div class="flex items-center justify-between mb-2">
+                  <span class="text-blue-700 font-semibold">Jean Dupont</span>
+                  <span class="text-yellow-400 text-xl">★★★★☆</span>
+              </div>
+              <p class="text-gray-600">Un événement vraiment incroyable ! J'ai passé un excellent moment et je reviendrai sans hésiter.</p>
           </div>
-          <p class="text-gray-600">${comment}</p>
-        `;
-  
-        commentList.appendChild(newComment);
-  
-        form.reset();
-        ratingInput.value = 0;
-        stars.forEach(s => {
-          s.classList.remove('text-yellow-400');
-          s.classList.add('text-gray-300');
-        });
-      });
-    </script>
-  </section>
+
+          <!-- Commentaire 2 -->
+          <div class="border-b pb-6">
+              <div class="flex items-center justify-between mb-2">
+                  <span class="text-blue-700 font-semibold">Marie Lefevre</span>
+                  <span class="text-yellow-400 text-xl">★★★★★</span>
+              </div>
+              <p class="text-gray-600">Une expérience inoubliable. Organisé de manière professionnelle et avec beaucoup d'activités intéressantes. Bravo !</p>
+          </div>
+
+          <!-- Commentaire 3 -->
+          <div class="border-b pb-6">
+              <div class="flex items-center justify-between mb-2">
+                  <span class="text-blue-700 font-semibold">Paul Martin</span>
+                  <span class="text-yellow-400 text-xl">★★★☆☆</span>
+              </div>
+              <p class="text-gray-600">C'était bien, mais il y a quelques améliorations possibles sur l'organisation. Sinon, l'ambiance était top !</p>
+          </div>
+      </div>
+  </div>
+
+  <!-- Animations -->
+  <style>
+      @keyframes fade-in-up {
+          from {
+              opacity: 0;
+              transform: translateY(20px);
+          }
+
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      .animate-fade-in-up {
+          animation: fade-in-up 0.8s ease-out both;
+      }
+  </style>
+</section>
+
   
   
 

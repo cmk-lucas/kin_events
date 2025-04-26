@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin - Gestion des Événements</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 text-gray-800">
 
   <div class="max-w-6xl mx-auto py-10 px-4">
@@ -15,14 +17,17 @@
     <form id="eventForm" class="bg-white p-6 rounded-2xl shadow-md mb-10">
       <div class="grid md:grid-cols-2 gap-4">
         <input type="text" id="title" placeholder="Nom de l'événement" class="border rounded-xl px-4 py-2" required />
-        <input type="text" id="category" placeholder="Catégorie (ex: Hip-Hop)" class="border rounded-xl px-4 py-2" required />
+        <input type="text" id="category" placeholder="Catégorie (ex: Hip-Hop)" class="border rounded-xl px-4 py-2"
+          required />
         <input type="text" id="price" placeholder="Prix (CDF)" class="border rounded-xl px-4 py-2" required />
         <input type="date" id="date" class="border rounded-xl px-4 py-2" required />
         <input type="text" id="lieu" placeholder="Lieu" class="border rounded-xl px-4 py-2" required />
         <input type="text" id="image" placeholder="Lien de l'image" class="border rounded-xl px-4 py-2" required />
       </div>
-      <textarea id="description" rows="3" placeholder="Description" class="w-full border rounded-xl mt-4 px-4 py-2" required></textarea>
-      <button type="submit" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700">Ajouter Événement</button>
+      <textarea id="description" rows="3" placeholder="Description" class="w-full border rounded-xl mt-4 px-4 py-2"
+        required></textarea>
+      <button type="submit" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700">Ajouter
+        Événement</button>
     </form>
 
     <!-- Liste des événements -->
@@ -48,7 +53,50 @@
   <script>
     const form = document.getElementById('eventForm');
     const eventList = document.getElementById('eventList');
+    let events = JSON.parse(localStorage.getItem('events')) || [];
     let editIndex = null;
+
+    function saveToLocalStorage() {
+      localStorage.setItem('events', JSON.stringify(events));
+    }
+
+    function renderEvents() {
+      eventList.innerHTML = ''; // Vider la liste des événements
+      events.forEach(event => {
+        // Créer une carte pour chaque événement
+        const eventCard = `
+      <article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+        data-category="${event.category}" data-price="${event.price}" data-date="${event.date}" data-lieu="${event.lieu}">
+        
+        <span class="absolute top-4 left-4 bg-green-100 text-green-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">
+          ${event.popular ? '🎉 Populaire' : ''}
+        </span>
+        
+        <img src="${event.image}" alt="${event.title}"
+          class="w-full h-52 object-cover group-hover:scale-110 group-hover:opacity-90 transition-transform duration-300">
+        
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">${event.icon} ${event.title}</h3>
+          <p class="text-gray-600 text-base mb-4">${event.description}</p>
+          
+          <div class="flex items-center justify-between mt-6">
+            <span class="text-lg font-bold text-yellow-500">${event.price} CDF</span>
+            <div class="flex space-x-2">
+              <a href="detail.html"
+                class="bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition transform hover:scale-105">Détails</a>
+              <button class="reserve-btn bg-yellow-500 text-blue-900 font-semibold py-2 px-4 rounded-xl hover:bg-yellow-400 transition transform hover:scale-105"
+                onclick="editEvent(${event.index})">Modifier</button>
+              <button class="reserve-btn bg-red-500 text-white font-semibold py-2 px-4 rounded-xl hover:bg-red-400 transition transform hover:scale-105"
+                onclick="deleteEvent(${event.index})">Supprimer</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    `;
+        eventList.innerHTML += eventCard; // Ajouter la carte au container
+      });
+    }
+
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -64,35 +112,19 @@
       };
 
       if (editIndex !== null) {
-        updateEvent(editIndex, event);
+        events[editIndex] = event;
         editIndex = null;
       } else {
-        addEvent(event);
+        events.push(event);
       }
 
+      saveToLocalStorage();
+      renderEvents();
       form.reset();
     });
 
-    function addEvent(event) {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td class="py-3 px-4">${event.title}</td>
-        <td class="py-3 px-4 text-center">${event.category}</td>
-        <td class="py-3 px-4 text-center">${event.price}</td>
-        <td class="py-3 px-4 text-center">${event.date}</td>
-        <td class="py-3 px-4 text-center">${event.lieu}</td>
-        <td class="py-3 px-4 text-center">
-          <button class="text-blue-600 font-semibold mr-2" onclick="editEvent(this)">Modifier</button>
-          <button class="text-red-500 font-semibold" onclick="deleteEvent(this)">Supprimer</button>
-        </td>
-      `;
-      row.dataset.details = JSON.stringify(event);
-      eventList.appendChild(row);
-    }
-
-    function editEvent(button) {
-      const row = button.closest('tr');
-      const event = JSON.parse(row.dataset.details);
+    function editEvent(index) {
+      const event = events[index];
       form.title.value = event.title;
       form.category.value = event.category;
       form.price.value = event.price;
@@ -100,25 +132,22 @@
       form.lieu.value = event.lieu;
       form.image.value = event.image;
       form.description.value = event.description;
-      editIndex = Array.from(eventList.children).indexOf(row);
+      editIndex = index;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function updateEvent(index, event) {
-      const row = eventList.children[index];
-      row.children[0].textContent = event.title;
-      row.children[1].textContent = event.category;
-      row.children[2].textContent = event.price;
-      row.children[3].textContent = event.date;
-      row.children[4].textContent = event.lieu;
-      row.dataset.details = JSON.stringify(event);
+    function deleteEvent(index) {
+      if (confirm('Supprimer cet événement ?')) {
+        events.splice(index, 1);
+        saveToLocalStorage();
+        renderEvents();
+      }
     }
 
-    function deleteEvent(button) {
-      const row = button.closest('tr');
-      row.remove();
-    }
+    // Charger au début
+    renderEvents();
   </script>
 
 </body>
+
 </html>

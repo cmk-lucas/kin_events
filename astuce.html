@@ -12,67 +12,43 @@
 </head>
 
 <body class="bg-gray-50 font-roboto">
-  <!-- Header Amélioré -->
-<header class="bg-white/80 backdrop-blur-md shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <!-- Logo -->
-      <h1 class="text-3xl font-extrabold text-blue-600 tracking-wide">
-        Kin<span class="text-gray-900">Events</span>
-      </h1>
-  
-      <!-- Navigation Desktop -->
-      <nav class="hidden md:flex items-center space-x-8">
-        <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Accueil</a>
-        <a href="evenements.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Événements</a>
-        <a href="astuce.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Trucs & Astuces</a>
-        <a href="abaout.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">À propos</a>
-      </nav>
-  
-      <!-- Menu Mobile -->
-      <button id="menuBtn" class="md:hidden text-blue-600 focus:outline-none" aria-label="Menu mobile">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
-             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-  
-    <!-- Navigation Mobile -->
-    <div id="mobileMenu" class="md:hidden hidden px-6 pt-2 pb-4 bg-white border-t border-gray-200 animate-fade-in-down space-y-2">
-      <a href="index.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
-      <a href="evenements.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Événements</a>
-      <a href="astuce.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Trucs & Astuces</a>
-      <a href="abaout.html" class="block text-gray-700 hover:text-blue-600 transition-colors">À propos</a>
-    </div>
-  
-    <style>
-      @keyframes fade-in-down {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-  
-      .animate-fade-in-down {
-        animation: fade-in-down 0.3s ease-out;
-      }
-    </style>
-  
-    <script>
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-  
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-        menuBtn.classList.toggle("open");
-      });
-    </script>
-  </header>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-extrabold text-blue-600">
+                Kin<span class="text-gray-800">Events</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Accueil</a>
+                <a href="evenements.html"
+                    class="text-gray-700 hover:text-blue-600 transition duration-300">Événements</a>
+                <a href="astuce.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Trucs &
+                    Astuces</a>
+                <a href="abaout.html" class="text-blue-600 font-semibold">À propos</a>
+            </nav>
+
+            <!-- Mobile Burger Button -->
+            <button id="burgerBtn" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobileMenu" class="md:hidden bg-white px-6 pb-4 pt-2 hidden shadow-lg">
+            <a href="index.html#home"
+                class="block py-2 text-gray-700 hover:text-blue-600 transition duration-300">Accueil</a>
+            <a href="index.html#events"
+                class="block py-2 text-gray-700 hover:text-blue-600 transition duration-300">Événements</a>
+            <a href="astuce.html" class="block py-2 text-gray-700 hover:text-blue-600 transition duration-300">Trucs
+                & Astuces</a>
+            <a href="about.html" class="block py-2 text-blue-600 font-semibold">À propos</a>
+        </div>
+    </header>
     <!-- Main Content -->
     <main class="py-20 px-6 bg-gray-50">
         <div class="max-w-6xl mx-auto text-center mb-20 px-6">
@@ -184,19 +160,33 @@
 
         <!-- Call to Action -->
         <section
-            class="bg-gradient-to-r from-blue-600 to-teal-500 py-20 text-center text-white rounded-xl shadow-2xl transform transition-all hover:scale-105">
-            <h2 class="text-4xl font-extrabold mb-4 tracking-wide">
-                Prêt à vivre l'événement ?
+            class="bg-gradient-to-r from-blue-600 via-teal-500 to-blue-800 py-28 text-center text-white rounded-xl shadow-2xl relative overflow-hidden">
+            <!-- Effet de fond dynamique -->
+            <div class="absolute inset-0 bg-teal-500 opacity-50 transform rotate-45 scale-150 blur-md"></div>
+
+            <h2
+                class="text-6xl font-extrabold mb-6 tracking-tight z-10 relative transform transition-all duration-500 hover:scale-110">
+                Rejoignez l'événement maintenant !
             </h2>
-            <p class="text-lg mb-6 leading-relaxed max-w-2xl mx-auto">
-                Rejoignez-nous et faites partie de la communauté KinEvents. Explorez les événements incontournables,
-                profitez de moments inoubliables et découvrez chaque jour les meilleures expériences à Kinshasa !
+
+            <p
+                class="text-lg mb-8 max-w-4xl mx-auto leading-relaxed z-10 relative opacity-90 transition-all duration-500 ease-in-out hover:opacity-100">
+                Soyez au cœur de l'action avec KinEvents. Découvrez des événements incroyables, des expériences uniques
+                et des moments inoubliables, exclusivement à Kinshasa.
             </p>
+
+            <!-- Bouton d'action -->
             <a href="evenements.html"
-                class="bg-white text-blue-600 py-4 px-8 rounded-full font-semibold text-xl hover:bg-gray-100 hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105">
-                Explorer les événements
+                class="bg-gradient-to-r from-teal-400 to-blue-500 text-white py-5 px-14 rounded-full font-semibold text-2xl shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-500 ease-in-out z-10 relative">
+                Explorer maintenant
             </a>
         </section>
+
+
+
+
+
+
 
     </main>
 
