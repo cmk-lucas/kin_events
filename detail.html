@@ -2,54 +2,57 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détails de l'Événement</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        @keyframes fade-in-up {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détails de l'Événement</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        .animate-fade-in-up {
-            animation: fade-in-up 0.8s ease-out both;
-        }
-    </style>
+    .animate-fade-in-up {
+      animation: fade-in-up 0.8s ease-out both;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Présentation / À propos -->
-<section class="py-20 bg-white" id="about">
+  <!-- Présentation / À propos -->
+  <section class="py-20 bg-white" id="about">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-center text-blue-700 mb-6 animate-fade-in-up">À propos de l'Événement</h2>
-      <p class="text-lg text-gray-700 leading-relaxed mb-6 transition-opacity duration-500 ease-in-out opacity-0 animate-fade-in-up">
+      <p
+        class="text-lg text-gray-700 leading-relaxed mb-6 transition-opacity duration-500 ease-in-out opacity-0 animate-fade-in-up">
         Notre événement est conçu pour rassembler les passionnés autour d’une expérience unique, riche en émotions, en
         découvertes et en connexions humaines.
       </p>
-  
+
       <!-- Bloc d'illustration -->
       <div class="relative bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-xl shadow-lg p-8 mt-8">
         <h3 class="text-2xl font-semibold mb-4">Pourquoi participer ?</h3>
         <p class="text-lg opacity-80">
-          L'événement offre une opportunité d'apprendre, d'échanger et de se connecter avec des experts et des passionnés.
+          L'événement offre une opportunité d'apprendre, d'échanger et de se connecter avec des experts et des
+          passionnés.
           Des activités variées, des conférences, des ateliers et des moments de réseautage vous attendent.
         </p>
-        <div class="absolute bottom-4 right-4 text-blue-200 font-semibold opacity-70 hover:opacity-100 transition-opacity">
+        <div
+          class="absolute bottom-4 right-4 text-blue-200 font-semibold opacity-70 hover:opacity-100 transition-opacity">
           Découvrez notre programme complet
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Animation -->
   <style>
     @keyframes fade-in-up {
@@ -57,93 +60,103 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-  
+
     .animate-fade-in-up {
       animation: fade-in-up 1s ease-out both;
     }
   </style>
-  
 
-    <!-- Programme de l'événement -->
-    <section class="py-20 bg-gray-100" id="schedule">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-blue-700 mb-12 animate-fade-in-up">Programme</h2>
-            <div class="grid md:grid-cols-2 gap-8">
 
-                <!-- 14h00 - Ouverture -->
-                <div
-                    class="bg-white p-8 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-600 text-white p-3 rounded-full">
-                            <i class="fas fa-users text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-blue-600 ml-4">14h00 - Ouverture</h3>
-                    </div>
-                    <p class="text-gray-600">Accueil des participants, réseautage, présentation.</p>
-                </div>
+  <!-- Programme de l'événement -->
+  <section class="py-20 bg-gray-100" id="schedule">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-blue-700 mb-12 animate-fade-in-up">Programme</h2>
+      <div class="grid md:grid-cols-2 gap-8">
 
-                <!-- 16h00 - Conférence principale -->
-                <div
-                    class="bg-white p-8 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-yellow-600 text-white p-3 rounded-full">
-                            <i class="fas fa-microphone-alt text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-blue-600 ml-4">16h00 - Conférence principale</h3>
-                    </div>
-                    <p class="text-gray-600">Intervention de nos invités spéciaux avec questions-réponses.</p>
-                </div>
-
+        <!-- 14h00 - Ouverture -->
+        <div
+          class="bg-white p-8 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-600 text-white p-3 rounded-full">
+              <i class="fas fa-users text-xl"></i>
             </div>
+            <h3 class="text-xl font-semibold text-blue-600 ml-4">14h00 - Ouverture</h3>
+          </div>
+          <p class="text-gray-600">Accueil des participants, réseautage, présentation.</p>
         </div>
-    </section>
+
+        <!-- 16h00 - Conférence principale -->
+        <div
+          class="bg-white p-8 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
+          <div class="flex items-center mb-4">
+            <div class="bg-yellow-600 text-white p-3 rounded-full">
+              <i class="fas fa-microphone-alt text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-600 ml-4">16h00 - Conférence principale</h3>
+          </div>
+          <p class="text-gray-600">Intervention de nos invités spéciaux avec questions-réponses.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 
-   <!-- Équipe ou Invités spéciaux -->
-<section class="py-20 bg-gray-100" id="team">
+  <!-- Équipe ou Invités spéciaux -->
+  <section class="py-20 bg-gray-100" id="team">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-center text-blue-700 mb-12 animate-fade-in-up">Notre Équipe</h2>
       <div class="grid md:grid-cols-3 gap-12 text-center">
         <!-- Membres de l'équipe -->
-        <div class="bg-white p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
-          <img src="img/A1.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-600 transition-all duration-300 ease-in-out hover:border-blue-700" alt="John Doe">
+        <div
+          class="bg-white p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+          <img src="img/A1.jpg"
+            class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-600 transition-all duration-300 ease-in-out hover:border-blue-700"
+            alt="John Doe">
           <h3 class="text-xl font-semibold text-blue-700 mb-2">John Doe</h3>
           <p class="text-gray-600 font-medium">Conférencier & Coach</p>
           <div class="mt-4">
             <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Voir le profil</a>
           </div>
         </div>
-  
+
         <!-- Exemple d'un autre membre -->
-        <div class="bg-white p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
-          <img src="img/A2.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-600 transition-all duration-300 ease-in-out hover:border-blue-700" alt="Jane Doe">
+        <div
+          class="bg-white p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+          <img src="img/A2.jpg"
+            class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-600 transition-all duration-300 ease-in-out hover:border-blue-700"
+            alt="Jane Doe">
           <h3 class="text-xl font-semibold text-blue-700 mb-2">Jane Doe</h3>
           <p class="text-gray-600 font-medium">Intervenante & Experte</p>
           <div class="mt-4">
             <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Voir le profil</a>
           </div>
         </div>
-  
+
         <!-- Exemple d'un autre membre -->
-        <div class="bg-white p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
-          <img src="img/A3.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-600 transition-all duration-300 ease-in-out hover:border-blue-700" alt="Alex Smith">
+        <div
+          class="bg-white p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+          <img src="img/A3.jpg"
+            class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-600 transition-all duration-300 ease-in-out hover:border-blue-700"
+            alt="Alex Smith">
           <h3 class="text-xl font-semibold text-blue-700 mb-2">Alex Smith</h3>
           <p class="text-gray-600 font-medium">Modérateur & Stratégiste</p>
           <div class="mt-4">
             <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Voir le profil</a>
           </div>
         </div>
-  
+
         <!-- Ajouter d'autres membres ici... -->
       </div>
     </div>
   </section>
-  
+
   <!-- Animation -->
   <style>
     @keyframes fade-in-up {
@@ -151,29 +164,33 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-  
+
     .animate-fade-in-up {
       animation: fade-in-up 0.8s ease-out both;
     }
   </style>
-  
 
-   <!-- Billetterie / Réservation -->
-<section class="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white" id="tickets">
+
+  <!-- Billetterie / Réservation -->
+  <section class="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white" id="tickets">
     <div class="max-w-6xl mx-auto text-center px-4">
       <h2 class="text-4xl font-bold mb-6 animate-fade-in-up">Réservez votre place maintenant</h2>
-      <p class="text-lg mb-8 max-w-2xl mx-auto leading-relaxed">Les places sont limitées, ne manquez pas l’opportunité de participer à cet événement exclusif. Réservez maintenant et assurez-vous de ne pas manquer cette expérience incroyable !</p>
-      <a href="#form" class="bg-white text-blue-600 font-semibold px-10 py-5 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
+      <p class="text-lg mb-8 max-w-2xl mx-auto leading-relaxed">Les places sont limitées, ne manquez pas l’opportunité
+        de participer à cet événement exclusif. Réservez maintenant et assurez-vous de ne pas manquer cette expérience
+        incroyable !</p>
+      <a href="#form"
+        class="bg-white text-blue-600 font-semibold px-10 py-5 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
         Je m’inscris
       </a>
     </div>
   </section>
-  
+
   <!-- Animation -->
   <style>
     @keyframes fade-in-up {
@@ -181,58 +198,71 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-  
+
     .animate-fade-in-up {
       animation: fade-in-up 0.8s ease-out both;
     }
   </style>
-  
 
-   <!-- Galerie photo / vidéos -->
-<section class="py-20 bg-gray-100" id="gallery">
+
+  <!-- Galerie photo / vidéos -->
+  <section class="py-20 bg-gray-100" id="gallery">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-center text-blue-700 mb-12 animate-fade-in-up">Galerie</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         <!-- Image 1 -->
         <div class="relative group">
-          <img src="img/A1.jpg" class="w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-500 ease-in-out transform group-hover:scale-105" alt="">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
+          <img src="img/A1.jpg"
+            class="w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-500 ease-in-out transform group-hover:scale-105"
+            alt="">
+          <div
+            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
             <span class="text-white text-xl font-semibold">Voir en plein écran</span>
           </div>
         </div>
-  
+
         <!-- Image 2 -->
         <div class="relative group">
-          <img src="img/A2.jpg" class="w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-500 ease-in-out transform group-hover:scale-105" alt="">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
+          <img src="img/A2.jpg"
+            class="w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-500 ease-in-out transform group-hover:scale-105"
+            alt="">
+          <div
+            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
             <span class="text-white text-xl font-semibold">Voir en plein écran</span>
           </div>
         </div>
-  
+
         <!-- Image 3 -->
         <div class="relative group">
-          <img src="img/A3.jpg" class="w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-500 ease-in-out transform group-hover:scale-105" alt="">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
+          <img src="img/A3.jpg"
+            class="w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-500 ease-in-out transform group-hover:scale-105"
+            alt="">
+          <div
+            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
             <span class="text-white text-xl font-semibold">Voir en plein écran</span>
           </div>
         </div>
-  
+
         <!-- Image 4 -->
         <div class="relative group">
-          <img src="img/A1.jpg" class="w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-500 ease-in-out transform group-hover:scale-105" alt="">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
+          <img src="img/A1.jpg"
+            class="w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-500 ease-in-out transform group-hover:scale-105"
+            alt="">
+          <div
+            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
             <span class="text-white text-xl font-semibold">Voir en plein écran</span>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Animation -->
   <style>
     @keyframes fade-in-up {
@@ -240,36 +270,38 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-  
+
     .animate-fade-in-up {
       animation: fade-in-up 0.8s ease-out both;
     }
   </style>
-  
 
-    <!-- Localisation / Carte -->
-<section class="py-20 bg-white" id="location">
+
+  <!-- Localisation / Carte -->
+  <section class="py-20 bg-white" id="location">
     <div class="max-w-6xl mx-auto px-4 text-center">
       <h2 class="text-4xl font-bold text-blue-700 mb-6 animate-fade-in-up">Où ça se passe ?</h2>
       <p class="text-lg text-gray-600 mb-6">Université de Kinshasa, RDC</p>
-  
+
       <!-- Carte Google Maps -->
       <div class="relative group">
-        <iframe src="https://www.google.com/maps/embed?pb=..." 
-                class="w-full h-96 rounded-xl border-0 shadow-xl transition-transform duration-500 ease-in-out group-hover:scale-105" 
-                allowfullscreen="" loading="lazy"></iframe>
-        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
+        <iframe src="https://www.google.com/maps/embed?pb=..."
+          class="w-full h-96 rounded-xl border-0 shadow-xl transition-transform duration-500 ease-in-out group-hover:scale-105"
+          allowfullscreen="" loading="lazy"></iframe>
+        <div
+          class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
           <span class="text-white text-xl font-semibold">Voir sur Google Maps</span>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Animation -->
   <style>
     @keyframes fade-in-up {
@@ -277,17 +309,17 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-  
+
     .animate-fade-in-up {
       animation: fade-in-up 0.8s ease-out both;
     }
   </style>
-  
 
 
 </body>
