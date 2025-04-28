@@ -50,6 +50,17 @@
             <a href="about.html" class="block py-2 text-blue-600 font-semibold">À propos</a>
         </div>
     </header>
+
+     <!-- JavaScript for Burger Menu -->
+     <script>
+        const burgerBtn = document.getElementById("burgerBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        burgerBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+    
     <!-- Main Content -->
     <main class="py-20 px-6 bg-gray-50">
         <div class="max-w-6xl mx-auto text-center mb-20 px-6">
