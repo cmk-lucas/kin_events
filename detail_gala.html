@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gala d'Excellence - Rotana Hotel</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @keyframes fade-in-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up { animation: fade-in-up 1s ease-out both; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Présentation principale -->
+  <section class="py-24 bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 text-white text-center" id="hero">
+    <div class="max-w-4xl mx-auto px-4 animate-fade-in-up">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">Gala d'Excellence 2025</h1>
+      <p class="text-xl md:text-2xl font-light mb-8">Une nuit d'élégance, de distinction et de networking, au prestigieux <strong>Rotana Hotel</strong>.</p>
+      <a href="#tickets" class="inline-block mt-6 bg-white text-yellow-700 font-semibold px-8 py-4 rounded-xl hover:bg-yellow-100 transition duration-300 ease-in-out">
+        Réservez votre billet
+      </a>
+    </div>
+  </section>
+
+  <!-- Détail de l'événement -->
+  <section class="py-20 bg-white" id="details">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-yellow-600 mb-12 animate-fade-in-up">À propos du Gala</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-10 animate-fade-in-up">
+        Le Gala d'Excellence est un événement exclusif rassemblant des leaders, entrepreneurs, artistes et personnalités influentes pour une soirée inoubliable dans un cadre somptueux.
+        <br><br>
+        Entre réception raffinée, dîner gastronomique, remise de prix et prestations artistiques, cette nuit est conçue pour célébrer la réussite et inspirer la prochaine génération de talents.
+      </p>
+      <div class="grid md:grid-cols-2 gap-8 mt-12">
+
+        <div class="bg-gray-100 p-8 rounded-2xl shadow-lg animate-fade-in-up">
+          <h3 class="text-2xl font-semibold text-yellow-600 mb-4">Le Lieu</h3>
+          <p class="text-gray-600">Rotana Hotel - Kinshasa Gombe. Un cadre luxueux, entre élégance moderne et excellence du service, pour une expérience mémorable.</p>
+        </div>
+
+        <div class="bg-gray-100 p-8 rounded-2xl shadow-lg animate-fade-in-up">
+          <h3 class="text-2xl font-semibold text-yellow-600 mb-4">Dress Code</h3>
+          <p class="text-gray-600">Tenue de soirée exigée : robes longues, costumes, nœud papillon ou cravate noire. L'élégance est de rigueur pour magnifier cette soirée d'exception.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Billetterie -->
+  <section class="py-20 bg-gradient-to-r from-yellow-600 to-yellow-800 text-white" id="tickets">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <h2 class="text-4xl font-bold mb-6 animate-fade-in-up">Réservez votre Billet</h2>
+      <p class="text-lg mb-10 animate-fade-in-up">
+        Places limitées pour garantir une expérience exclusive. Réservez dès maintenant pour vivre une soirée de prestige au Rotana Hotel.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="bg-white text-yellow-700 p-8 rounded-xl shadow-2xl animate-fade-in-up">
+          <h3 class="text-2xl font-bold mb-4">Billet Standard</h3>
+          <p class="text-gray-600 mb-6">Accès au gala + dîner 3 services + animations live.</p>
+          <p class="text-3xl font-bold mb-6">120€</p>
+          <a href="#form" class="block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 rounded-xl transition duration-300 ease-in-out">
+            Réserver
+          </a>
+        </div>
+
+        <div class="bg-white text-yellow-700 p-8 rounded-xl shadow-2xl animate-fade-in-up">
+          <h3 class="text-2xl font-bold mb-4">Billet VIP</h3>
+          <p class="text-gray-600 mb-6">Accès premium au gala + dîner gastronomique + table réservée + cadeaux exclusifs.</p>
+          <p class="text-3xl font-bold mb-6">250€</p>
+          <a href="#form" class="block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 rounded-xl transition duration-300 ease-in-out">
+            Réserver VIP
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
