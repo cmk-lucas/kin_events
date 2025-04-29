@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Safari Beats Festival - Safari Beach</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    @keyframes pop {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate-pop {
+      animation: pop 0.8s ease-out both;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Section Hero -->
+  <section class="py-24 bg-gradient-to-r from-pink-600 via-yellow-500 to-purple-600 text-center" id="hero">
+    <div class="max-w-4xl mx-auto px-4 animate-pop">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Safari Beats Festival</h1>
+      <p class="text-xl md:text-2xl font-light mb-8">La plus grosse beach party de l'année à <strong>Safari Beach</strong> ! 🌴🎶🔥</p>
+      <a href="#tickets" class="inline-block mt-6 bg-white text-pink-600 font-bold px-8 py-4 rounded-xl hover:bg-yellow-300 transition duration-300">
+        Réserver maintenant
+      </a>
+    </div>
+  </section>
+
+  <!-- Détails -->
+  <section class="py-20 bg-gray-800" id="details">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-pink-400 mb-12 animate-pop">À propos du Festival</h2>
+      <p class="text-lg text-gray-300 leading-relaxed mb-10 animate-pop">
+        2 jours de musique, de danse et de vibes incroyables sur la plage. 
+        DJs internationaux, artistes live, food trucks, pool party et bien plus encore.
+      </p>
+      <div class="grid md:grid-cols-2 gap-8 mt-12">
+        <div class="bg-gray-700 p-8 rounded-2xl shadow-lg animate-pop">
+          <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Le Lieu</h3>
+          <p class="text-gray-400">Safari Beach - Plage de rêve, coucher de soleil magique, ambiance 100% tropicale.</p>
+        </div>
+        <div class="bg-gray-700 p-8 rounded-2xl shadow-lg animate-pop">
+          <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Dress Code</h3>
+          <p class="text-gray-400">Coloré, Summer Vibes, Bikini, Shorts, Lunettes de soleil. Libère ton énergie estivale !</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Billetterie -->
+  <section class="py-20 bg-gradient-to-r from-pink-600 via-yellow-500 to-purple-600" id="tickets">
+    <div class="max-w-5xl mx-auto text-center px-4">
+      <h2 class="text-4xl font-bold mb-6 text-white animate-pop">Billetterie</h2>
+      <p class="text-lg mb-10 text-white animate-pop">
+        Sélectionne ton Pass pour vivre le meilleur de Safari Beats.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Pass Journée -->
+        <div class="bg-white text-gray-900 p-8 rounded-xl shadow-2xl animate-pop hover:scale-105 transition transform duration-300">
+          <h3 class="text-2xl font-bold text-pink-500 mb-4">Pass Journée</h3>
+          <p class="text-gray-600 mb-6">Accès à toutes les scènes pendant 1 journée.</p>
+          <p class="text-3xl font-bold mb-6">30€</p>
+          <a href="#form" class="block bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 rounded-xl transition duration-300">
+            Acheter
+          </a>
+        </div>
+
+        <!-- Pass 2 Jours -->
+        <div class="bg-white text-gray-900 p-8 rounded-xl shadow-2xl animate-pop hover:scale-105 transition transform duration-300">
+          <h3 class="text-2xl font-bold text-pink-500 mb-4">Pass 2 Jours</h3>
+          <p class="text-gray-600 mb-6">Accès complet + goodies exclusifs Safari Beats !</p>
+          <p class="text-3xl font-bold mb-6">50€</p>
+          <a href="#form" class="block bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 rounded-xl transition duration-300">
+            Acheter
+          </a>
+        </div>
+
+        <!-- Pass VIP -->
+        <div class="bg-white text-gray-900 p-8 rounded-xl shadow-2xl animate-pop hover:scale-105 transition transform duration-300">
+          <h3 class="text-2xl font-bold text-pink-500 mb-4">Pass VIP</h3>
+          <p class="text-gray-600 mb-6">Accès VIP Lounge + Bouteille offerte + Photo Artistes + Cadeaux.</p>
+          <p class="text-3xl font-bold mb-6">120€</p>
+          <a href="#form" class="block bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 rounded-xl transition duration-300">
+            VIP Access
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
