@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détails de l'Événement - Hip-Hop Night</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in-up {
+      animation: fade-in-up 0.8s ease-out both;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Présentation / À propos -->
+  <section class="py-20 bg-white" id="about">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-red-600 mb-6 animate-fade-in-up">À propos de l'Événement</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6 transition-opacity duration-500 ease-in-out opacity-0 animate-fade-in-up">
+        Rejoignez-nous pour une soirée Hip-Hop inoubliable au Pullman Kinshasa ! Danse, freestyle, battles et performances live vous attendent dans une ambiance urbaine unique.
+      </p>
+
+      <!-- Bloc d'illustration -->
+      <div class="relative bg-gradient-to-r from-red-500 to-red-700 text-white rounded-xl shadow-lg p-8 mt-8">
+        <h3 class="text-2xl font-semibold mb-4">Pourquoi participer ?</h3>
+        <p class="text-lg opacity-80">
+          Vibrez au rythme des beats enflammés, connectez-vous avec les artistes, et profitez d'une expérience Hip-Hop authentique dans un lieu d'exception.
+        </p>
+        <div class="absolute bottom-4 right-4 text-red-200 font-semibold opacity-70 hover:opacity-100 transition-opacity">
+          Découvrez notre programme complet
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programme de l'événement -->
+  <section class="py-20 bg-gray-100" id="schedule">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-red-600 mb-12 animate-fade-in-up">Programme</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- 18h00 - Accueil -->
+        <div class="bg-white p-8 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
+          <div class="flex items-center mb-4">
+            <div class="bg-red-600 text-white p-3 rounded-full">
+              <i class="fas fa-door-open text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-red-600 ml-4">18h00 - Ouverture & Accueil</h3>
+          </div>
+          <p class="text-gray-600">Accueil des participants et échauffement musical avec DJ Lucas Saint.</p>
+        </div>
+
+        <!-- 20h00 - Live Battles -->
+        <div class="bg-white p-8 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
+          <div class="flex items-center mb-4">
+            <div class="bg-yellow-500 text-white p-3 rounded-full">
+              <i class="fas fa-microphone-alt text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-red-600 ml-4">20h00 - Battles & Performances</h3>
+          </div>
+          <p class="text-gray-600">Des battles en freestyle enflammés avec nos artistes invités et compétitions de danse.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Équipe ou Invités spéciaux -->
+  <section class="py-20 bg-gray-100" id="team">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-red-600 mb-12 animate-fade-in-up">Nos Artistes</h2>
+      <div class="grid md:grid-cols-3 gap-12 text-center">
+
+        <!-- Membres de l'équipe -->
+        <div class="bg-white p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+          <img src="img/lucas.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-red-600 transition-all duration-300 ease-in-out hover:border-red-700" alt="Lucas Saint">
+          <h3 class="text-xl font-semibold text-red-700 mb-2">Lucas Saint</h3>
+          <p class="text-gray-600 font-medium">DJ & MC Principal</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+          <img src="img/david.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-red-600 transition-all duration-300 ease-in-out hover:border-red-700" alt="David M">
+          <h3 class="text-xl font-semibold text-red-700 mb-2">David M</h3>
+          <p class="text-gray-600 font-medium">Rap Freestyler</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+          <img src="img/benie.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-red-600 transition-all duration-300 ease-in-out hover:border-red-700" alt="Bénie A">
+          <h3 class="text-xl font-semibold text-red-700 mb-2">Bénie A</h3>
+          <p class="text-gray-600 font-medium">Danseuse & Choregraphe</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Billetterie / Réservation -->
+  <section class="py-20 bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white" id="tickets">
+    <div class="max-w-6xl mx-auto text-center px-4">
+      <h2 class="text-4xl font-bold mb-6 animate-fade-in-up">Réservez votre place maintenant</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto leading-relaxed">Ne ratez pas cette nuit explosive au Pullman Kinshasa. Les billets sont limités, alors dépêchez-vous de réserver votre spot !</p>
+      <a href="#form"
+        class="bg-white text-red-600 font-semibold px-10 py-5 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
+        Je m’inscris
+      </a>
+    </div>
+  </section>
+
+  <!-- Galerie photo -->
+  <section class="py-20 bg-gray-100" id="gallery">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-red-600 mb-12 animate-fade-in-up">Galerie</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="relative group">
+          <img src="img/hiphop1.jpg" class="w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-500 ease-in-out transform group-hover:scale-105" alt="">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
+            <span class="text-white text-xl font-semibold">Voir</span>
+          </div>
+        </div>
+        <div class="relative group">
+          <img src="img/hiphop2.jpg" class="w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-500 ease-in-out transform group-hover:scale-105" alt="">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
+            <span class="text-white text-xl font-semibold">Voir</span>
+          </div>
+        </div>
+        <!-- Ajoute d'autres photos ici -->
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
