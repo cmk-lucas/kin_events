@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Générateur de QR Code Client</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-4">
+
+  <h1 class="text-2xl md:text-3xl font-bold mb-4 text-center">🎫 Générateur QR - Safari Beats</h1>
+  <p class="text-sm text-gray-400 mb-6 text-center">Remplis les infos du client pour générer un QR Code unique</p>
+
+  <div class="bg-gray-800 p-6 rounded-xl shadow-xl w-full max-w-md">
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm mb-1">👤 Nom :</label>
+        <input type="text" id="name" class="w-full p-3 rounded-lg bg-gray-700 text-white" placeholder="Nom du client">
+      </div>
+      <div>
+        <label class="block text-sm mb-1">📧 Email :</label>
+        <input type="email" id="email" class="w-full p-3 rounded-lg bg-gray-700 text-white" placeholder="email@exemple.com">
+      </div>
+      <div>
+        <label class="block text-sm mb-1">🎟️ Type de Pass :</label>
+        <input type="text" id="pass" class="w-full p-3 rounded-lg bg-gray-700 text-white" placeholder="Pass VIP, Journée...">
+      </div>
+      <div>
+        <label class="block text-sm mb-1">📍 Événement :</label>
+        <input type="text" id="event" class="w-full p-3 rounded-lg bg-gray-700 text-white" placeholder="Nom de l'événement">
+      </div>
+    </div>
+
+    <button onclick="generateQR()" class="mt-6 bg-pink-600 hover:bg-pink-700 w-full py-3 rounded-lg font-bold text-lg transition">🎉 Générer QR Code</button>
+
+    <div id="qrcode" class="mt-8 flex justify-center"></div>
+
+    <!-- Bouton de téléchargement -->
+    <button id="downloadBtn" onclick="downloadQRCode()" class="mt-6 bg-green-600 hover:bg-green-700 w-full py-3 rounded-lg font-bold text-lg transition hidden">📥 Télécharger QR Code</button>
+  </div>
+
+  <script>
+    let qrCodeInstance;
+
+    function generateQR() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const pass = document.getElementById('pass').value.trim();
+      const event = document.getElementById('event').value.trim();
+
+      if (!name || !email || !pass || !event) {
+        alert("🚨 Merci de remplir tous les champs obligatoires.");
+        return;
+      }
+
+      // Créer une version plus courte du texte à encoder
+      const data = `${name} | ${email} | ${pass} | ${event}`;
+
+      // Réinitialiser le QR code existant
+      document.getElementById('qrcode').innerHTML = "";
+
+      // Générer le QR code avec un niveau de correction plus bas
+      qrCodeInstance = new QRCode(document.getElementById("qrcode"), {
+        text: data,
+        width: 220,
+        height: 220,
+        colorDark: "#ffffff", // QR code en blanc
+        colorLight: "#1f2937", // Fond du QR code
+        correctLevel: QRCode.CorrectLevel.L // Correction d'erreur faible
+      });
+
+      // Afficher le bouton de téléchargement
+      document.getElementById('downloadBtn').classList.remove('hidden');
+    }
+
+    // Fonction de téléchargement
+    function downloadQRCode() {
+      // Utilisation de la méthode toDataURL pour obtenir l'image du QR code
+      const canvas = document.querySelector('#qrcode canvas');
+      if (canvas) {
+        const dataURL = canvas.toDataURL("image/png");
+        const link = document.createElement("a");
+        link.href = dataURL;
+        link.download = "qr_code_safari_beats.png"; // Nom du fichier téléchargé
+        link.click(); // Simuler le clic pour télécharger
+      }
+    }
+  </script>
+
+</body>
+</html>

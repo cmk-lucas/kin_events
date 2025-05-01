@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scanner QR Code - Safari Beats</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col justify-center items-center px-4">
+
+  <!-- Titre -->
+  <h1 class="text-2xl md:text-4xl font-bold mb-4 text-center leading-tight">📷 Scanner ton QR Code</h1>
+  <p class="text-center text-sm text-gray-400 mb-6">Approche ton billet QR devant la caméra</p>
+
+  <!-- Lecteur QR -->
+  <div id="reader" class="w-full max-w-sm sm:max-w-md rounded-xl overflow-hidden shadow-lg border-4 border-pink-600"></div>
+
+  <!-- Résultat -->
+  <div id="result" class="mt-6 w-full max-w-sm sm:max-w-md bg-gray-800 p-4 rounded-xl text-sm whitespace-pre-wrap text-center"></div>
+
+  <script>
+    function onScanSuccess(decodedText, decodedResult) {
+      document.getElementById('result').innerText = `✅ Code détecté :\n${decodedText}`;
+    }
+
+    function onScanFailure(error) {
+      // Ignoré sauf pour debug : console.log(`Scan failed: ${error}`);
+    }
+
+    const html5QrCode = new Html5Qrcode("reader");
+
+    Html5Qrcode.getCameras().then(devices => {
+      if (devices && devices.length) {
+        html5QrCode.start(
+          { facingMode: "environment" }, // Use rear camera by default
+          {
+            fps: 10,
+            qrbox: { width: 250, height: 250 }
+          },
+          onScanSuccess,
+          onScanFailure
+        );
+      } else {
+        document.getElementById('result').innerText = "❌ Aucune caméra détectée.";
+      }
+    }).catch(err => {
+      document.getElementById('result').innerText = `❌ Erreur d’accès à la caméra.\n${err}`;
+    });
+  </script>
+
+</body>
+</html>
