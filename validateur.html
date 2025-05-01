@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scanner QR Code - Safari Beats</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="https://unpkg.com/html5-qrcode@2.3.7/minified/html5-qrcode.min.js"></script>
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex flex-col justify-center items-center px-4">
 
@@ -17,48 +17,43 @@
   <div id="reader" class="w-full max-w-sm sm:max-w-md rounded-xl overflow-hidden shadow-lg border-4 border-pink-600"></div>
 
   <!-- Résultat -->
-  <div id="result" class="mt-6 w-full max-w-sm sm:max-w-md bg-gray-800 p-4 rounded-xl text-sm whitespace-pre-wrap text-center"></div>
+  <div id="result" class="mt-6 w-full max-w-sm sm:max-w-md bg-gray-800 p-4 rounded-xl text-sm whitespace-pre-wrap text-center">📄 En attente de scan...</div>
 
   <!-- Script QR -->
   <script>
+    const html5QrCode = new Html5Qrcode("reader");
+
     function onScanSuccess(decodedText, decodedResult) {
       document.getElementById('result').innerText = `✅ Code détecté :\n${decodedText}`;
+      html5QrCode.stop().catch(err => console.error("Erreur d'arrêt : ", err));
     }
 
     function onScanFailure(error) {
-      // console.log(`Scan failed: ${error}`);
+      // Ignoré volontairement
     }
 
-    const html5QrCode = new Html5Qrcode("reader");
-
     Html5Qrcode.getCameras().then(devices => {
-      if (devices && devices.length) {
+      if (devices && devices.length > 0) {
         html5QrCode.start(
           { facingMode: "environment" },
-          {
-            fps: 10,
-            qrbox: { width: 250, height: 250 }
-          },
+          { fps: 10, qrbox: { width: 250, height: 250 } },
           onScanSuccess,
           onScanFailure
         ).then(() => {
-          // Corriger comportement iOS
-          setTimeout(() => {
-            const video = document.querySelector("video");
-            if (video) {
-              video.setAttribute("playsinline", true);
-              video.setAttribute("autoplay", true);
-              video.setAttribute("muted", true);
-            }
-          }, 500);
+          // Fix iOS
+          const video = document.querySelector('video');
+          if (video) {
+            video.setAttribute('playsinline', true);
+            video.setAttribute('autoplay', true);
+            video.setAttribute('muted', true);
+          }
         });
       } else {
         document.getElementById('result').innerText = "❌ Aucune caméra détectée.";
       }
     }).catch(err => {
-      document.getElementById('result').innerText = `❌ Erreur d’accès à la caméra.\n${err}`;
+      document.getElementById('result').innerText = `❌ Erreur d'accès caméra : ${err}`;
     });
   </script>
-
 </body>
 </html>
