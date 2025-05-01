@@ -6,6 +6,16 @@
   <title>Scanner QR Code - Safari Beats</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/html5-qrcode@2.3.7/minified/html5-qrcode.min.js"></script>
+  <style>
+    /* Safari fix : forcer playsinline et éviter le fullscreen */
+    video {
+      width: 100% !important;
+      height: auto !important;
+      object-fit: cover;
+      -webkit-playsinline: true;
+      playsinline: true;
+    }
+  </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex flex-col justify-center items-center px-4">
 
@@ -20,38 +30,43 @@
   <div id="result" class="mt-6 w-full max-w-sm sm:max-w-md bg-gray-800 p-4 rounded-xl text-sm whitespace-pre-wrap text-center"></div>
 
   <script>
+    const html5QrCode = new Html5Qrcode("reader");
+
     function onScanSuccess(decodedText, decodedResult) {
       document.getElementById('result').innerText = `✅ Code détecté :\n${decodedText}`;
     }
 
     function onScanFailure(error) {
-      // console.log(`Scan failed: ${error}`);
+      // console.log("Échec du scan : ", error);
     }
 
-    const html5QrCode = new Html5Qrcode("reader");
-
     Html5Qrcode.getCameras().then(devices => {
-      if (devices && devices.length) {
+      if (devices && devices.length > 0) {
         html5QrCode.start(
-          { facingMode: "environment" }, // Caméra arrière
+          { facingMode: "environment" },
           {
             fps: 10,
-            qrbox: { width: 250, height: 250 }
+            qrbox: 250
           },
           onScanSuccess,
           onScanFailure
         ).then(() => {
-          // Ajout de playsinline pour iOS
-          const videoElem = document.querySelector('video');
-          if (videoElem) {
-            videoElem.setAttribute('playsinline', true);
-          }
+          // Forcer l’attribut playsinline
+          setTimeout(() => {
+            const video = document.querySelector("video");
+            if (video) {
+              video.setAttribute("playsinline", true);
+              video.setAttribute("webkit-playsinline", true);
+              video.setAttribute("muted", true);
+              video.setAttribute("autoplay", true);
+            }
+          }, 500);
         });
       } else {
-        document.getElementById('result').innerText = "❌ Aucune caméra détectée.";
+        document.getElementById("result").innerText = "❌ Aucune caméra détectée.";
       }
     }).catch(err => {
-      document.getElementById('result').innerText = `❌ Erreur d’accès à la caméra.\n${err}`;
+      document.getElementById("result").innerText = `❌ Erreur d’accès à la caméra.\n${err}`;
     });
   </script>
 
