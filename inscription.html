@@ -1,97 +1,143 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kin Events - Auth</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          animation: {
-            'fade-in': 'fade-in 0.5s ease-out'
-          },
-          keyframes: {
-            'fade-in': {
-              '0%': { opacity: '0', transform: 'scale(0.95)' },
-              '100%': { opacity: '1', transform: 'scale(1)' },
-            },
-          },
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kin Events - Auth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fade-in 0.5s ease-out'
+                    },
+                    keyframes: {
+                        'fade-in': {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                    },
+                }
+            }
         }
-      }
-    }
-  </script>
-  <script src="https://unpkg.com/@heroicons/vue@2.0.11/24/outline/index.umd.js"></script>
+    </script>
+    <script src="https://unpkg.com/@heroicons/vue@2.0.11/24/outline/index.umd.js"></script>
 </head>
+
 <body class="relative min-h-screen bg-gray-900 text-white">
 
-  <!-- Background image -->
-  <div class="absolute inset-0">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Kinshasa_-_panorama.jpg"
-         alt="Kinshasa"
-         class="w-full h-full object-cover md:object-center brightness-50" />
-  </div>
-
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-
-  <!-- Form container -->
-  <div class="relative z-10 flex items-center justify-center min-h-screen px-4">
-    <div class="bg-white text-gray-900 p-4 md:p-8 rounded-2xl shadow-2xl w-full max-w-md animate-fade-in max-h-screen overflow-y-auto">
-      
-      <!-- Branding -->
-      <div class="text-center mb-4">
-        <h1 class="text-3xl md:text-4xl font-extrabold text-blue-600 tracking-wide">Kin Events</h1>
-        <p class="text-sm text-gray-500">Rejoins la vibe de Kinshasa !</p>
-      </div>
-
-      <h2 class="text-xl font-bold text-center mb-4" id="form-title">Connexion</h2>
-
-      <form id="auth-form" class="space-y-4" method="POST" action="backend/signup.php">
-        <div id="name-field" class="hidden">
-            <label class="block text-sm font-medium">Nom complet</label>
-            <div class="flex items-center border border-gray-300 rounded-md p-2 gap-2">
-                <input type="text" name="full_name" placeholder="Jean Mbala" class="w-full outline-none" required />
-            </div>
-        </div>
-  
-        <div>
-            <label class="block text-sm font-medium">Email</label>
-            <div class="flex items-center border border-gray-300 rounded-md p-2 gap-2">
-                <input type="email" name="email" placeholder="email@kinevents.cd" class="w-full outline-none" required />
-            </div>
-        </div>
-  
-        <div>
-            <label class="block text-sm font-medium">Mot de passe</label>
-            <div class="flex items-center border border-gray-300 rounded-md p-2 gap-2">
-                <input type="password" name="password" placeholder="••••••••" class="w-full outline-none" required />
-            </div>
-        </div>
-
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Continuer</button>
-      </form>
-
-      <p class="mt-4 text-sm text-center text-gray-600">
-        Pas encore de compte ?
-        <button onclick="toggleForm()" class="text-blue-600 hover:underline" id="switch-text">S'inscrire</button>
-      </p>
+    <!-- Background image -->
+    <div class="absolute inset-0">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Kinshasa_-_panorama.jpg" alt="Kinshasa"
+            class="w-full h-full object-cover md:object-center brightness-50" />
     </div>
-  </div>
 
-  <script>
-    let isSignup = false;
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
 
-    function toggleForm() {
-      isSignup = !isSignup;
-      document.getElementById('form-title').textContent = isSignup ? 'Inscription' : 'Connexion';
-      document.getElementById('name-field').classList.toggle('hidden');
-      document.querySelector('p').innerHTML = isSignup 
-        ? 'Déjà inscrit ? <button onclick="toggleForm()" class="text-blue-600 hover:underline" id="switch-text">Se connecter</button>'
-        : 'Pas encore de compte ? <button onclick="toggleForm()" class="text-blue-600 hover:underline" id="switch-text">S\'inscrire</button>';
-    }
-  </script>
+    <!-- Form container -->
+    <div class="relative z-10 flex items-center justify-center min-h-screen px-4">
+        <div
+            class="bg-white text-gray-900 p-4 md:p-8 rounded-2xl shadow-2xl w-full max-w-md animate-fade-in max-h-screen overflow-y-auto">
+
+            <!-- Branding -->
+            <div class="text-center mb-4">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-blue-600 tracking-wide">Kin Events</h1>
+                <p class="text-sm text-gray-500">Rejoins la vibe de Kinshasa !</p>
+            </div>
+
+            <h2 class="text-xl font-bold text-center mb-4" id="form-title">Connexion</h2>
+
+            <!-- ...le même code jusqu'au formulaire -->
+
+            <form id="auth-form" class="space-y-4">
+                <div id="name-field" class="hidden">
+                    <label class="block text-sm font-medium">Nom complet</label>
+                    <div class="flex items-center border border-gray-300 rounded-md p-2 gap-2">
+                        <input type="text" name="full_name" placeholder="Jean Mbala" class="w-full outline-none" />
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium">Email</label>
+                    <div class="flex items-center border border-gray-300 rounded-md p-2 gap-2">
+                        <input type="email" name="email" placeholder="email@kinevents.cd" class="w-full outline-none"
+                            required />
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium">Mot de passe</label>
+                    <div class="flex items-center border border-gray-300 rounded-md p-2 gap-2">
+                        <input type="password" name="password" placeholder="••••••••" class="w-full outline-none"
+                            required />
+                    </div>
+                </div>
+
+                <div id="alert-box" class="text-sm font-medium text-center"></div>
+
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Continuer</button>
+            </form>
+
+            <!-- ...suite inchangée jusqu'au script -->
+
+
+            <p class="mt-4 text-sm text-center text-gray-600">
+                Pas encore de compte ?
+                <button onclick="toggleForm()" class="text-blue-600 hover:underline"
+                    id="switch-text">S'inscrire</button>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let isSignup = false;
+      
+        function toggleForm() {
+          isSignup = !isSignup;
+          document.getElementById('form-title').textContent = isSignup ? 'Inscription' : 'Connexion';
+          document.getElementById('name-field').classList.toggle('hidden');
+          document.querySelector('p').innerHTML = isSignup
+            ? 'Déjà inscrit ? <button onclick="toggleForm()" class="text-blue-600 hover:underline">Se connecter</button>'
+            : 'Pas encore de compte ? <button onclick="toggleForm()" class="text-blue-600 hover:underline">S\'inscrire</button>';
+        }
+      
+        // Gestion du formulaire
+        document.getElementById('auth-form').addEventListener('submit', async function (e) {
+          e.preventDefault();
+          
+          const alertBox = document.getElementById('alert-box');
+          alertBox.textContent = ''; // reset message
+      
+          const formData = new FormData(this);
+          if (!isSignup) {
+            // Connexion (à coder plus tard)
+            alertBox.textContent = "Connexion pas encore activée.";
+            alertBox.className = "text-yellow-500";
+            return;
+          }
+      
+          const response = await fetch('backend/signup.php', {
+            method: 'POST',
+            body: formData
+          });
+      
+          const result = await response.json();
+          alertBox.textContent = result.message;
+          alertBox.className = result.success ? 'text-green-600' : 'text-red-600';
+      
+          if (result.success) {
+            setTimeout(() => {
+              window.location.href = 'index.html';
+            }, 2000);
+          }
+        });
+      </script>
+      
 
 </body>
+
 </html>

@@ -1,42 +1,41 @@
 <?php
-include('db.php'); // Inclure la connexion à la base de données
+include('db.php');
+header('Content-Type: application/json');
 
-// Vérifier si le formulaire est soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les données du formulaire
-    $full_name = $_POST['full_name'];
-    $email = $_POST['email'];
+    $full_name = trim($_POST['full_name']);
+    $email = trim($_POST['email']);
     $password = $_POST['password'];
 
-    // Valider les champs
     if (empty($full_name) || empty($email) || empty($password)) {
-        echo "Tous les champs sont obligatoires.";
+        echo json_encode(["success" => false, "message" => "Tous les champs sont obligatoires."]);
         exit();
     }
 
-    // Vérifier si l'email existe déjà dans la base de données
-    $sql = "SELECT * FROM users WHERE email = '$email'";
-    $result = $conn->query($sql);
+    $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
 
-    if ($result->num_rows > 0) {
-        echo "Cet email est déjà utilisé.";
+    if ($stmt->num_rows > 0) {
+        $stmt->close();
+        echo json_encode(["success" => false, "message" => "Cet email est déjà utilisé."]);
         exit();
     }
+    $stmt->close();
 
-    // Hacher le mot de passe avant de l'enregistrer
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $stmt = $conn->prepare("INSERT INTO users (full_name, email, password, role) VALUES (?, ?, ?, 'user')");
+    $stmt->bind_param("sss", $full_name, $email, $hashed_password);
 
-    // Insérer les données de l'utilisateur dans la base de données
-    $sql = "INSERT INTO users (full_name, email, password, role) 
-            VALUES ('$full_name', '$email', '$hashed_password', 'user')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Inscription réussie !";
-        // Rediriger l'utilisateur vers la page de connexion ou d'accueil
-        header("Location: login.php"); // Remplacer par l'URL de la page de connexion
+    if ($stmt->execute()) {
+        $stmt->close();
+        echo json_encode(["success" => true, "message" => "Inscription réussie !"]);
         exit();
     } else {
-        echo "Erreur : " . $conn->error;
+        $stmt->close();
+        echo json_encode(["success" => false, "message" => "Erreur serveur."]);
+        exit();
     }
 }
 ?>

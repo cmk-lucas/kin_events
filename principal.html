@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plateforme d'Événements - Kinshasa</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body class="font-sans bg-gray-100">
 
@@ -12,12 +13,17 @@
 <header class="bg-white/80 backdrop-blur-md shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
-    <h1 class="text-3xl font-extrabold text-blue-600 tracking-wide">
-      Kin<span class="text-gray-900">Events</span>
+    <h1 class="text-3xl font-extrabold text-blue-600 tracking-wide flex items-center space-x-2">
+      <span>Kin<span class="text-gray-900">Events</span></span>
     </h1>
 
+    <!-- Icône utilisateur Font Awesome -->
+    <a href="#" class="ml-4 text-gray-700 hover:text-blue-600 transition-colors text-xl" aria-label="Profil utilisateur">
+      <i class="fas fa-user"></i>
+    </a>
+
     <!-- Navigation Desktop -->
-    <nav class="hidden md:flex items-center space-x-8">
+    <nav class="hidden md:flex items-center space-x-8 ml-auto">
       <a href="principal.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Accueil</a>
       <a href="evenements.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Événements</a>
       <a href="astuce.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Trucs & Astuces</a>
@@ -25,7 +31,7 @@
     </nav>
 
     <!-- Menu Mobile -->
-    <button id="menuBtn" class="md:hidden text-blue-600 focus:outline-none" aria-label="Menu mobile">
+    <button id="menuBtn" class="md:hidden text-blue-600 focus:outline-none ml-4" aria-label="Menu mobile">
       <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round"
@@ -69,7 +75,6 @@
     });
   </script>
 </header>
-
   
 
 <!-- Hero Section améliorée -->
