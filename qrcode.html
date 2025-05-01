@@ -40,9 +40,19 @@
     <button id="downloadBtn" onclick="downloadQRCode()" class="mt-6 bg-green-600 hover:bg-green-700 w-full py-3 rounded-lg font-bold text-lg transition hidden">📥 Télécharger QR Code</button>
   </div>
 
+  <!-- Scanner QR -->
+  <div class="mt-6 w-full max-w-md bg-gray-800 p-6 rounded-xl shadow-xl">
+    <h2 class="text-xl font-semibold mb-4">🔍 Scanner QR Code</h2>
+    <div id="reader" class="w-full h-64 border-4 border-pink-600 rounded-lg"></div>
+    <div id="scanResult" class="mt-4 bg-gray-700 p-3 rounded-lg text-center text-white">📄 En attente de scan...</div>
+  </div>
+
+  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+
   <script>
     let qrCodeInstance;
 
+    // Fonction de génération de QR Code
     function generateQR() {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -57,6 +67,13 @@
       // Créer une version plus courte du texte à encoder
       const data = `${name} | ${email} | ${pass} | ${event}`;
 
+      // Vérifier si le QR Code existe déjà dans le localStorage
+      const existingQRCode = localStorage.getItem(data);
+      if (existingQRCode) {
+        alert("❌ Ce QR Code a déjà été généré !");
+        return;
+      }
+
       // Réinitialiser le QR code existant
       document.getElementById('qrcode').innerHTML = "";
 
@@ -69,6 +86,9 @@
         colorLight: "#1f2937", // Fond du QR code
         correctLevel: QRCode.CorrectLevel.L // Correction d'erreur faible
       });
+
+      // Stocker les données dans le localStorage
+      localStorage.setItem(data, JSON.stringify({ name, email, pass, event }));
 
       // Afficher le bouton de téléchargement
       document.getElementById('downloadBtn').classList.remove('hidden');
@@ -86,6 +106,41 @@
         link.click(); // Simuler le clic pour télécharger
       }
     }
+
+    // Scanner QR Code et afficher le résultat
+    const html5QrCode = new Html5Qrcode("reader");
+
+    function onScanSuccess(decodedText, decodedResult) {
+      const data = localStorage.getItem(decodedText);
+      if (data) {
+        const clientInfo = JSON.parse(data);
+        document.getElementById('scanResult').innerText = `✅ QR Code valide !\nNom: ${clientInfo.name}\nEmail: ${clientInfo.email}\nPass: ${clientInfo.pass}\nÉvénement: ${clientInfo.event}`;
+      } else {
+        document.getElementById('scanResult').innerText = "❌ QR Code non trouvé.";
+      }
+    }
+
+    function onScanFailure(error) {
+      // Ignore error
+    }
+
+    // Démarrer la caméra pour le scan
+    Html5Qrcode.getCameras().then(devices => {
+      if (devices && devices.length > 0) {
+        html5QrCode.start(
+          { facingMode: "environment" },
+          { fps: 10, qrbox: { width: 250, height: 250 } },
+          onScanSuccess,
+          onScanFailure
+        ).catch(err => {
+          console.error("Erreur de démarrage de la caméra:", err);
+        });
+      } else {
+        document.getElementById('scanResult').innerText = "❌ Aucune caméra détectée.";
+      }
+    }).catch(err => {
+      document.getElementById('scanResult').innerText = `❌ Erreur d'accès caméra : ${err}`;
+    });
   </script>
 
 </body>
