@@ -1,91 +1,117 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Réservation | Safari Beats Festival 🎶</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .hidden { display: none; }
+    .hidden {
+      display: none;
+    }
+
     .animate-pop {
       animation: pop 0.6s ease forwards;
     }
+
     @keyframes pop {
-      0% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
   </style>
 </head>
 
 <body class="bg-gray-900 text-white">
 
-<!-- Section Formulaire -->
-<section class="py-20" id="form">
-  <div class="max-w-3xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 animate-pop">Réserve ton Pass 🎟️</h2>
-    
-    <form id="reservationForm" class="bg-gray-800 p-8 rounded-2xl shadow-2xl animate-pop">
-      
-      <!-- Nom -->
-      <div class="mb-6">
-        <label for="name" class="block mb-2 font-semibold">Nom complet</label>
-        <input type="text" id="name" name="Nom" required
-          class="w-full p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
-          placeholder="Ton nom ici" />
+  <!-- Section Formulaire -->
+  <section class="py-20" id="form">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 animate-pop">Réserve ton Pass 🎟️</h2>
+
+      <form id="reservationForm" class="bg-gray-800 p-8 rounded-2xl shadow-2xl animate-pop">
+
+        <!-- Nom -->
+        <div class="mb-6">
+          <label for="name" class="block mb-2 font-semibold">Nom complet</label>
+          <input type="text" id="name" name="Nom" required
+            class="w-full p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
+            placeholder="Ton nom ici" />
+        </div>
+
+        <!-- Email -->
+        <div class="mb-6">
+          <label for="email" class="block mb-2 font-semibold">Email</label>
+          <input type="email" id="email" name="Email" required
+            class="w-full p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
+            placeholder="tonemail@email.com" />
+        </div>
+
+        <!-- Choix du billet -->
+        <div class="mb-6">
+          <label for="ticket" class="block mb-2 font-semibold">Choix du Pass</label>
+          <select id="ticket" name="Pass" required
+            class="w-full p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500">
+            <option value="" disabled selected>-- Sélectionne ton pass --</option>
+            <option value="Pass Journée">Pass Journée - 30€</option>
+            <option value="Pass 2 Jours">Pass 2 Jours - 50€</option>
+            <option value="Pass VIP">Pass VIP - 120€</option>
+          </select>
+        </div>
+
+        <!-- Bouton Envoyer -->
+        <div class="text-center mt-10">
+          <button type="submit"
+            class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300">
+            Réserver mon billet 🎟️
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Message de confirmation caché -->
+      <div id="confirmationMessage" class="hidden text-center mt-12 text-2xl font-bold text-green-400 animate-pop">
+        🎉 Merci pour la commande du billet ! Vous serez notifié par email.
       </div>
-
-      <!-- Email -->
-      <div class="mb-6">
-        <label for="email" class="block mb-2 font-semibold">Email</label>
-        <input type="email" id="email" name="Email" required
-          class="w-full p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
-          placeholder="tonemail@email.com" />
-      </div>
-
-      <!-- Choix du billet -->
-      <div class="mb-6">
-        <label for="ticket" class="block mb-2 font-semibold">Choix du Pass</label>
-        <select id="ticket" name="Pass" required
-          class="w-full p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500">
-          <option value="" disabled selected>-- Sélectionne ton pass --</option>
-          <option value="Pass Journée">Pass Journée - 30€</option>
-          <option value="Pass 2 Jours">Pass 2 Jours - 50€</option>
-          <option value="Pass VIP">Pass VIP - 120€</option>
-        </select>
-      </div>
-
-      <!-- Bouton Envoyer -->
-      <div class="text-center mt-10">
-        <button type="submit"
-          class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300">
-          Réserver mon billet 🎟️
-        </button>
-      </div>
-
-    </form>
-
-    <!-- Message de confirmation caché -->
-    <div id="confirmationMessage" class="hidden text-center mt-12 text-2xl font-bold text-green-400 animate-pop">
-      🎉 Merci pour la commande du billet ! Vous serez notifié par email.
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Script de confirmation -->
-<script>
-  const form = document.getElementById('reservationForm');
-  const confirmation = document.getElementById('confirmationMessage');
+  <!-- Script de confirmation -->
+  <script>
+    const form = document.getElementById('reservationForm');
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Empêcher l'envoi classique
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    // Simuler l'envoi (tu peux remplacer ici par un vrai fetch si besoin)
-    setTimeout(() => {
-      form.classList.add('hidden'); // Cacher le formulaire
-      confirmation.classList.remove('hidden'); // Montrer le message de succès
-    }, 500);
-  });
-</script>
+      // Récupérer les valeurs
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const ticket = document.getElementById('ticket').value;
+
+      // Créer le message brut
+      const rawMessage = `🎫 Nouvelle réservation Safari Beats Festival\n👤 Nom : ${name}\n📧 Email : ${email}\n🎟️ Pass choisi : ${ticket}`;
+
+      // Encoder le message pour une URL
+      const encodedMessage = encodeURIComponent(rawMessage);
+
+      // Numéro WhatsApp sans + ni espaces
+      const phone = "243854532435";
+      const url = `https://wa.me/${phone}?text=${encodedMessage}`;
+
+      // Ouvrir WhatsApp
+      window.open(url, '_blank');
+    });
+  </script>
+
+
 
 </body>
+
 </html>
