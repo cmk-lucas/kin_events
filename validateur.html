@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scanner QR Code - Safari Beats</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="https://unpkg.com/html5-qrcode@2.3.7/minified/html5-qrcode.min.js"></script>
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex flex-col justify-center items-center px-4">
 
@@ -25,7 +25,7 @@
     }
 
     function onScanFailure(error) {
-      // Ignoré sauf pour debug : console.log(`Scan failed: ${error}`);
+      // console.log(`Scan failed: ${error}`);
     }
 
     const html5QrCode = new Html5Qrcode("reader");
@@ -33,14 +33,20 @@
     Html5Qrcode.getCameras().then(devices => {
       if (devices && devices.length) {
         html5QrCode.start(
-          { facingMode: "environment" }, // Use rear camera by default
+          { facingMode: "environment" }, // Caméra arrière
           {
             fps: 10,
             qrbox: { width: 250, height: 250 }
           },
           onScanSuccess,
           onScanFailure
-        );
+        ).then(() => {
+          // Ajout de playsinline pour iOS
+          const videoElem = document.querySelector('video');
+          if (videoElem) {
+            videoElem.setAttribute('playsinline', true);
+          }
+        });
       } else {
         document.getElementById('result').innerText = "❌ Aucune caméra détectée.";
       }
