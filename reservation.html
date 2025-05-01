@@ -31,7 +31,6 @@
 
 <body class="bg-gray-900 text-white">
 
-  <!-- Section Formulaire -->
   <section class="py-20" id="form">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-center mb-12 animate-pop">Réserve ton Pass 🎟️</h2>
@@ -54,7 +53,34 @@
             placeholder="tonemail@email.com" />
         </div>
 
-        <!-- Choix du billet -->
+        <!-- Numéro WhatsApp -->
+        <div class="mb-6">
+          <label for="whatsapp" class="block mb-2 font-semibold">Numéro WhatsApp</label>
+          <input type="text" id="whatsapp" name="WhatsApp" required
+            class="w-full p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
+            placeholder="ex: 243899999999" />
+        </div>
+
+        <!-- Sélection de l’événement -->
+        <div class="mb-6">
+          <label for="event" class="block mb-2 font-semibold">Événement choisi</label>
+          <select id="event" name="Événement" required
+            class="w-full p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500">
+            <option value="" disabled selected>-- Choisis ton événement --</option>
+            <option value="Safari Beats Festival">Safari Beats Festival</option>
+            <option value="Afro Night">Afro Night</option>
+            <option value="Sunset Beach Party">Sunset Beach Party</option>
+          </select>
+        </div>
+
+        <!-- Photo de la personne -->
+        <div class="mb-6">
+          <label for="photo" class="block mb-2 font-semibold">Photo de profil</label>
+          <input type="file" id="photo" name="Photo" accept="image/*"
+            class="w-full p-4 rounded-lg bg-gray-700 text-white file:bg-pink-600 file:border-none file:rounded file:px-4 file:py-2 file:text-white" />
+        </div>
+
+        <!-- Choix du Pass -->
         <div class="mb-6">
           <label for="ticket" class="block mb-2 font-semibold">Choix du Pass</label>
           <select id="ticket" name="Pass" required
@@ -76,41 +102,36 @@
 
       </form>
 
-      <!-- Message de confirmation caché -->
       <div id="confirmationMessage" class="hidden text-center mt-12 text-2xl font-bold text-green-400 animate-pop">
         🎉 Merci pour la commande du billet ! Vous serez notifié par email.
       </div>
     </div>
   </section>
 
-  <!-- Script de confirmation -->
+  <!-- Script -->
   <script>
     const form = document.getElementById('reservationForm');
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // Récupérer les valeurs
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
+      const whatsapp = document.getElementById('whatsapp').value.trim();
       const ticket = document.getElementById('ticket').value;
+      const event = document.getElementById('event').value;
 
-      // Créer le message brut
-      const rawMessage = `🎫 Nouvelle réservation Safari Beats Festival\n👤 Nom : ${name}\n📧 Email : ${email}\n🎟️ Pass choisi : ${ticket}`;
+      const message = `🎫 *Nouvelle réservation*%0A` +
+        `👤 Nom : ${name}%0A` +
+        `📧 Email : ${email}%0A` +
+        `📱 WhatsApp : ${whatsapp}%0A` +
+        `🎉 Événement : ${event}%0A` +
+        `🎟️ Pass : ${ticket}`;
 
-      // Encoder le message pour une URL
-      const encodedMessage = encodeURIComponent(rawMessage);
-
-      // Numéro WhatsApp sans + ni espaces
-      const phone = "243854532435";
-      const url = `https://wa.me/${phone}?text=${encodedMessage}`;
-
-      // Ouvrir WhatsApp
+      const url = `https://wa.me/243854532435?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
     });
   </script>
-
-
 
 </body>
 
