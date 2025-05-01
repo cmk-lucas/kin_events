@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost"; // ou l'adresse de ton serveur de base de données
 $username = "root"; // nom d'utilisateur pour la base de données
-$password = ""; // mot de passe pour l'utilisateur
+$password = "root"; // mot de passe pour l'utilisateur
 $dbname = "kin_events"; // nom de la base de données
 
 // Création de la connexion
