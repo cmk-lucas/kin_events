@@ -1,101 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Urban Beats Hip-Hop Party - Pullman Hôtel</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soirée Afterwork - Jeunes Entrepreneurs Catholiques</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
     @keyframes fade-in-up {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .animate-fade-in-up { animation: fade-in-up 1s ease-out both; }
+    .animate-fade-in-up {
+      animation: fade-in-up 1s ease-out both;
+    }
   </style>
 </head>
+<body class="bg-gray-100 text-gray-900">
 
-<body class="bg-gray-900 text-white">
-
-  <!-- Présentation principale -->
-  <section class="py-24 bg-gradient-to-r from-purple-800 via-black to-yellow-500 text-center" id="hero">
-    <div class="max-w-4xl mx-auto px-4 animate-fade-in-up">
-      <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Urban Beats Hip-Hop Party</h1>
-      <p class="text-xl md:text-2xl font-light mb-8">Prépare-toi pour LA nuit hip-hop au <strong>Pullman Hôtel</strong> avec les meilleurs artistes du moment !</p>
-      <a href="#tickets" class="inline-block mt-6 bg-yellow-400 text-black font-bold px-8 py-4 rounded-xl hover:bg-yellow-500 transition duration-300">
-        Réserver mon billet
+  <!-- Hero section -->
+  <section class="py-20 bg-gradient-to-r from-yellow-100 via-white to-gray-200 text-center" id="hero">
+    <div class="max-w-4xl mx-auto px-6 animate-fade-in-up">
+      <h1 class="text-5xl font-extrabold mb-6 text-gray-800">Nouvelle date,<br> Nouveaux défis,<br> Nouvelles attentes.</h1>
+      <p class="text-xl mb-8 text-gray-700">🎉 Venez vivre une expérience inoubliable lors de notre <strong>SOIRÉE AFTERWORK</strong> dédiée aux jeunes entrepreneurs catholiques.</p>
+      <a href="#infos" class="inline-block mt-6 bg-yellow-500 text-white font-bold px-8 py-4 rounded-xl hover:bg-yellow-600 transition duration-300">
+        En savoir plus
       </a>
     </div>
   </section>
 
-  <!-- Détail de l'événement -->
-  <section class="py-20 bg-gray-800" id="details">
+  <!-- Détails événement -->
+  <section class="py-16 bg-white" id="infos">
     <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center text-yellow-400 mb-12 animate-fade-in-up">À propos de l'événement</h2>
-      <p class="text-lg text-gray-300 leading-relaxed mb-10 animate-fade-in-up">
-        La soirée "Urban Beats" te plonge au cœur de la culture hip-hop : live shows, battles de danse, DJ sets de folie et un show lumière incroyable. 
-        Rejoins-nous pour une nuit où le flow, le style et l'attitude sont rois !
-      </p>
-      <div class="grid md:grid-cols-2 gap-8 mt-12">
-
-        <div class="bg-gray-700 p-8 rounded-2xl shadow-lg animate-fade-in-up">
-          <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Le Lieu</h3>
-          <p class="text-gray-400">Pullman Hôtel - Un cadre premium modernisé pour accueillir les plus grands événements urbains en plein cœur de la ville.</p>
+      <h2 class="text-4xl font-bold text-center text-yellow-500 mb-12 animate-fade-in-up">Informations pratiques</h2>
+      <div class="grid md:grid-cols-2 gap-10 text-gray-700 animate-fade-in-up">
+        <div class="bg-yellow-100 p-8 rounded-xl shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">📅 Date</h3>
+          <p>Vendredi 16 Mai 2025</p>
+          <h3 class="text-2xl font-semibold mt-6 mb-2">🕓 Heure</h3>
+          <p>De 16h00 à 21h30</p>
         </div>
-
-        <div class="bg-gray-700 p-8 rounded-2xl shadow-lg animate-fade-in-up">
-          <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Dress Code</h3>
-          <p class="text-gray-400">Fresh and Fly : streetwear, sneakers, caps, chaînes. Sois stylé pour briller dans le public et sur le dancefloor !</p>
+        <div class="bg-yellow-100 p-8 rounded-xl shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">📍 Lieu</h3>
+          <p>Hôtel les Béatitudes</p>
+          <h3 class="text-2xl font-semibold mt-6 mb-2">🎫 Entrée</h3>
+          <p>Sur invitation – Réservez en nous écrivant en privé</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Billetterie -->
-  <section class="py-20 bg-gradient-to-r from-black via-gray-900 to-gray-800" id="tickets">
-    <div class="max-w-5xl mx-auto text-center px-4">
-      <h2 class="text-4xl font-bold mb-6 text-yellow-400 animate-fade-in-up">Billetterie</h2>
-      <p class="text-lg mb-10 text-gray-300 animate-fade-in-up">
-        Choisis ton style de soirée et rejoins la vibe Urban Beats.
-      </p>
+  <!-- Programme -->
+  <section class="py-16 bg-gray-50" id="programme">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-yellow-500 mb-12 animate-fade-in-up">Programme captivant</h2>
+      <ul class="space-y-6 text-lg text-gray-800 animate-fade-in-up">
+        <li>✅ Présentation des projets : Initiatives inspirantes des jeunes entrepreneurs</li>
+        <li>✅ Panels inspirants : Vision et conseils pour réussir en affaires</li>
+        <li>✅ Partage d’expériences émouvantes : Histoires motivantes</li>
+        <li>✅ Présentation du projet commun : Découvrez le HUB ENTREPRENEURIAL</li>
+        <li>✅ Networking : Échangez avec d'autres entrepreneurs passionnés</li>
+        <li>✅ Cocktail dînatoire : Savourez des délices tout en discutant</li>
+      </ul>
+    </div>
+  </section>
 
-      <div class="grid md:grid-cols-3 gap-8">
+  <!-- Dress code -->
+  <section class="py-16 bg-yellow-100">
+    <div class="max-w-4xl mx-auto px-6 text-center animate-fade-in-up">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">🎩 Code-dress</h2>
+      <p class="text-lg text-gray-700">Business Casual noir, en hommage à nos frères et sœurs entrepreneurs à l’Est.</p>
+    </div>
+  </section>
 
-        <!-- Ticket Standard -->
-        <div class="bg-gray-700 p-8 rounded-xl shadow-2xl animate-fade-in-up">
-          <h3 class="text-2xl font-bold text-yellow-300 mb-4">Standard</h3>
-          <p class="text-gray-400 mb-6">Accès général + 1 boisson offerte.</p>
-          <p class="text-3xl font-bold mb-6">30€</p>
-          <a href="reservation.html" class="block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded-xl transition duration-300">
-            Prendre une place
-          </a>
-        </div>
-
-        <!-- Ticket VIP -->
-        <div class="bg-gray-700 p-8 rounded-xl shadow-2xl animate-fade-in-up">
-          <h3 class="text-2xl font-bold text-yellow-300 mb-4">VIP Zone</h3>
-          <p class="text-gray-400 mb-6">Accès VIP + zone réservée + 2 cocktails + cadeau exclusif.</p>
-          <p class="text-3xl font-bold mb-6">70€</p>
-          <a href="reservation.html" class="block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded-xl transition duration-300">
-            Prendre une place VIP
-          </a>
-        </div>
-
-        <!-- Ticket Platinium -->
-        <div class="bg-gray-700 p-8 rounded-xl shadow-2xl animate-fade-in-up">
-          <h3 class="text-2xl font-bold text-yellow-300 mb-4">Platinium</h3>
-          <p class="text-gray-400 mb-6">Accès VIP + backstage + photo avec les artistes + bouteille offerte.</p>
-          <p class="text-3xl font-bold mb-6">150€</p>
-          <a href="reservation.html" class="block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded-xl transition duration-300">
-            Devenir Platinium
-          </a>
-        </div>
-
-      </div>
+  <!-- Conclusion -->
+  <section class="py-16 bg-gray-900 text-white text-center">
+    <div class="max-w-3xl mx-auto px-6 animate-fade-in-up">
+      <h2 class="text-3xl font-bold mb-6">Rejoignez une communauté dynamique</h2>
+      <p class="text-lg mb-6">Cette soirée est une opportunité de célébrer notre unité et notre créativité, et de bâtir ensemble un monde meilleur, un projet à la fois. ✨</p>
+      <a href="#hero" class="inline-block mt-4 bg-yellow-500 text-black font-bold px-8 py-3 rounded-xl hover:bg-yellow-600 transition duration-300">
+        Réserver mon invitation
+      </a>
     </div>
   </section>
 
 </body>
-
 </html>
