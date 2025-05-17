@@ -62,21 +62,43 @@
     ________________
     ________________
   </div>
-  <!-- En-tête -->
-  <section class="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 text-white py-12">
-    <div class="max-w-7xl mx-auto text-center px-4">
-      <h1
-        class="text-4xl font-extrabold tracking-tight leading-tight text-white mb-4 transform transition-transform duration-300 hover:scale-105">
-        Catalogue d'Événements</h1>
-      <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto text-gray-200">
-        Découvrez des événements passionnants à venir et réservez votre place dès maintenant pour ne rien manquer !
-      </p>
-      <a href="#events"
-        class="bg-yellow-500 text-blue-900 font-semibold py-3 px-8 rounded-full shadow-md transition-all duration-300 hover:bg-yellow-400 hover:shadow-xl transform hover:scale-105">
-        Explorer les Événements
-      </a>
-    </div>
-  </section>
+  <!-- En-tête Événements -->
+<section class="relative bg-gradient-to-br from-blue-700 via-indigo-700 to-blue-900 text-white py-24 overflow-hidden">
+  <!-- Effet décoratif animé -->
+  <div class="absolute top-0 left-0 w-32 h-32 bg-yellow-400 rounded-full blur-3xl opacity-30 animate-pulse -z-10"></div>
+  <div class="absolute bottom-0 right-0 w-48 h-48 bg-pink-500 rounded-full blur-3xl opacity-20 animate-ping -z-10"></div>
+
+  <div class="max-w-6xl mx-auto text-center px-6 animate-fade-in-up">
+    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight drop-shadow-lg mb-4">
+      🎉 Catalogue des <span class="text-yellow-400">Événements</span> Incontournables
+    </h1>
+    <p class="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto mb-8">
+      Explore les soirées les plus folles, concerts, festivals et rendez-vous culturels à Kinshasa. Réserve ta place avant qu’il ne soit trop tard !
+    </p>
+    <a href="#events"
+       class="inline-block bg-yellow-400 text-blue-900 font-bold py-3 px-10 rounded-full hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+      🔥 Explorer les Événements
+    </a>
+  </div>
+
+  <!-- Animation -->
+  <style>
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fade-in-up 1s ease-out both;
+    }
+  </style>
+</section>
 
   <!-- Filtres de recherche -->
   <section class="bg-gray-100 py-10">
