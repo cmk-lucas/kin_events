@@ -77,22 +77,50 @@
 </header>
   
 
-<!-- Hero Section améliorée -->
-<section id="home" class="relative bg-blue-800 text-white py-32 overflow-hidden">
-  <div class="absolute inset-0 bg-cover bg-center opacity-40 blur-sm scale-105" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');"></div>
+<!-- Hero Section avec image d’ambiance -->
+<section id="home" class="relative w-full h-screen flex items-center justify-center text-white overflow-hidden bg-black">
   
-  <div class="relative z-10 max-w-4xl mx-auto text-center px-6">
-    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight drop-shadow-md">
-      🌆 Découvrez les <span class="text-yellow-400">meilleurs événements</span> à Kinshasa
+  <!-- Image de fond -->
+  <div class="absolute inset-0">
+    <img src="img/uk.jpg"
+         alt="Ambiance Kinshasa"
+         class="w-full h-full object-cover brightness-50 scale-105" />
+  </div>
+
+  <!-- Contenu -->
+  <div class="relative z-10 text-center px-6 max-w-3xl animate-fade-in-up">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight drop-shadow-lg">
+      🌆 Kinshasa s'enflamme chaque nuit
     </h1>
-    <p class="mt-6 text-lg md:text-xl text-blue-100 leading-relaxed">
-      Concerts live, soirées inoubliables, festivals culturels… <br class="hidden sm:inline" />Tout est ici, à portée de clic.
+    <p class="mt-6 text-lg sm:text-xl text-blue-100">
+      Concerts live, soirées, festivals et vibes urbaines.<br class="hidden sm:inline" />
+      Découvre, vis, partage les meilleurs événements du moment.
     </p>
-    <a href="#events" class="inline-block mt-10 bg-yellow-400 text-blue-900 font-semibold py-3 px-10 rounded-full hover:bg-yellow-300 transition-all duration-300 shadow-xl">
-      🎉 Explorer les événements
+    <a href="#events"
+       class="inline-block mt-10 bg-yellow-400 text-blue-900 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-300 transition duration-300">
+      🔥 Explorer les événements
     </a>
   </div>
+
+  <!-- Animation -->
+  <style>
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fade-in-up 1s ease-out both;
+    }
+  </style>
 </section>
+
 
   
 <!-- Section Événements à venir -->
