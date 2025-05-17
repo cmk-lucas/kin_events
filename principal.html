@@ -152,37 +152,41 @@
   
 
 <!-- Commentaires et Évaluations Section -->
-<section class="py-20 bg-gray-100" id="comments">
+<section class="py-20 bg-gray-100" id="comments" aria-labelledby="section-comments-title">
   <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-4xl font-bold text-blue-700 text-center mb-16 animate-fade-in-up">
+    <h2 id="section-comments-title" class="text-4xl font-extrabold text-blue-700 text-center mb-16 animate-fade-in-up">
       Commentaires & Évaluations
     </h2>
 
-    <!-- Liste des Commentaires en Ligne -->
-    <div class="flex flex-col lg:flex-row gap-8 justify-center items-stretch animate-fade-in-up">
-      
-      <!-- Carte Commentaire 1 -->
-      <div class="bg-white rounded-3xl shadow-xl p-6 flex-1 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+    <!-- Liste des Commentaires -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up">
+
+      <!-- Carte Commentaire (réutilisable) -->
+      <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-300 hover:shadow-2xl">
         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jean Dupont" class="w-20 h-20 rounded-full mb-4 shadow-md">
-        <h4 class="text-blue-700 font-bold text-lg">Jean Dupont</h4>
-        <div class="text-yellow-400 text-xl mb-2">★★★★☆</div>
-        <p class="text-gray-600 text-sm">Un événement vraiment incroyable ! J'ai passé un excellent moment et je reviendrai sans hésiter.</p>
+        <h4 class="text-blue-700 font-semibold text-lg mb-1">Jean Dupont</h4>
+        <div class="flex mb-2" aria-label="4 étoiles sur 5">
+          <span class="text-yellow-400 text-xl">★★★★☆</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">Un événement vraiment incroyable ! J'ai passé un excellent moment et je reviendrai sans hésiter.</p>
       </div>
 
-      <!-- Carte Commentaire 2 -->
-      <div class="bg-white rounded-3xl shadow-xl p-6 flex-1 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+      <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-300 hover:shadow-2xl">
         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Marie Lefevre" class="w-20 h-20 rounded-full mb-4 shadow-md">
-        <h4 class="text-blue-700 font-bold text-lg">Marie Lefevre</h4>
-        <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
-        <p class="text-gray-600 text-sm">Une expérience inoubliable. Organisé de manière professionnelle et avec beaucoup d'activités intéressantes. Bravo !</p>
+        <h4 class="text-blue-700 font-semibold text-lg mb-1">Marie Lefevre</h4>
+        <div class="flex mb-2" aria-label="5 étoiles sur 5">
+          <span class="text-yellow-400 text-xl">★★★★★</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">Une expérience inoubliable. Organisé de manière professionnelle et avec beaucoup d'activités intéressantes. Bravo !</p>
       </div>
 
-      <!-- Carte Commentaire 3 -->
-      <div class="bg-white rounded-3xl shadow-xl p-6 flex-1 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+      <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-300 hover:shadow-2xl">
         <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Paul Martin" class="w-20 h-20 rounded-full mb-4 shadow-md">
-        <h4 class="text-blue-700 font-bold text-lg">Paul Martin</h4>
-        <div class="text-yellow-400 text-xl mb-2">★★★☆☆</div>
-        <p class="text-gray-600 text-sm">C'était bien, mais il y a quelques améliorations possibles sur l'organisation. Sinon, l'ambiance était top !</p>
+        <h4 class="text-blue-700 font-semibold text-lg mb-1">Paul Martin</h4>
+        <div class="flex mb-2" aria-label="3 étoiles sur 5">
+          <span class="text-yellow-400 text-xl">★★★☆☆</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">C'était bien, mais il y a quelques améliorations possibles sur l'organisation. Sinon, l'ambiance était top !</p>
       </div>
 
     </div>
@@ -206,6 +210,7 @@
     }
   </style>
 </section>
+
 
 
   
