@@ -153,61 +153,60 @@
 
 <!-- Commentaires et Évaluations Section -->
 <section class="py-20 bg-gray-100" id="comments">
-  <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-4xl font-bold text-blue-700 text-center mb-12 animate-fade-in-up">Commentaires & Évaluations</h2>
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-blue-700 text-center mb-16 animate-fade-in-up">
+      Commentaires & Évaluations
+    </h2>
 
-      <!-- Liste des Commentaires -->
-      <div id="commentList" class="bg-white shadow-2xl rounded-3xl p-8 mt-12 animate-fade-in-up space-y-6">
-          <h3 class="text-2xl font-semibold text-gray-800 mb-8">Avis des Participants</h3>
-          
-          <!-- Commentaire 1 -->
-          <div class="border-b pb-6">
-              <div class="flex items-center justify-between mb-2">
-                  <span class="text-blue-700 font-semibold">Jean Dupont</span>
-                  <span class="text-yellow-400 text-xl">★★★★☆</span>
-              </div>
-              <p class="text-gray-600">Un événement vraiment incroyable ! J'ai passé un excellent moment et je reviendrai sans hésiter.</p>
-          </div>
-
-          <!-- Commentaire 2 -->
-          <div class="border-b pb-6">
-              <div class="flex items-center justify-between mb-2">
-                  <span class="text-blue-700 font-semibold">Marie Lefevre</span>
-                  <span class="text-yellow-400 text-xl">★★★★★</span>
-              </div>
-              <p class="text-gray-600">Une expérience inoubliable. Organisé de manière professionnelle et avec beaucoup d'activités intéressantes. Bravo !</p>
-          </div>
-
-          <!-- Commentaire 3 -->
-          <div class="border-b pb-6">
-              <div class="flex items-center justify-between mb-2">
-                  <span class="text-blue-700 font-semibold">Paul Martin</span>
-                  <span class="text-yellow-400 text-xl">★★★☆☆</span>
-              </div>
-              <p class="text-gray-600">C'était bien, mais il y a quelques améliorations possibles sur l'organisation. Sinon, l'ambiance était top !</p>
-          </div>
+    <!-- Liste des Commentaires en Ligne -->
+    <div class="flex flex-col lg:flex-row gap-8 justify-center items-stretch animate-fade-in-up">
+      
+      <!-- Carte Commentaire 1 -->
+      <div class="bg-white rounded-3xl shadow-xl p-6 flex-1 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jean Dupont" class="w-20 h-20 rounded-full mb-4 shadow-md">
+        <h4 class="text-blue-700 font-bold text-lg">Jean Dupont</h4>
+        <div class="text-yellow-400 text-xl mb-2">★★★★☆</div>
+        <p class="text-gray-600 text-sm">Un événement vraiment incroyable ! J'ai passé un excellent moment et je reviendrai sans hésiter.</p>
       </div>
+
+      <!-- Carte Commentaire 2 -->
+      <div class="bg-white rounded-3xl shadow-xl p-6 flex-1 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Marie Lefevre" class="w-20 h-20 rounded-full mb-4 shadow-md">
+        <h4 class="text-blue-700 font-bold text-lg">Marie Lefevre</h4>
+        <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
+        <p class="text-gray-600 text-sm">Une expérience inoubliable. Organisé de manière professionnelle et avec beaucoup d'activités intéressantes. Bravo !</p>
+      </div>
+
+      <!-- Carte Commentaire 3 -->
+      <div class="bg-white rounded-3xl shadow-xl p-6 flex-1 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+        <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Paul Martin" class="w-20 h-20 rounded-full mb-4 shadow-md">
+        <h4 class="text-blue-700 font-bold text-lg">Paul Martin</h4>
+        <div class="text-yellow-400 text-xl mb-2">★★★☆☆</div>
+        <p class="text-gray-600 text-sm">C'était bien, mais il y a quelques améliorations possibles sur l'organisation. Sinon, l'ambiance était top !</p>
+      </div>
+
+    </div>
   </div>
 
-  <!-- Animations -->
+  <!-- Animation -->
   <style>
-      @keyframes fade-in-up {
-          from {
-              opacity: 0;
-              transform: translateY(20px);
-          }
-
-          to {
-              opacity: 1;
-              transform: translateY(0);
-          }
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
-
-      .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out both;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
+
+    .animate-fade-in-up {
+      animation: fade-in-up 0.8s ease-out both;
+    }
   </style>
 </section>
+
 
   
   
