@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KinEvents - Kinshasa</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Pour s’assurer que la section couvre tout l’écran */
     html, body {
       height: 100%;
       margin: 0;
@@ -15,158 +13,45 @@
   </style>
 </head>
 
-<body class="font-sans bg-gray-900 min-h-screen flex items-center justify-center p-4">
+<body class="bg-gray-950 text-white min-h-screen flex items-center justify-center p-4">
 
   <section
-    class="relative w-full max-w-7xl mx-auto rounded-xl overflow-hidden shadow-xl
-      bg-gradient-to-r from-blue-900 via-indigo-800 to-purple-900
-      text-white
-      min-h-[90vh]
-      flex flex-col md:flex-row
-      p-6 sm:p-10 lg:p-16
-      gap-8
-    "
+    class="relative w-full max-w-3xl mx-auto rounded-3xl overflow-hidden shadow-2xl
+      bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900
+      text-white p-10 sm:p-16 text-center flex flex-col items-center justify-center gap-6"
   >
-    <!-- Background subtle shapes or effect -->
+
+    <!-- Background Image -->
     <div
-      class="absolute inset-0 bg-[url('https://source.unsplash.com/1600x900/?party,music')] bg-cover bg-center opacity-15 -z-10 rounded-xl"
+      class="absolute inset-0 bg-[url('https://source.unsplash.com/1600x900/?concert,nightlife')] bg-cover bg-center opacity-10 blur-sm -z-10"
       aria-hidden="true"
     ></div>
 
-    <!-- Left: Inscription -->
-    <div
-      class="flex-1 bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 sm:p-12 shadow-lg
-      flex flex-col justify-center max-w-full
-      min-w-0"
-    >
-      <h2
-        class="text-3xl sm:text-4xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500 leading-tight"
-      >
-        Inscrivez-vous pour ne rien manquer
-      </h2>
-      <p class="mb-8 text-gray-300 leading-relaxed text-base sm:text-lg max-w-xl">
-        Recevez toutes les nouveautés et événements exclusifs directement dans votre boîte mail.
-      </p>
-      <form id="signupForm" class="flex flex-col gap-5 max-w-xl" novalidate>
-        <input
-          type="text"
-          id="firstNameInput"
-          name="firstName"
-          placeholder="Prénom"
-          required
-          class="py-3 px-5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-base sm:text-lg transition"
-        />
-        <input
-          type="text"
-          id="lastNameInput"
-          name="lastName"
-          placeholder="Nom"
-          required
-          class="py-3 px-5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-base sm:text-lg transition"
-        />
-        <input
-          type="email"
-          id="emailInput"
-          name="email"
-          placeholder="Votre adresse e-mail"
-          required
-          class="py-3 px-5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-base sm:text-lg transition"
-        />
-        <input
-          type="password"
-          id="passwordInput"
-          name="password"
-          placeholder="Mot de passe"
-          required
-          minlength="6"
-          class="py-3 px-5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-base sm:text-lg transition"
-        />
-        <button
-          type="submit"
-          class="bg-yellow-400 text-blue-900 font-bold py-3 rounded-lg hover:bg-yellow-300 transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-yellow-400"
-        >
-          S'inscrire
-        </button>
-      </form>
-      <p id="signupSuccess" class="mt-5 text-green-400 font-semibold hidden text-base sm:text-lg max-w-xl">
-        Merci pour votre inscription !
-      </p>
-      <p id="signupError" class="mt-5 text-red-400 font-semibold hidden text-base sm:text-lg max-w-xl"></p>
+    <!-- Logo or Icon (optional) -->
+    <div class="mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6h13M9 6L3 12m6-6l6 6" />
+      </svg>
     </div>
 
-    <!-- Right: Continuer sans s'inscrire -->
-    <div
-      class="flex-1 flex flex-col items-center justify-center gap-8 bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 sm:p-12 shadow-lg text-center max-w-full min-w-0"
+    <!-- Title -->
+    <h1 class="text-4xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500">
+      Bienvenue sur KinEvents
+    </h1>
+
+    <!-- Description -->
+    <p class="text-gray-300 text-base sm:text-lg max-w-xl">
+      Explorez les meilleurs événements, soirées et festivals à Kinshasa sans avoir besoin de créer un compte.
+    </p>
+
+    <!-- Call to Action Button -->
+    <a
+      href="principal.html"
+      class="mt-6 inline-block bg-yellow-400 text-blue-900 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-300 hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-yellow-400"
     >
-      <h2
-        class="text-3xl sm:text-4xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500 leading-tight"
-      >
-        Pas envie de vous inscrire ?
-      </h2>
-      <p class="mb-8 text-gray-300 max-w-xs sm:max-w-md leading-relaxed text-base sm:text-lg mx-auto px-2">
-        Continuez votre découverte des événements KinEvents sans créer de compte.
-      </p>
-      <a
-        href="principal.html"
-        class="inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-bold px-10 py-3 rounded-lg hover:bg-yellow-400 hover:text-blue-900 transition transform hover:scale-110 whitespace-nowrap focus:outline-none focus:ring-4 focus:ring-yellow-400"
-      >
-        Continuer sans inscription
-      </a>
-    </div>
+      Accéder aux événements
+    </a>
   </section>
 
-  <script>
-    const signupForm = document.getElementById('signupForm');
-    const signupSuccess = document.getElementById('signupSuccess');
-    const signupError = document.getElementById('signupError');
-
-    signupForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const firstName = document.getElementById('firstNameInput').value.trim();
-      const lastName = document.getElementById('lastNameInput').value.trim();
-      const email = document.getElementById('emailInput').value.trim();
-      const password = document.getElementById('passwordInput').value;
-
-      if (!firstName || !lastName || !validateEmail(email) || password.length < 6) {
-        signupError.textContent =
-          'Veuillez remplir tous les champs correctement (email valide et mot de passe ≥ 6 caractères).';
-        signupError.classList.remove('hidden');
-        signupSuccess.classList.add('hidden');
-        return;
-      }
-
-      try {
-        signupError.classList.add('hidden');
-        signupSuccess.classList.add('hidden');
-
-        const response = await fetch('/api/signup', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ firstName, lastName, email, password }),
-        });
-
-        if (response.ok) {
-          signupSuccess.classList.remove('hidden');
-          signupError.classList.add('hidden');
-          signupForm.reset();
-        } else {
-          const data = await response.json();
-          signupError.textContent = data.message || 'Une erreur est survenue. Veuillez réessayer.';
-          signupError.classList.remove('hidden');
-          signupSuccess.classList.add('hidden');
-        }
-      } catch (error) {
-        signupError.textContent = 'Impossible de se connecter au serveur. Veuillez réessayer plus tard.';
-        signupError.classList.remove('hidden');
-        signupSuccess.classList.add('hidden');
-      }
-    });
-
-    function validateEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-  </script>
 </body>
-
 </html>
