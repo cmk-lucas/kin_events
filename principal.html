@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,497 +8,563 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
+
 <body class="font-sans bg-gray-100">
 
-<!-- Header Amélioré -->
-<header class="bg-white/80 backdrop-blur-md shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <!-- Logo -->
-    <h1 class="text-3xl font-extrabold text-blue-600 tracking-wide flex items-center space-x-2">
-      <span>Kin<span class="text-gray-900">Events</span></span>
-    </h1>
+  <!-- Header Amélioré -->
+  <header class="bg-white/80 backdrop-blur-md shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <h1 class="text-3xl font-extrabold text-blue-600 tracking-wide flex items-center space-x-2">
+        <span>Kin<span class="text-gray-900">Events</span></span>
+      </h1>
 
-    <!-- Icône utilisateur Font Awesome -->
-    <a href="#" class="ml-4 text-gray-700 hover:text-blue-600 transition-colors text-xl" aria-label="Profil utilisateur">
-      <i class="fas fa-user"></i>
-    </a>
+      <!-- Icône utilisateur Font Awesome -->
+      <a href="#" class="ml-4 text-gray-700 hover:text-blue-600 transition-colors text-xl"
+        aria-label="Profil utilisateur">
+        <i class="fas fa-user"></i>
+      </a>
 
-    <!-- Navigation Desktop -->
-    <nav class="hidden md:flex items-center space-x-8 ml-auto">
-      <a href="principal.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Accueil</a>
-      <a href="evenements.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Événements</a>
-      <a href="astuce.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Trucs & Astuces</a>
-      <a href="abaout.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">À propos</a>
-    </nav>
+      <!-- Navigation Desktop -->
+      <nav class="hidden md:flex items-center space-x-8 ml-auto">
+        <a href="principal.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Accueil</a>
+        <a href="evenements.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Événements</a>
+        <a href="astuce.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Trucs &
+          Astuces</a>
+        <a href="abaout.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">À propos</a>
+      </nav>
 
-    <!-- Menu Mobile -->
-    <button id="menuBtn" class="md:hidden text-blue-600 focus:outline-none ml-4" aria-label="Menu mobile">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-  </div>
+      <!-- Menu Mobile -->
+      <button id="menuBtn" class="md:hidden text-blue-600 focus:outline-none ml-4" aria-label="Menu mobile">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
 
-  <!-- Navigation Mobile -->
-  <div id="mobileMenu" class="md:hidden hidden px-6 pt-2 pb-4 bg-white border-t border-gray-200 animate-fade-in-down space-y-2">
-    <a href="principal.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
-    <a href="evenements.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Événements</a>
-    <a href="astuce.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Trucs & Astuces</a>
-    <a href="abaout.html" class="block text-gray-700 hover:text-blue-600 transition-colors">À propos</a>
-  </div>
+    <!-- Navigation Mobile -->
+    <div id="mobileMenu"
+      class="md:hidden hidden px-6 pt-2 pb-4 bg-white border-t border-gray-200 animate-fade-in-down space-y-2">
+      <a href="principal.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
+      <a href="evenements.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Événements</a>
+      <a href="astuce.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Trucs & Astuces</a>
+      <a href="abaout.html" class="block text-gray-700 hover:text-blue-600 transition-colors">À propos</a>
+    </div>
 
-  <style>
-    @keyframes fade-in-down {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
+    <style>
+      @keyframes fade-in-down {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      .animate-fade-in-down {
+        animation: fade-in-down 0.3s ease-out;
       }
-    }
+    </style>
 
-    .animate-fade-in-down {
-      animation: fade-in-down 0.3s ease-out;
-    }
-  </style>
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
 
-  <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        menuBtn.classList.toggle("open");
+      });
+    </script>
+  </header>
 
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      menuBtn.classList.toggle("open");
-    });
-  </script>
-</header>
-  
 
-<!-- Hero Section avec image d’ambiance -->
-<section id="home" class="relative w-full h-screen flex items-center justify-center text-white overflow-hidden bg-black">
-  
-  <!-- Image de fond -->
-  <div class="absolute inset-0">
-    <img src="img/uk.jpg"
-         alt="Ambiance Kinshasa"
-         class="w-full h-full object-cover brightness-50 scale-105" />
-  </div>
+  <!-- Hero Section avec image d’ambiance -->
+  <section id="home"
+    class="relative w-full h-screen flex items-center justify-center text-white overflow-hidden bg-black">
 
-  <!-- Contenu -->
-  <div class="relative z-10 text-center px-6 max-w-3xl animate-fade-in-up">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight drop-shadow-lg">
-      🌆 Kinshasa s'enflamme chaque nuit
-    </h1>
-    <p class="mt-6 text-lg sm:text-xl text-blue-100">
-      Concerts live, soirées, festivals et vibes urbaines.<br class="hidden sm:inline" />
-      Découvre, vis, partage les meilleurs événements du moment.
-    </p>
-    <a href="#events"
-       class="inline-block mt-10 bg-yellow-400 text-blue-900 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-300 transition duration-300">
-      🔥 Explorer les événements
-    </a>
-  </div>
+    <!-- Image de fond -->
+    <div class="absolute inset-0">
+      <img src="img/uk.jpg" alt="Ambiance Kinshasa" class="w-full h-full object-cover brightness-50 scale-105" />
+    </div>
 
-  <!-- Animation -->
-  <style>
-    @keyframes fade-in-up {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
+    <!-- Contenu -->
+    <div class="relative z-10 text-center px-6 max-w-3xl animate-fade-in-up">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight drop-shadow-lg">
+        🌆 Kinshasa s'enflamme chaque nuit
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-blue-100">
+        Concerts live, soirées, festivals et vibes urbaines.<br class="hidden sm:inline" />
+        Découvre, vis, partage les meilleurs événements du moment.
+      </p>
+      <a href="#events"
+        class="inline-block mt-10 bg-yellow-400 text-blue-900 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-300 transition duration-300">
+        🔥 Explorer les événements
+      </a>
+    </div>
+
+    <!-- Animation -->
+    <style>
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      .animate-fade-in-up {
+        animation: fade-in-up 1s ease-out both;
       }
-    }
-
-    .animate-fade-in-up {
-      animation: fade-in-up 1s ease-out both;
-    }
-  </style>
-</section>
+    </style>
+  </section>
 
 
-  
-<!-- Section Événements à venir -->
-<section id="events" class="py-20 bg-gray-50">
+
+  <!-- Section Événements à venir -->
+  <section id="events" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-center text-blue-700 mb-2">🎉 Événements à venir</h2>
       <p class="text-center text-gray-500 text-lg">Ne ratez rien de ce qui se passe en ville</p>
-  
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
-        
+
         <!-- Carte Événement -->
-        <div class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1">
-          <span class="absolute top-4 left-4 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full z-10">Populaire</span>
-          <img src="img/hack.jpg" alt="Concert de Jazz" class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1">
+          <span
+            class="absolute top-4 left-4 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full z-10">Populaire</span>
+          <img src="img/hack.jpg" alt="Concert de Jazz"
+            class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
           <div class="p-6">
             <h3 class="text-2xl font-semibold text-blue-600">semaine du hacking</h3>
             <p class="text-gray-600 mt-2">🚀 Plongez dans l’univers du hacking avec SAVOIRA !</p>
             <div class="flex items-center justify-between mt-6">
               <span class="text-lg font-bold text-yellow-500">17 000 CDF</span>
-              <a href="detail_jazz.html" class="bg-blue-600 text-white py-2 px-5 rounded-xl hover:bg-blue-700 transition">Voir Détails</a>
+              <a href="detail_jazz.html"
+                class="bg-blue-600 text-white py-2 px-5 rounded-xl hover:bg-blue-700 transition">Voir Détails</a>
             </div>
           </div>
         </div>
-  
+
         <!-- Carte Événement -->
-        <div class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1">
-          <span class="absolute top-4 left-4 bg-red-100 text-red-600 text-xs font-semibold px-3 py-1 rounded-full z-10">🔥 Nouveau</span>
-          <img src="img/ev2.jpg" alt="Soirée Hip-Hop" class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1">
+          <span
+            class="absolute top-4 left-4 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full z-10">Populaire</span>
+          <img src="img/hack.jpg" alt="Concert de Jazz"
+            class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-blue-600">semaine du hacking</h3>
+            <p class="text-gray-600 mt-2">🚀 Plongez dans l’univers du hacking avec SAVOIRA !</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="text-lg font-bold text-yellow-500">17 000 CDF</span>
+              <a href="detail_jazz.html"
+                class="bg-blue-600 text-white py-2 px-5 rounded-xl hover:bg-blue-700 transition">Voir Détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte Événement -->
+        <div
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1">
+          <span
+            class="absolute top-4 left-4 bg-red-100 text-red-600 text-xs font-semibold px-3 py-1 rounded-full z-10">🔥
+            Nouveau</span>
+          <img src="img/ev2.jpg" alt="Soirée Hip-Hop"
+            class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
           <div class="p-6">
             <h3 class="text-2xl font-semibold text-blue-600">🎤 AFTERWORK</h3>
-            <p class="text-gray-600 mt-2">Venez vivre une expérience inoubliable lors de notre SOIRÉE AFTERWORK dédiée aux jeunes entrepreneurs catholiques.</p>
+            <p class="text-gray-600 mt-2">Venez vivre une expérience inoubliable lors de notre SOIRÉE AFTERWORK dédiée
+              aux jeunes entrepreneurs catholiques.</p>
             <div class="flex items-center justify-between mt-6">
               <span class="text-lg font-bold text-yellow-500">Gratuit</span>
-              <a href="detail_hip.html" class="bg-blue-600 text-white py-2 px-5 rounded-xl hover:bg-blue-700 transition">Voir Détails</a>
+              <a href="detail_hip.html"
+                class="bg-blue-600 text-white py-2 px-5 rounded-xl hover:bg-blue-700 transition">Voir Détails</a>
             </div>
           </div>
         </div>
-  
+
         <!-- Carte Événement -->
-        <div class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1">
-          <span class="absolute top-4 left-4 bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full z-10">🌟 Recommandé</span>
-          <img src="img/festival.jpeg" alt="Festival de Musique" class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1">
+          <span
+            class="absolute top-4 left-4 bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full z-10">🌟
+            Recommandé</span>
+          <img src="img/festival.jpeg" alt="Festival de Musique"
+            class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
           <div class="p-6">
             <h3 class="text-2xl font-semibold text-blue-600">🎶 Festival de Musique</h3>
-            <p class="text-gray-600 mt-2">Trois jours de vibes avec des artistes locaux, food trucks et activités culturelles.</p>
+            <p class="text-gray-600 mt-2">Trois jours de vibes avec des artistes locaux, food trucks et activités
+              culturelles.</p>
             <div class="flex items-center justify-between mt-6">
               <span class="text-lg font-bold text-green-600">Gratuit</span>
-              <a href="detail_festival.html" class="bg-blue-600 text-white py-2 px-5 rounded-xl hover:bg-blue-700 transition">Voir Détails</a>
+              <a href="detail_festival.html"
+                class="bg-blue-600 text-white py-2 px-5 rounded-xl hover:bg-blue-700 transition">Voir Détails</a>
             </div>
           </div>
         </div>
-  
+
       </div>
     </div>
   </section>
 
 
   <!-- Carrousel Kin Events -->
-<section class="w-full max-w-6xl mx-auto overflow-hidden rounded-2xl relative mt-10" id="carousel" style="max-width: 100%;">
+  <section class="w-full max-w-6xl mx-auto overflow-hidden rounded-2xl relative mt-10" id="carousel"
+    style="max-width: 100%;">
 
-  <div id="carouselSlide" class="flex transition-transform duration-700 ease-in-out">
+    <div id="carouselSlide" class="flex transition-transform duration-700 ease-in-out">
 
-    <!-- Slide 1 -->
-    <div class="w-full md:w-[600px] h-[380px] flex-shrink-0 px-2">
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition group">
-        <img src="img/Kinshasa _paris.jpg" alt="Kinshasa - Paris" class="w-full h-60 md:h-[320px] object-cover rounded-t-xl">
-        <div class="p-4">
-          <h3 class="text-xl font-bold text-gray-900">Kinshasa - Paris</h3>
-          <button class="mt-2 text-sm text-blue-600 hover:underline" onclick="openModal(0)">Voir événement</button>
+      <!-- Slide 1 -->
+      <div class="w-full md:w-[600px] h-[380px] flex-shrink-0 px-2">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition group">
+          <img src="img/Kinshasa _paris.jpg" alt="Kinshasa - Paris"
+            class="w-full h-60 md:h-[320px] object-cover rounded-t-xl">
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900">Kinshasa - Paris</h3>
+            <button class="mt-2 text-sm text-blue-600 hover:underline" onclick="openModal(0)">Voir événement</button>
+          </div>
         </div>
       </div>
+
+      <!-- Slide 2 -->
+      <div class="w-full md:w-[600px] h-[380px] flex-shrink-0 px-2">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition group">
+          <img src="img/deux.jpg" alt="Soirée Afro à Kin" class="w-full h-60 md:h-[320px] object-cover rounded-t-xl">
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900">Soirée Afro à Kin</h3>
+            <button class="mt-2 text-sm text-blue-600 hover:underline" onclick="openModal(1)">Voir événement</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="w-full md:w-[600px] h-[380px] flex-shrink-0 px-2">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition group">
+          <img src="img/martyr.jpg" alt="Concert Martyrs" class="w-full h-60 md:h-[320px] object-cover rounded-t-xl">
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900">Concert au Stade des Martyrs</h3>
+            <button class="mt-2 text-sm text-blue-600 hover:underline" onclick="openModal(2)">Voir événement</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="w-full md:w-[600px] h-[380px] flex-shrink-0 px-2">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition group">
+          <img src="img/Kinshasa 🇨🇩.jpg" alt="Découverte Kinshasa"
+            class="w-full h-60 md:h-[320px] object-cover rounded-t-xl">
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900">Découverte de Kinshasa 🇨🇩</h3>
+            <button class="mt-2 text-sm text-blue-600 hover:underline" onclick="openModal(3)">Voir événement</button>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Slide 2 -->
-    <div class="w-full md:w-[600px] h-[380px] flex-shrink-0 px-2">
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition group">
-        <img src="img/deux.jpg" alt="Soirée Afro à Kin" class="w-full h-60 md:h-[320px] object-cover rounded-t-xl">
-        <div class="p-4">
-          <h3 class="text-xl font-bold text-gray-900">Soirée Afro à Kin</h3>
-          <button class="mt-2 text-sm text-blue-600 hover:underline" onclick="openModal(1)">Voir événement</button>
-        </div>
+    <!-- Boutons de navigation -->
+    <button id="prevBtn" aria-label="Précédent"
+      class="absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70 transition">
+      &#10094;
+    </button>
+    <button id="nextBtn" aria-label="Suivant"
+      class="absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70 transition">
+      &#10095;
+    </button>
+  </section>
+
+  <!-- MODALE - Style compact -->
+  <div id="modal" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50 px-4">
+    <div
+      class="bg-white rounded-xl max-w-3xl w-full relative overflow-hidden shadow-2xl animate-fadeIn md:flex md:flex-row md:items-center">
+      <button onclick="closeModal()"
+        class="absolute top-3 right-3 text-3xl text-gray-600 hover:text-black transition">&times;</button>
+
+      <img id="modalImg" src="" alt="Événement"
+        class="w-full h-48 md:h-[300px] object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none md:w-1/2">
+
+      <div class="p-6 md:w-1/2">
+        <h3 id="modalTitle" class="text-2xl font-bold mb-2">Titre</h3>
+        <p id="modalDesc" class="text-gray-700 mb-6 leading-relaxed">Description détaillée...</p>
+        <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Réserver ma place</button>
       </div>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="w-full md:w-[600px] h-[380px] flex-shrink-0 px-2">
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition group">
-        <img src="img/martyr.jpg" alt="Concert Martyrs" class="w-full h-60 md:h-[320px] object-cover rounded-t-xl">
-        <div class="p-4">
-          <h3 class="text-xl font-bold text-gray-900">Concert au Stade des Martyrs</h3>
-          <button class="mt-2 text-sm text-blue-600 hover:underline" onclick="openModal(2)">Voir événement</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 4 -->
-    <div class="w-full md:w-[600px] h-[380px] flex-shrink-0 px-2">
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition group">
-        <img src="img/Kinshasa 🇨🇩.jpg" alt="Découverte Kinshasa" class="w-full h-60 md:h-[320px] object-cover rounded-t-xl">
-        <div class="p-4">
-          <h3 class="text-xl font-bold text-gray-900">Découverte de Kinshasa 🇨🇩</h3>
-          <button class="mt-2 text-sm text-blue-600 hover:underline" onclick="openModal(3)">Voir événement</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Boutons de navigation -->
-  <button id="prevBtn" aria-label="Précédent" class="absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70 transition">
-    &#10094;
-  </button>
-  <button id="nextBtn" aria-label="Suivant" class="absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70 transition">
-    &#10095;
-  </button>
-</section>
-
-<!-- MODALE - Style compact -->
-<div id="modal" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50 px-4">
-  <div class="bg-white rounded-xl max-w-3xl w-full relative overflow-hidden shadow-2xl animate-fadeIn md:flex md:flex-row md:items-center">
-    <button onclick="closeModal()" class="absolute top-3 right-3 text-3xl text-gray-600 hover:text-black transition">&times;</button>
-
-    <img id="modalImg" src="" alt="Événement" class="w-full h-48 md:h-[300px] object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none md:w-1/2">
-
-    <div class="p-6 md:w-1/2">
-      <h3 id="modalTitle" class="text-2xl font-bold mb-2">Titre</h3>
-      <p id="modalDesc" class="text-gray-700 mb-6 leading-relaxed">Description détaillée...</p>
-      <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Réserver ma place</button>
-    </div>
-  </div>
-</div>
-
-<style>
-  .animate-fadeIn {
-    animation: fadeIn 0.3s ease-in-out;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
-
-  /* Responsive pour carrousel */
-  @media (max-width: 768px) {
-    #carouselSlide > div {
-      width: 100% !important;
-      height: auto !important;
-    }
-  }
-</style>
-
-<script>
-  const slide = document.getElementById('carouselSlide');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const slidesCount = slide.children.length;
-  let index = 0;
-
-  function showSlide(i) {
-    slide.style.transform = `translateX(-${i * 100}%)`;
-  }
-
-  function autoSlide() {
-    index = (index + 1) % slidesCount;
-    showSlide(index);
-  }
-
-  let interval = setInterval(autoSlide, 4000); // 4s entre chaque slide
-
-  prevBtn.addEventListener('click', () => {
-    index = (index - 1 + slidesCount) % slidesCount;
-    showSlide(index);
-    resetInterval();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    index = (index + 1) % slidesCount;
-    showSlide(index);
-    resetInterval();
-  });
-
-  function resetInterval() {
-    clearInterval(interval);
-    interval = setInterval(autoSlide, 4000);
-  }
-
-  // Données des événements
-  const events = [
-    {
-      img: 'img/Kinshasa _paris.jpg',
-      title: 'Kinshasa - Paris',
-      desc: 'Un voyage culturel entre Kinshasa et Paris avec musique, mode et gastronomie.'
-    },
-    {
-      img: 'img/deux.jpg',
-      title: 'Soirée Afro à Kin',
-      desc: 'Danse, networking et ambiance afrobeat au cœur de Kinshasa.'
-    },
-    {
-      img: 'img/martyr.jpg',
-      title: 'Concert au Stade des Martyrs',
-      desc: 'Grand concert live avec les plus grands artistes de la RDC.'
-    },
-    {
-      img: 'img/Kinshasa 🇨🇩.jpg',
-      title: 'Découverte de Kinshasa 🇨🇩',
-      desc: 'Explore la capitale en profondeur : art, culture, et lieux incontournables.'
-    }
-  ];
-
-  function openModal(i) {
-    document.getElementById('modal').classList.remove('hidden');
-    document.getElementById('modalImg').src = events[i].img;
-    document.getElementById('modalTitle').textContent = events[i].title;
-    document.getElementById('modalDesc').textContent = events[i].desc;
-    clearInterval(interval); // Stop auto slide when modal is open
-  }
-
-  function closeModal() {
-    document.getElementById('modal').classList.add('hidden');
-    resetInterval();
-  }
-</script>
-
-  
-  
-
-<!-- Commentaires et Évaluations Section -->
-<section class="py-20 bg-gray-100" id="comments" aria-labelledby="section-comments-title">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 id="section-comments-title" class="text-4xl font-extrabold text-blue-700 text-center mb-16 animate-fade-in-up">
-      Commentaires & Évaluations
-    </h2>
-
-    <!-- Liste des Commentaires -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up">
-
-      <!-- Carte Commentaire (réutilisable) -->
-      <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-300 hover:shadow-2xl">
-        <img src="img/A3.jpg" alt="Jean Dupont" class="w-20 h-20 rounded-full mb-4 shadow-md">
-        <h4 class="text-blue-700 font-semibold text-lg mb-1">Jean Dupont</h4>
-        <div class="flex mb-2" aria-label="4 étoiles sur 5">
-          <span class="text-yellow-400 text-xl">★★★★☆</span>
-        </div>
-        <p class="text-gray-600 text-sm leading-relaxed">Un événement vraiment incroyable ! J'ai passé un excellent moment et je reviendrai sans hésiter.</p>
-      </div>
-
-      <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-300 hover:shadow-2xl">
-        <img src="img/A2.jpg" alt="Marie Lefevre" class="w-20 h-20 rounded-full mb-4 shadow-md">
-        <h4 class="text-blue-700 font-semibold text-lg mb-1">Marie Lefevre</h4>
-        <div class="flex mb-2" aria-label="5 étoiles sur 5">
-          <span class="text-yellow-400 text-xl">★★★★★</span>
-        </div>
-        <p class="text-gray-600 text-sm leading-relaxed">Une expérience inoubliable. Organisé de manière professionnelle et avec beaucoup d'activités intéressantes. Bravo !</p>
-      </div>
-
-      <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-300 hover:shadow-2xl">
-        <img src="img/davide.jpg" alt="Paul Martin" class="w-20 h-20 rounded-full mb-4 shadow-md">
-        <h4 class="text-blue-700 font-semibold text-lg mb-1">Paul Martin</h4>
-        <div class="flex mb-2" aria-label="3 étoiles sur 5">
-          <span class="text-yellow-400 text-xl">★★★☆☆</span>
-        </div>
-        <p class="text-gray-600 text-sm leading-relaxed">C'était bien, mais il y a quelques améliorations possibles sur l'organisation. Sinon, l'ambiance était top !</p>
-      </div>
-
     </div>
   </div>
 
-  <!-- Animation -->
   <style>
-    @keyframes fade-in-up {
+    .animate-fadeIn {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-fade-in-up {
-      animation: fade-in-up 0.8s ease-out both;
-    }
-  </style>
-</section>
-
-
-
-  
-  
-
-<!-- Section Newsletter -->
-<section id="newsletter" class="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white py-20 px-6">
-  <div class="max-w-3xl mx-auto text-center animate-fade-in-up">
-    <h2 class="text-4xl sm:text-5xl font-extrabold mb-4 tracking-tight">
-      📬 Restez Connecté à Kinshasa
-    </h2>
-    <p class="text-lg sm:text-xl mb-8 text-blue-100">
-      Recevez chaque semaine les meilleurs événements directement dans votre boîte mail.
-    </p>
-
-    <!-- Formulaire Newsletter -->
-    <form class="flex flex-col sm:flex-row items-center gap-4 justify-center">
-      <div class="relative w-full sm:w-2/3">
-        <input type="email" placeholder="Votre adresse email" required
-          class="w-full px-5 py-3 pr-12 rounded-full text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-yellow-400 shadow-xl">
-        <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-4 top-3 w-6 h-6 text-gray-500" fill="none"
-          viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M16 12H8m0 0l4-4m-4 4l4 4" />
-        </svg>
-      </div>
-      <button type="submit"
-        class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold px-8 py-3 rounded-full shadow-lg transition-all duration-300">
-        S'abonner
-      </button>
-    </form>
-  </div>
-
-  <!-- Animation -->
-  <style>
-    @keyframes fade-in-up {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+        transform: scale(0.95);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
       }
     }
 
-    .animate-fade-in-up {
-      animation: fade-in-up 1s ease-out both;
+    /* Responsive pour carrousel */
+    @media (max-width: 768px) {
+      #carouselSlide>div {
+        width: 100% !important;
+        height: auto !important;
+      }
     }
   </style>
-</section>
 
-  
+  <script>
+    const slide = document.getElementById('carouselSlide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slidesCount = slide.children.length;
+    let index = 0;
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-white py-10">
-  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
-    
-    <!-- Logo et nom -->
-    <div class="text-center md:text-left">
-      <h3 class="text-2xl font-bold text-blue-400">Événements Kinshasa</h3>
-      <p class="text-sm text-gray-400 mt-1">&copy; 2025 Tous droits réservés.</p>
+    function showSlide(i) {
+      slide.style.transform = `translateX(-${i * 100}%)`;
+    }
+
+    function autoSlide() {
+      index = (index + 1) % slidesCount;
+      showSlide(index);
+    }
+
+    let interval = setInterval(autoSlide, 4000); // 4s entre chaque slide
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slidesCount) % slidesCount;
+      showSlide(index);
+      resetInterval();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % slidesCount;
+      showSlide(index);
+      resetInterval();
+    });
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(autoSlide, 4000);
+    }
+
+    // Données des événements
+    const events = [
+      {
+        img: 'img/Kinshasa _paris.jpg',
+        title: 'Kinshasa - Paris',
+        desc: 'Un voyage culturel entre Kinshasa et Paris avec musique, mode et gastronomie.'
+      },
+      {
+        img: 'img/deux.jpg',
+        title: 'Soirée Afro à Kin',
+        desc: 'Danse, networking et ambiance afrobeat au cœur de Kinshasa.'
+      },
+      {
+        img: 'img/martyr.jpg',
+        title: 'Concert au Stade des Martyrs',
+        desc: 'Grand concert live avec les plus grands artistes de la RDC.'
+      },
+      {
+        img: 'img/Kinshasa 🇨🇩.jpg',
+        title: 'Découverte de Kinshasa 🇨🇩',
+        desc: 'Explore la capitale en profondeur : art, culture, et lieux incontournables.'
+      }
+    ];
+
+    function openModal(i) {
+      document.getElementById('modal').classList.remove('hidden');
+      document.getElementById('modalImg').src = events[i].img;
+      document.getElementById('modalTitle').textContent = events[i].title;
+      document.getElementById('modalDesc').textContent = events[i].desc;
+      clearInterval(interval); // Stop auto slide when modal is open
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+      resetInterval();
+    }
+  </script>
+
+
+
+
+  <!-- Commentaires et Évaluations Section -->
+  <section class="py-20 bg-gray-100" id="comments" aria-labelledby="section-comments-title">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 id="section-comments-title"
+        class="text-4xl font-extrabold text-blue-700 text-center mb-16 animate-fade-in-up">
+        Commentaires & Évaluations
+      </h2>
+
+      <!-- Liste des Commentaires -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up">
+
+        <!-- Carte Commentaire (réutilisable) -->
+        <div
+          class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-300 hover:shadow-2xl">
+          <img src="img/A3.jpg" alt="Jean Dupont" class="w-20 h-20 rounded-full mb-4 shadow-md">
+          <h4 class="text-blue-700 font-semibold text-lg mb-1">Jean Dupont</h4>
+          <div class="flex mb-2" aria-label="4 étoiles sur 5">
+            <span class="text-yellow-400 text-xl">★★★★☆</span>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">Un événement vraiment incroyable ! J'ai passé un excellent
+            moment et je reviendrai sans hésiter.</p>
+        </div>
+
+        <div
+          class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-300 hover:shadow-2xl">
+          <img src="img/A2.jpg" alt="Marie Lefevre" class="w-20 h-20 rounded-full mb-4 shadow-md">
+          <h4 class="text-blue-700 font-semibold text-lg mb-1">Marie Lefevre</h4>
+          <div class="flex mb-2" aria-label="5 étoiles sur 5">
+            <span class="text-yellow-400 text-xl">★★★★★</span>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">Une expérience inoubliable. Organisé de manière
+            professionnelle et avec beaucoup d'activités intéressantes. Bravo !</p>
+        </div>
+
+        <div
+          class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-300 hover:shadow-2xl">
+          <img src="img/davide.jpg" alt="Paul Martin" class="w-20 h-20 rounded-full mb-4 shadow-md">
+          <h4 class="text-blue-700 font-semibold text-lg mb-1">Paul Martin</h4>
+          <div class="flex mb-2" aria-label="3 étoiles sur 5">
+            <span class="text-yellow-400 text-xl">★★★☆☆</span>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">C'était bien, mais il y a quelques améliorations possibles
+            sur l'organisation. Sinon, l'ambiance était top !</p>
+        </div>
+
+      </div>
     </div>
 
-    <!-- Adresse et contact -->
-    <div class="text-center text-sm text-gray-300">
-      <p>📍 Avenue du 30 Juin, Kinshasa, RDC</p>
-      <p>📞 +243 854 532 435</p>
-      <p>✉️ Kin_events@gmail.com</p>
+    <!-- Animation -->
+    <style>
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in-up {
+        animation: fade-in-up 0.8s ease-out both;
+      }
+    </style>
+  </section>
+
+
+
+
+
+
+  <!-- Section Newsletter -->
+  <section id="newsletter" class="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center animate-fade-in-up">
+      <h2 class="text-4xl sm:text-5xl font-extrabold mb-4 tracking-tight">
+        📬 Restez Connecté à Kinshasa
+      </h2>
+      <p class="text-lg sm:text-xl mb-8 text-blue-100">
+        Recevez chaque semaine les meilleurs événements directement dans votre boîte mail.
+      </p>
+
+      <!-- Formulaire Newsletter -->
+      <form class="flex flex-col sm:flex-row items-center gap-4 justify-center">
+        <div class="relative w-full sm:w-2/3">
+          <input type="email" placeholder="Votre adresse email" required
+            class="w-full px-5 py-3 pr-12 rounded-full text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-yellow-400 shadow-xl">
+          <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-4 top-3 w-6 h-6 text-gray-500" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l4-4m-4 4l4 4" />
+          </svg>
+        </div>
+        <button type="submit"
+          class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold px-8 py-3 rounded-full shadow-lg transition-all duration-300">
+          S'abonner
+        </button>
+      </form>
     </div>
 
-    <!-- Réseaux sociaux -->
-    <div class="flex gap-5 text-xl">
-      <a href="https://www.instagram.com/kin_events01/" class="hover:text-blue-400 transition-colors duration-200" aria-label="Facebook">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/kin_events01/" class="hover:text-pink-400 transition-colors duration-200" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.instagram.com/kin_events01/" class="hover:text-sky-400 transition-colors duration-200" aria-label="Twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://www.instagram.com/kin_events01/" class="hover:text-red-500 transition-colors duration-200" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-    </div>
+    <!-- Animation -->
+    <style>
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
 
-  </div>
-</footer>
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in-up {
+        animation: fade-in-up 1s ease-out both;
+      }
+    </style>
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-10">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
+
+      <!-- Logo et nom -->
+      <div class="text-center md:text-left">
+        <h3 class="text-2xl font-bold text-blue-400">Événements Kinshasa</h3>
+        <p class="text-sm text-gray-400 mt-1">&copy; 2025 Tous droits réservés.</p>
+      </div>
+
+      <!-- Adresse et contact -->
+      <div class="text-center text-sm text-gray-300">
+        <p>📍 Avenue du 30 Juin, Kinshasa, RDC</p>
+        <p>📞 +243 854 532 435</p>
+        <p>✉️ Kin_events@gmail.com</p>
+      </div>
+
+      <!-- Réseaux sociaux -->
+      <div class="flex gap-5 text-xl">
+        <a href="https://www.instagram.com/kin_events01/" class="hover:text-blue-400 transition-colors duration-200"
+          aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/kin_events01/" class="hover:text-pink-400 transition-colors duration-200"
+          aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.instagram.com/kin_events01/" class="hover:text-sky-400 transition-colors duration-200"
+          aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/kin_events01/" class="hover:text-red-500 transition-colors duration-200"
+          aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+
+    </div>
+  </footer>
 
 
 </body>
+
 </html>
