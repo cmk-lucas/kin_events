@@ -6,98 +6,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KinEvents - Kinshasa</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Pour s’assurer que la section couvre tout l’écran */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+  </style>
 </head>
 
-<body class="font-sans bg-gray-100 min-h-screen flex items-center justify-center p-4">
+<body class="font-sans bg-gray-900 min-h-screen flex items-center justify-center p-4">
 
   <section
-    class="relative bg-gradient-to-r from-blue-800 via-indigo-700 to-purple-800 text-white py-12 px-4 max-w-7xl mx-auto rounded-xl overflow-hidden shadow-xl w-full sm:px-6 md:px-12"
+    class="relative w-full max-w-7xl mx-auto rounded-xl overflow-hidden shadow-xl
+      bg-gradient-to-r from-blue-900 via-indigo-800 to-purple-900
+      text-white
+      min-h-[90vh]
+      flex flex-col md:flex-row
+      p-6 sm:p-10 lg:p-16
+      gap-8
+    "
   >
     <!-- Background subtle shapes or effect -->
     <div
-      class="absolute inset-0 bg-[url('https://source.unsplash.com/1600x900/?party,music')] bg-cover bg-center opacity-20 -z-10 rounded-xl"
+      class="absolute inset-0 bg-[url('https://source.unsplash.com/1600x900/?party,music')] bg-cover bg-center opacity-15 -z-10 rounded-xl"
+      aria-hidden="true"
     ></div>
 
+    <!-- Left: Inscription -->
     <div
-      class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      class="flex-1 bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 sm:p-12 shadow-lg
+      flex flex-col justify-center max-w-full
+      min-w-0"
     >
-      <!-- Left: Inscription -->
-      <div
-        class="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 sm:p-10 shadow-lg max-w-full"
+      <h2
+        class="text-3xl sm:text-4xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500 leading-tight"
       >
-        <h2
-          class="text-3xl sm:text-4xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500"
+        Inscrivez-vous pour ne rien manquer
+      </h2>
+      <p class="mb-8 text-gray-300 leading-relaxed text-base sm:text-lg max-w-xl">
+        Recevez toutes les nouveautés et événements exclusifs directement dans votre boîte mail.
+      </p>
+      <form id="signupForm" class="flex flex-col gap-5 max-w-xl" novalidate>
+        <input
+          type="text"
+          id="firstNameInput"
+          name="firstName"
+          placeholder="Prénom"
+          required
+          class="py-3 px-5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-base sm:text-lg transition"
+        />
+        <input
+          type="text"
+          id="lastNameInput"
+          name="lastName"
+          placeholder="Nom"
+          required
+          class="py-3 px-5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-base sm:text-lg transition"
+        />
+        <input
+          type="email"
+          id="emailInput"
+          name="email"
+          placeholder="Votre adresse e-mail"
+          required
+          class="py-3 px-5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-base sm:text-lg transition"
+        />
+        <input
+          type="password"
+          id="passwordInput"
+          name="password"
+          placeholder="Mot de passe"
+          required
+          minlength="6"
+          class="py-3 px-5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-base sm:text-lg transition"
+        />
+        <button
+          type="submit"
+          class="bg-yellow-400 text-blue-900 font-bold py-3 rounded-lg hover:bg-yellow-300 transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-yellow-400"
         >
-          Inscrivez-vous pour ne rien manquer
-        </h2>
-        <p class="mb-6 text-gray-200 leading-relaxed text-sm sm:text-base">
-          Recevez toutes les nouveautés et événements exclusifs directement dans votre boîte mail.
-        </p>
-        <form id="signupForm" class="flex flex-col gap-4" novalidate>
-          <input
-            type="text"
-            id="firstNameInput"
-            name="firstName"
-            placeholder="Prénom"
-            required
-            class="py-3 px-4 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-base sm:text-lg"
-          />
-          <input
-            type="text"
-            id="lastNameInput"
-            name="lastName"
-            placeholder="Nom"
-            required
-            class="py-3 px-4 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-base sm:text-lg"
-          />
-          <input
-            type="email"
-            id="emailInput"
-            name="email"
-            placeholder="Votre adresse e-mail"
-            required
-            class="py-3 px-4 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-base sm:text-lg"
-          />
-          <input
-            type="password"
-            id="passwordInput"
-            name="password"
-            placeholder="Mot de passe"
-            required
-            minlength="6"
-            class="py-3 px-4 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-base sm:text-lg"
-          />
-          <button
-            type="submit"
-            class="bg-yellow-400 text-blue-900 font-bold py-3 rounded-lg hover:bg-yellow-300 transition transform hover:scale-105"
-          >
-            S'inscrire
-          </button>
-        </form>
-        <p id="signupSuccess" class="mt-4 text-green-400 font-semibold hidden text-sm sm:text-base">
-          Merci pour votre inscription !
-        </p>
-        <p id="signupError" class="mt-4 text-red-400 font-semibold hidden text-sm sm:text-base"></p>
-      </div>
+          S'inscrire
+        </button>
+      </form>
+      <p id="signupSuccess" class="mt-5 text-green-400 font-semibold hidden text-base sm:text-lg max-w-xl">
+        Merci pour votre inscription !
+      </p>
+      <p id="signupError" class="mt-5 text-red-400 font-semibold hidden text-base sm:text-lg max-w-xl"></p>
+    </div>
 
-      <!-- Right: Continuer sans s'inscrire -->
-      <div
-        class="flex flex-col items-center justify-center gap-6 bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 sm:p-10 shadow-lg text-center max-w-full"
+    <!-- Right: Continuer sans s'inscrire -->
+    <div
+      class="flex-1 flex flex-col items-center justify-center gap-8 bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 sm:p-12 shadow-lg text-center max-w-full min-w-0"
+    >
+      <h2
+        class="text-3xl sm:text-4xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500 leading-tight"
       >
-        <h2
-          class="text-3xl sm:text-4xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500"
-        >
-          Pas envie de vous inscrire ?
-        </h2>
-        <p class="mb-8 text-gray-200 max-w-xs sm:max-w-sm leading-relaxed text-sm sm:text-base mx-auto px-2">
-          Continuez votre découverte des événements KinEvents sans créer de compte.
-        </p>
-        <a
-          href="principal.html"
-          class="inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-bold px-8 sm:px-10 py-3 rounded-lg hover:bg-yellow-400 hover:text-blue-900 transition transform hover:scale-110 whitespace-nowrap"
-          >Continuer sans inscription</a
-        >
-      </div>
+        Pas envie de vous inscrire ?
+      </h2>
+      <p class="mb-8 text-gray-300 max-w-xs sm:max-w-md leading-relaxed text-base sm:text-lg mx-auto px-2">
+        Continuez votre découverte des événements KinEvents sans créer de compte.
+      </p>
+      <a
+        href="principal.html"
+        class="inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-bold px-10 py-3 rounded-lg hover:bg-yellow-400 hover:text-blue-900 transition transform hover:scale-110 whitespace-nowrap focus:outline-none focus:ring-4 focus:ring-yellow-400"
+      >
+        Continuer sans inscription
+      </a>
     </div>
   </section>
 
@@ -109,13 +123,11 @@
     signupForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Récupérer les valeurs
       const firstName = document.getElementById('firstNameInput').value.trim();
       const lastName = document.getElementById('lastNameInput').value.trim();
       const email = document.getElementById('emailInput').value.trim();
       const password = document.getElementById('passwordInput').value;
 
-      // Validation simple côté client
       if (!firstName || !lastName || !validateEmail(email) || password.length < 6) {
         signupError.textContent =
           'Veuillez remplir tous les champs correctement (email valide et mot de passe ≥ 6 caractères).';
@@ -124,7 +136,6 @@
         return;
       }
 
-      // Simuler envoi à un backend (exemple fetch POST JSON)
       try {
         signupError.classList.add('hidden');
         signupSuccess.classList.add('hidden');
@@ -153,7 +164,6 @@
     });
 
     function validateEmail(email) {
-      // Validation basique
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
   </script>
