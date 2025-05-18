@@ -176,6 +176,174 @@
       </div>
     </div>
   </section>
+
+
+  <!-- Carrousel Kin Events -->
+<section class="w-full max-w-6xl mx-auto overflow-hidden rounded-2xl relative mt-10" id="carousel" style="max-width: 100%;">
+
+  <div id="carouselSlide" class="flex transition-transform duration-700 ease-in-out">
+
+    <!-- Slide 1 -->
+    <div class="w-full md:w-[600px] h-[380px] flex-shrink-0 px-2">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition group">
+        <img src="img/Kinshasa _paris.jpg" alt="Kinshasa - Paris" class="w-full h-60 md:h-[320px] object-cover rounded-t-xl">
+        <div class="p-4">
+          <h3 class="text-xl font-bold text-gray-900">Kinshasa - Paris</h3>
+          <button class="mt-2 text-sm text-blue-600 hover:underline" onclick="openModal(0)">Voir événement</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="w-full md:w-[600px] h-[380px] flex-shrink-0 px-2">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition group">
+        <img src="img/deux.jpg" alt="Soirée Afro à Kin" class="w-full h-60 md:h-[320px] object-cover rounded-t-xl">
+        <div class="p-4">
+          <h3 class="text-xl font-bold text-gray-900">Soirée Afro à Kin</h3>
+          <button class="mt-2 text-sm text-blue-600 hover:underline" onclick="openModal(1)">Voir événement</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="w-full md:w-[600px] h-[380px] flex-shrink-0 px-2">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition group">
+        <img src="img/martyr.jpg" alt="Concert Martyrs" class="w-full h-60 md:h-[320px] object-cover rounded-t-xl">
+        <div class="p-4">
+          <h3 class="text-xl font-bold text-gray-900">Concert au Stade des Martyrs</h3>
+          <button class="mt-2 text-sm text-blue-600 hover:underline" onclick="openModal(2)">Voir événement</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="w-full md:w-[600px] h-[380px] flex-shrink-0 px-2">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition group">
+        <img src="img/Kinshasa 🇨🇩.jpg" alt="Découverte Kinshasa" class="w-full h-60 md:h-[320px] object-cover rounded-t-xl">
+        <div class="p-4">
+          <h3 class="text-xl font-bold text-gray-900">Découverte de Kinshasa 🇨🇩</h3>
+          <button class="mt-2 text-sm text-blue-600 hover:underline" onclick="openModal(3)">Voir événement</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Boutons de navigation -->
+  <button id="prevBtn" aria-label="Précédent" class="absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70 transition">
+    &#10094;
+  </button>
+  <button id="nextBtn" aria-label="Suivant" class="absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70 transition">
+    &#10095;
+  </button>
+</section>
+
+<!-- MODALE - Style compact -->
+<div id="modal" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50 px-4">
+  <div class="bg-white rounded-xl max-w-3xl w-full relative overflow-hidden shadow-2xl animate-fadeIn md:flex md:flex-row md:items-center">
+    <button onclick="closeModal()" class="absolute top-3 right-3 text-3xl text-gray-600 hover:text-black transition">&times;</button>
+
+    <img id="modalImg" src="" alt="Événement" class="w-full h-48 md:h-[300px] object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none md:w-1/2">
+
+    <div class="p-6 md:w-1/2">
+      <h3 id="modalTitle" class="text-2xl font-bold mb-2">Titre</h3>
+      <p id="modalDesc" class="text-gray-700 mb-6 leading-relaxed">Description détaillée...</p>
+      <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Réserver ma place</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Responsive pour carrousel */
+  @media (max-width: 768px) {
+    #carouselSlide > div {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+</style>
+
+<script>
+  const slide = document.getElementById('carouselSlide');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const slidesCount = slide.children.length;
+  let index = 0;
+
+  function showSlide(i) {
+    slide.style.transform = `translateX(-${i * 100}%)`;
+  }
+
+  function autoSlide() {
+    index = (index + 1) % slidesCount;
+    showSlide(index);
+  }
+
+  let interval = setInterval(autoSlide, 4000); // 4s entre chaque slide
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + slidesCount) % slidesCount;
+    showSlide(index);
+    resetInterval();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % slidesCount;
+    showSlide(index);
+    resetInterval();
+  });
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(autoSlide, 4000);
+  }
+
+  // Données des événements
+  const events = [
+    {
+      img: 'img/Kinshasa _paris.jpg',
+      title: 'Kinshasa - Paris',
+      desc: 'Un voyage culturel entre Kinshasa et Paris avec musique, mode et gastronomie.'
+    },
+    {
+      img: 'img/deux.jpg',
+      title: 'Soirée Afro à Kin',
+      desc: 'Danse, networking et ambiance afrobeat au cœur de Kinshasa.'
+    },
+    {
+      img: 'img/martyr.jpg',
+      title: 'Concert au Stade des Martyrs',
+      desc: 'Grand concert live avec les plus grands artistes de la RDC.'
+    },
+    {
+      img: 'img/Kinshasa 🇨🇩.jpg',
+      title: 'Découverte de Kinshasa 🇨🇩',
+      desc: 'Explore la capitale en profondeur : art, culture, et lieux incontournables.'
+    }
+  ];
+
+  function openModal(i) {
+    document.getElementById('modal').classList.remove('hidden');
+    document.getElementById('modalImg').src = events[i].img;
+    document.getElementById('modalTitle').textContent = events[i].title;
+    document.getElementById('modalDesc').textContent = events[i].desc;
+    clearInterval(interval); // Stop auto slide when modal is open
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.add('hidden');
+    resetInterval();
+  }
+</script>
+
   
   
 
