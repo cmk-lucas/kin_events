@@ -11,96 +11,153 @@
 <body class="font-sans bg-gray-100">
 
 
-    <!-- Section KinEvents et Newsletter fusionnées -->
     <section
-        class="py-32 bg-gradient-to-r from-blue-800 via-indigo-600 to-purple-700 text-white text-center relative overflow-hidden">
-        <!-- Effet de fond parallax pour KinEvents -->
-        <div class="absolute inset-0 bg-cover bg-center opacity-40"
-            style="background-image: url('https://source.unsplash.com/1600x900/?event');"></div>
-        <div class="relative z-10 px-6">
-            <h2
-                class="text-6xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-500 animate__animated animate__fadeIn animate__delay-1s">
-                Bienvenue sur KinEvents
-            </h2>
-            <p
-                class="text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed animate__animated animate__fadeIn animate__delay-1.5s">
-                KinEvents est la plateforme ultime pour découvrir les événements à Kinshasa. Que vous soyez amateur de
-                concerts, de festivals, ou de soirées, vous trouverez ici tous les événements à ne pas manquer. Nous
-                offrons une expérience unique pour explorer la scène locale dynamique, avec une interface fluide et des
-                informations en temps réel.
-            </p>
+  class="relative bg-gradient-to-r from-blue-800 via-indigo-700 to-purple-800 text-white py-20 px-6 max-w-7xl mx-auto rounded-xl overflow-hidden shadow-xl"
+>
+  <!-- Background subtle shapes or effect -->
+  <div
+    class="absolute inset-0 bg-[url('https://source.unsplash.com/1600x900/?party,music')] bg-cover bg-center opacity-20 -z-10"
+  ></div>
 
-            <!-- Section boutons KinEvents -->
-            <div
-                class="flex flex-col sm:flex-row justify-center space-y-6 sm:space-y-0 sm:space-x-6 animate__animated animate__fadeIn animate__delay-2s">
-                <a href="evenements.html"
-                    class="inline-block bg-yellow-500 text-blue-900 py-6 px-16 sm:px-12 rounded-lg shadow-lg hover:bg-yellow-400 hover:shadow-2xl transition-all transform hover:scale-110 duration-300 ease-in-out">
-                    Voir les événements
-                </a>
-                <a href="principal.html"
-                    class="inline-block text-white py-6 px-16 sm:px-12 border-2 border-white rounded-lg hover:bg-white hover:text-blue-900 transition-all transform hover:scale-110 duration-300 ease-in-out">
-                    En savoir plus
-                </a>
-            </div>
-        </div>
+  <div
+    class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+  >
+    <!-- Left: Inscription -->
+    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-10 shadow-lg">
+      <h2
+        class="text-4xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500"
+      >
+        Inscrivez-vous pour ne rien manquer
+      </h2>
+      <p class="mb-8 text-gray-200 leading-relaxed">
+        Recevez toutes les nouveautés et événements exclusifs directement dans votre boîte mail.
+      </p>
+      <form id="signupForm" class="flex flex-col gap-4" novalidate>
+        <input
+          type="text"
+          id="firstNameInput"
+          name="firstName"
+          placeholder="Prénom"
+          required
+          class="py-4 px-5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-lg"
+        />
+        <input
+          type="text"
+          id="lastNameInput"
+          name="lastName"
+          placeholder="Nom"
+          required
+          class="py-4 px-5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-lg"
+        />
+        <input
+          type="email"
+          id="emailInput"
+          name="email"
+          placeholder="Votre adresse e-mail"
+          required
+          class="py-4 px-5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-lg"
+        />
+        <input
+          type="password"
+          id="passwordInput"
+          name="password"
+          placeholder="Mot de passe"
+          required
+          minlength="6"
+          class="py-4 px-5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900 text-lg"
+        />
+        <button
+          type="submit"
+          class="bg-yellow-400 text-blue-900 font-bold py-4 rounded-lg hover:bg-yellow-300 transition transform hover:scale-105"
+        >
+          S'inscrire
+        </button>
+      </form>
+      <p id="signupSuccess" class="mt-4 text-green-400 font-semibold hidden">
+        Merci pour votre inscription !
+      </p>
+      <p id="signupError" class="mt-4 text-red-400 font-semibold hidden"></p>
+    </div>
 
-        <!-- Effet de fond parallax pour Newsletter -->
-        <div class="absolute inset-0 bg-cover bg-center opacity-40"
-            style="background-image: url('https://source.unsplash.com/1600x900/?newsletter');"></div>
-        <div class="relative z-10 px-6 pt-24">
-            <h2
-                class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-500 animate__animated animate__fadeIn animate__delay-2s">
-                Restez informé !
-            </h2>
-            <p
-                class="text-2xl mb-12 max-w-3xl mx-auto leading-relaxed animate__animated animate__fadeIn animate__delay-2.5s">
-                Inscrivez-vous à notre newsletter pour recevoir les dernières informations sur les événements à
-                Kinshasa. Ne manquez pas les prochains concerts, festivals, et soirées. Soyez toujours à jour avec
-                KinEvents !
-            </p>
+    <!-- Right: Continuer sans s'inscrire -->
+    <div
+      class="flex flex-col items-center justify-center gap-6 bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-10 shadow-lg text-center"
+    >
+      <h2
+        class="text-4xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500"
+      >
+        Pas envie de vous inscrire ?
+      </h2>
+      <p class="mb-8 text-gray-200 max-w-sm leading-relaxed">
+        Continuez votre découverte des événements KinEvents sans créer de compte.
+      </p>
+      <a
+        href="principal.html"
+        class="inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-bold px-10 py-4 rounded-lg hover:bg-yellow-400 hover:text-blue-900 transition transform hover:scale-110"
+      >
+        Continuer sans inscription
+      </a>
+    </div>
+  </div>
+</section>
 
-            <!-- Formulaire de newsletter -->
-            <div class="max-w-md mx-auto animate__animated animate__fadeIn animate__delay-3s">
-                <form id="newsletterForm"
-                    class="bg-white p-8 rounded-lg shadow-lg transform transition-all hover:scale-110 duration-300">
-                    <input type="email" id="email" name="email" placeholder="Entrez votre e-mail"
-                        class="w-full py-4 px-6 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
-                        required>
-                    <button type="submit"
-                        class="w-full bg-yellow-400 text-blue-900 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-all duration-300 shadow-xl hover:scale-110">
-                        S'inscrire
-                    </button>
-                </form>
-                <p id="successMessage" class="text-green-500 mt-4 hidden">Merci pour votre inscription à notre
-                    newsletter !</p>
-                <p id="errorMessage" class="text-red-500 mt-4 hidden">Une erreur est survenue. Veuillez réessayer plus
-                    tard.</p>
-            </div>
-        </div>
-    </section>
+<script>
+  const signupForm = document.getElementById('signupForm');
+  const signupSuccess = document.getElementById('signupSuccess');
+  const signupError = document.getElementById('signupError');
 
+  signupForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    <script>
-        // Gestion de l'inscription à la newsletter
-        const newsletterForm = document.getElementById('newsletterForm');
-        const successMessage = document.getElementById('successMessage');
-        const errorMessage = document.getElementById('errorMessage');
+    // Récupérer les valeurs
+    const firstName = document.getElementById('firstNameInput').value.trim();
+    const lastName = document.getElementById('lastNameInput').value.trim();
+    const email = document.getElementById('emailInput').value.trim();
+    const password = document.getElementById('passwordInput').value;
 
-        newsletterForm.addEventListener('submit', function (event) {
-            event.preventDefault();
+    // Validation simple côté client
+    if (!firstName || !lastName || !validateEmail(email) || password.length < 6) {
+      signupError.textContent =
+        'Veuillez remplir tous les champs correctement (email valide et mot de passe ≥ 6 caractères).';
+      signupError.classList.remove('hidden');
+      signupSuccess.classList.add('hidden');
+      return;
+    }
 
-            // Simuler une soumission réussie ou une erreur
-            const email = document.getElementById('email').value;
-            if (email) {
-                successMessage.classList.remove('hidden');
-                errorMessage.classList.add('hidden');
-                document.getElementById('email').value = ''; // Réinitialiser le champ
-            } else {
-                errorMessage.classList.remove('hidden');
-                successMessage.classList.add('hidden');
-            }
-        });
-    </script>
+    // Simuler envoi à un backend (exemple fetch POST JSON)
+    try {
+      signupError.classList.add('hidden');
+      signupSuccess.classList.add('hidden');
+
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, lastName, email, password }),
+      });
+
+      if (response.ok) {
+        signupSuccess.classList.remove('hidden');
+        signupError.classList.add('hidden');
+        signupForm.reset();
+      } else {
+        const data = await response.json();
+        signupError.textContent = data.message || 'Une erreur est survenue. Veuillez réessayer.';
+        signupError.classList.remove('hidden');
+        signupSuccess.classList.add('hidden');
+      }
+    } catch (error) {
+      signupError.textContent = 'Impossible de se connecter au serveur. Veuillez réessayer plus tard.';
+      signupError.classList.remove('hidden');
+      signupSuccess.classList.add('hidden');
+    }
+  });
+
+  function validateEmail(email) {
+    // Validation basique
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+</script>
+
 
 </body>
 
