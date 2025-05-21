@@ -216,6 +216,61 @@
     </div>
   </section>
 
+<section class="bg-white py-4 overflow-hidden border-t border-blue-200">
+  <div id="communes-track" class="flex space-x-10 text-blue-900 font-semibold text-sm sm:text-base tracking-wide uppercase whitespace-nowrap will-change-transform">
+    <span>Gombe</span>
+    <span>Kinshasa</span>
+    <span>Barumbu</span>
+    <span>Kintambo</span>
+    <span>Lingwala</span>
+    <span>Bandalungwa</span>
+    <span>Ngaliema</span>
+    <span>Kalamu</span>
+    <span>Kasavubu</span>
+    <span>Ngaba</span>
+    <span>Lemba</span>
+    <span>Matete</span>
+    <span>Limete</span>
+    <span>Ndjili</span>
+    <span>Kimbanseke</span>
+    <span>Masina</span>
+    <span>Nsele</span>
+    <span>Mont Ngafula</span>
+    <span>Selembao</span>
+    <span>Makala</span>
+    <span>Bumbu</span>
+    <span>Ngiri-Ngiri</span>
+    <span>Kasavubu</span>
+    <span>Maluku</span>
+    <span>Kimwenza</span>
+    <span>Mpasa</span>
+  </div>
+</section>
+
+<script>
+  const communeTrack = document.getElementById('communes-track');
+  const communeSpeed = 0.6; // Pixels par frame, ajuste la vitesse ici
+
+  // Cloner les spans pour la boucle infinie
+  const communes = Array.from(communeTrack.children);
+  communes.forEach(commune => {
+    const clone = commune.cloneNode(true);
+    communeTrack.appendChild(clone);
+  });
+
+  let x = 0;
+
+  function scrollCommunes() {
+    x -= communeSpeed;
+    if (x <= -communeTrack.scrollWidth / 2) {
+      x = 0;
+    }
+    communeTrack.style.transform = `translateX(${x}px)`;
+    requestAnimationFrame(scrollCommunes);
+  }
+
+  scrollCommunes();
+</script>
 
   <!-- Carrousel Kin Events -->
   <section class="w-full max-w-6xl mx-auto overflow-hidden rounded-2xl relative mt-10" id="carousel"
