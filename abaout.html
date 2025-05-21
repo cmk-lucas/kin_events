@@ -174,53 +174,82 @@
                     <img src="img/alfis.jpg" alt="Portrait de Jonathan K."
                         class="w-28 h-28 mx-auto rounded-full object-cover shadow-lg mb-5">
                     <h3 class="text-xl font-semibold text-gray-900">Alfils M.</h3>
-                    <p class="text-blue-600 text-sm mb-2">Charger parteneriat</p>
+                    <p class="text-blue-600 text-sm mb-2">Responsable des partenariats</p>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        Expert back-end, Jonathan conçoit des fondations techniques robustes et sécurisées pour soutenir
-                        la croissance.
+                        Dans le cadre de notre collaboration, Alfils assure le développement des partenariats
+                        stratégiques de Kin Events, en construisant des relations solides avec nos collaborateurs pour
+                        soutenir la croissance et la visibilité de la plateforme.
+                    </p>
+
+
+                </div>
+
+                <!-- Membre 4 -->
+                <div class="bg-white rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 p-8">
+                    <img src="img/evlyne.jpg" alt="Portrait de Jonathan K."
+                        class="w-28 h-28 mx-auto rounded-full object-cover shadow-lg mb-5">
+                    <h3 class="text-xl font-semibold text-gray-900">Evlyne M.</h3>
+                    <p class="text-blue-600 text-sm mb-2">Assistante principale</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        En tant qu’assistante principale de Kin Events, Evlyne joue un rôle essentiel dans la
+                        coordination des activités, le suivi des partenaires et l’organisation interne, contribuant
+                        activement au bon déroulement de chaque projet.
                     </p>
                 </div>
 
+                <!-- Membre 5 -->
+                    <div class="bg-white rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 p-8">
+                        <img src="img/djo museme.jpg" alt="Portrait de Jonathan K."
+                            class="w-28 h-28 mx-auto rounded-full object-cover shadow-lg mb-5">
+                        <h3 class="text-xl font-semibold text-gray-900">Djo  M.</h3>
+                        <p class="text-blue-600 text-sm mb-2">Partenariat & Relations externes</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            En charge du partenariat et des relations externes de Kin Events, djo développe et
+                            entretient des collaborations stratégiques, tout en représentant l’image de l’entreprise
+                            auprès de nos partenaires, sponsors et institutions.
+                        </p>
+
+
+                    </div>
+        </section>
+
+
+
+        <section class="bg-blue-50/80 py-4 overflow-hidden">
+            <div id="logo-track" class="flex space-x-8 will-change-transform">
+                <img src="img/instagram-7678783_1920.png" alt="Partenaire 1" class="h-12 object-contain" />
+                <img src="img/instagram-7678783_1920.png" alt="Partenaire 2" class="h-12 object-contain" />
+                <img src="img/instagram-7678783_1920.png" alt="Partenaire 3" class="h-12 object-contain" />
+                <img src="img/instagram-7678783_1920.png" alt="Partenaire 4" class="h-12 object-contain" />
+                <img src="img/instagram-7678783_1920.png" alt="Partenaire 5" class="h-12 object-contain" />
             </div>
         </section>
 
-          
+        <script>
+            const track = document.getElementById('logo-track');
+            const speed = 0.5; // pixels par frame, ajuste la vitesse ici
 
-        <section class="bg-blue-50/80 py-4 overflow-hidden">
-  <div id="logo-track" class="flex space-x-8 will-change-transform">
-    <img src="img/instagram-7678783_1920.png" alt="Partenaire 1" class="h-12 object-contain" />
-    <img src="img/instagram-7678783_1920.png" alt="Partenaire 2" class="h-12 object-contain" />
-    <img src="img/instagram-7678783_1920.png" alt="Partenaire 3" class="h-12 object-contain" />
-    <img src="img/instagram-7678783_1920.png" alt="Partenaire 4" class="h-12 object-contain" />
-    <img src="img/instagram-7678783_1920.png" alt="Partenaire 5" class="h-12 object-contain" />
-  </div>
-</section>
+            // Cloner les enfants pour boucle infinie
+            const logos = Array.from(track.children);
+            logos.forEach(logo => {
+                const clone = logo.cloneNode(true);
+                track.appendChild(clone);
+            });
 
-<script>
-  const track = document.getElementById('logo-track');
-  const speed = 0.5; // pixels par frame, ajuste la vitesse ici
+            let position = 0;
 
-  // Cloner les enfants pour boucle infinie
-  const logos = Array.from(track.children);
-  logos.forEach(logo => {
-    const clone = logo.cloneNode(true);
-    track.appendChild(clone);
-  });
+            function animate() {
+                position -= speed;
+                // Quand la moitié du scroll est atteinte, reset la position
+                if (position <= -track.scrollWidth / 2) {
+                    position = 0;
+                }
+                track.style.transform = `translateX(${position}px)`;
+                requestAnimationFrame(animate);
+            }
 
-  let position = 0;
-
-  function animate() {
-    position -= speed;
-    // Quand la moitié du scroll est atteinte, reset la position
-    if (position <= -track.scrollWidth / 2) {
-      position = 0;
-    }
-    track.style.transform = `translateX(${position}px)`;
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-</script>
+            animate();
+        </script>
 
 
 
