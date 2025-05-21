@@ -184,6 +184,43 @@
             </div>
         </section>
 
+          
+
+        <section class="bg-blue-50/80 py-4 overflow-hidden">
+  <div id="logo-track" class="flex space-x-8 will-change-transform">
+    <img src="img/instagram-7678783_1920.png" alt="Partenaire 1" class="h-12 object-contain" />
+    <img src="img/instagram-7678783_1920.png" alt="Partenaire 2" class="h-12 object-contain" />
+    <img src="img/instagram-7678783_1920.png" alt="Partenaire 3" class="h-12 object-contain" />
+    <img src="img/instagram-7678783_1920.png" alt="Partenaire 4" class="h-12 object-contain" />
+    <img src="img/instagram-7678783_1920.png" alt="Partenaire 5" class="h-12 object-contain" />
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById('logo-track');
+  const speed = 0.5; // pixels par frame, ajuste la vitesse ici
+
+  // Cloner les enfants pour boucle infinie
+  const logos = Array.from(track.children);
+  logos.forEach(logo => {
+    const clone = logo.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  let position = 0;
+
+  function animate() {
+    position -= speed;
+    // Quand la moitié du scroll est atteinte, reset la position
+    if (position <= -track.scrollWidth / 2) {
+      position = 0;
+    }
+    track.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
 
 
 
