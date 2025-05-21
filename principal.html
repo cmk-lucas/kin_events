@@ -216,59 +216,60 @@
     </div>
   </section>
 
-<section class="bg-white py-4 overflow-hidden border-t border-blue-200">
-  <div id="communes-track" class="flex space-x-10 text-blue-900 font-semibold text-sm sm:text-base tracking-wide uppercase whitespace-nowrap will-change-transform">
-    <span>Gombe</span>
-    <span>Kinshasa</span>
-    <span>Barumbu</span>
-    <span>Kintambo</span>
-    <span>Lingwala</span>
-    <span>Bandalungwa</span>
-    <span>Ngaliema</span>
-    <span>Kalamu</span>
-    <span>Kasavubu</span>
-    <span>Ngaba</span>
-    <span>Lemba</span>
-    <span>Matete</span>
-    <span>Limete</span>
-    <span>Ndjili</span>
-    <span>Kimbanseke</span>
-    <span>Masina</span>
-    <span>Nsele</span>
-    <span>Mont Ngafula</span>
-    <span>Selembao</span>
-    <span>Makala</span>
-    <span>Bumbu</span>
-    <span>Ngiri-Ngiri</span>
-    <span>Maluku</span>
-    <span>Kisenso</span>
-  </div>
-</section>
+  <section class="bg-white py-4 overflow-hidden border-t border-blue-200">
+    <div id="communes-track"
+      class="flex space-x-10 text-blue-900 font-semibold text-sm sm:text-base tracking-wide uppercase whitespace-nowrap will-change-transform">
+      <span>Gombe</span>
+      <span>Kinshasa</span>
+      <span>Barumbu</span>
+      <span>Kintambo</span>
+      <span>Lingwala</span>
+      <span>Bandalungwa</span>
+      <span>Ngaliema</span>
+      <span>Kalamu</span>
+      <span>Kasavubu</span>
+      <span>Ngaba</span>
+      <span>Lemba</span>
+      <span>Matete</span>
+      <span>Limete</span>
+      <span>Ndjili</span>
+      <span>Kimbanseke</span>
+      <span>Masina</span>
+      <span>Nsele</span>
+      <span>Mont Ngafula</span>
+      <span>Selembao</span>
+      <span>Makala</span>
+      <span>Bumbu</span>
+      <span>Ngiri-Ngiri</span>
+      <span>Maluku</span>
+      <span>Kisenso</span>
+    </div>
+  </section>
 
-<script>
-  const communeTrack = document.getElementById('communes-track');
-  const communeSpeed = 0.6; // Pixels par frame, ajuste la vitesse ici
+  <script>
+    const communeTrack = document.getElementById('communes-track');
+    const communeSpeed = 0.6; // Pixels par frame, ajuste la vitesse ici
 
-  // Cloner les spans pour la boucle infinie
-  const communes = Array.from(communeTrack.children);
-  communes.forEach(commune => {
-    const clone = commune.cloneNode(true);
-    communeTrack.appendChild(clone);
-  });
+    // Cloner les spans pour la boucle infinie
+    const communes = Array.from(communeTrack.children);
+    communes.forEach(commune => {
+      const clone = commune.cloneNode(true);
+      communeTrack.appendChild(clone);
+    });
 
-  let x = 0;
+    let x = 0;
 
-  function scrollCommunes() {
-    x -= communeSpeed;
-    if (x <= -communeTrack.scrollWidth / 2) {
-      x = 0;
+    function scrollCommunes() {
+      x -= communeSpeed;
+      if (x <= -communeTrack.scrollWidth / 2) {
+        x = 0;
+      }
+      communeTrack.style.transform = `translateX(${x}px)`;
+      requestAnimationFrame(scrollCommunes);
     }
-    communeTrack.style.transform = `translateX(${x}px)`;
-    requestAnimationFrame(scrollCommunes);
-  }
 
-  scrollCommunes();
-</script>
+    scrollCommunes();
+  </script>
 
   <!-- Carrousel Kin Events -->
   <section class="w-full max-w-6xl mx-auto overflow-hidden rounded-2xl relative mt-10" id="carousel"
@@ -523,221 +524,232 @@
     </style>
   </section>
 
- <!-- Section Guide Touristique Améliorée avec Modal -->
-<section class="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-6xl mx-auto">
-    <!-- Titre & Description -->
-    <div class="text-center mb-14">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">🧭 Trouvez un Guide à Kinshasa</h2>
-      <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-        Nouvel arrivant à Kinshasa ? Nos guides locaux sont là pour vous accompagner dans une expérience authentique et enrichissante.
-      </p>
+  <!-- Section Guide Touristique Améliorée avec Modal -->
+  <section class="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <!-- Titre & Description -->
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-700 mb-4">
+          🧭 Trouvez un guide professionnel à Kinshasa
+        </h2>
+        <p class="text-base sm:text-lg md:text-xl text-gray-500 max-w-2xl mx-auto">
+          Vous arrivez à Kinshasa ou souhaitez mieux connaître la ville ? Nos guides certifiés vous accompagnent pour
+          une découverte enrichissante, encadrée et sur mesure, adaptée à vos besoins.
+        </p>
+      </div>
+
+
+      <!-- Carrousel horizontal -->
+      <div class="flex overflow-x-auto gap-6 snap-x snap-mandatory scroll-smooth pb-4 scrollbar-hide">
+        <!-- Guide Card Template -->
+        <div onclick="openModal(this)" data-guide-name="lucie – Guide culturel"
+          data-guide-desc="Explorez les quartiers historiques et les marchés artisanaux de Kinshasa."
+          data-guide-langues="Français, Lingala" data-guide-comp="Histoire, Culture urbaine, Artisanat"
+          class="cursor-pointer snap-center shrink-0 w-[260px] sm:w-[300px] bg-white bg-opacity-10 hover:bg-opacity-20 transition-all rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/11 (1).jpg" alt="Guide lucie" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg sm:text-xl font-semibold">Lucie – Guide culturel</h3>
+            <p class="text-gray-300 text-sm mt-1">Explorez les quartiers historiques et les marchés artisanaux de
+              Kinshasa.</p>
+          </div>
+        </div>
+
+        <div onclick="openModal(this)" data-guide-name="Esther – Guide nature"
+          data-guide-desc="Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus encore."
+          data-guide-langues="Français, Anglais" data-guide-comp="Randonnée, Faune, Botanique"
+          class="cursor-pointer snap-center shrink-0 w-[260px] sm:w-[300px] bg-white bg-opacity-10 hover:bg-opacity-20 transition-all rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/11 (5).jpg" alt="Guide Esther" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg sm:text-xl font-semibold">Esther – Guide nature</h3>
+            <p class="text-gray-300 text-sm mt-1">Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus
+              encore.</p>
+          </div>
+        </div>
+
+        <div onclick="openModal(this)" data-guide-name="jonathan – Guide nature"
+          data-guide-desc="Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus encore."
+          data-guide-langues="Français, Anglais" data-guide-comp="Randonnée, Faune, Botanique"
+          class="cursor-pointer snap-center shrink-0 w-[260px] sm:w-[300px] bg-white bg-opacity-10 hover:bg-opacity-20 transition-all rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/11 (4).jpg" alt="Guide Esther" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg sm:text-xl font-semibold">jonathan – Guide nature</h3>
+            <p class="text-gray-300 text-sm mt-1">Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus
+              encore.</p>
+          </div>
+        </div>
+
+        <div onclick="openModal(this)" data-guide-name="David – Guide nature"
+          data-guide-desc="Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus encore."
+          data-guide-langues="Français, Anglais" data-guide-comp="Randonnée, Faune, Botanique"
+          class="cursor-pointer snap-center shrink-0 w-[260px] sm:w-[300px] bg-white bg-opacity-10 hover:bg-opacity-20 transition-all rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/11 (3).jpg" alt="Guide david" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg sm:text-xl font-semibold">David – Guide nature</h3>
+            <p class="text-gray-300 text-sm mt-1">Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus
+              encore.</p>
+          </div>
+        </div>
+
+        <div onclick="openModal(this)" data-guide-name="fils – Guide nature"
+          data-guide-desc="Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus encore."
+          data-guide-langues="Français, Anglais" data-guide-comp="Randonnée, Faune, Botanique"
+          class="cursor-pointer snap-center shrink-0 w-[260px] sm:w-[300px] bg-white bg-opacity-10 hover:bg-opacity-20 transition-all rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/11 (6).jpg" alt="Guide fils" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg sm:text-xl font-semibold">Fils – Guide nature</h3>
+            <p class="text-gray-300 text-sm mt-1">Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus
+              encore.</p>
+          </div>
+        </div>
+
+        <div onclick="openModal(this)" data-guide-name="Daniella – Guide urbain"
+          data-guide-desc="Découvrez Kinshasa la nuit : concerts, bars et ambiance urbaine."
+          data-guide-langues="Français, Lingala" data-guide-comp="Vie nocturne, Musique, Art contemporain"
+          class="cursor-pointer snap-center shrink-0 w-[260px] sm:w-[300px] bg-white bg-opacity-10 hover:bg-opacity-20 transition-all rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/11 (2).jpg" alt="Guide Daniella" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg sm:text-xl font-semibold">Daniella – Guide urbain</h3>
+            <p class="text-gray-300 text-sm mt-1">Découvrez Kinshasa la nuit : concerts, bars et ambiance urbaine.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton Réserver -->
+      <div class="text-center mt-10">
+        <button onclick="openReservationModal()"
+          class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full transition">
+          Réserver un Guide
+        </button>
+      </div>
     </div>
+  </section>
 
-    <!-- Carrousel horizontal -->
-    <div class="flex overflow-x-auto gap-6 snap-x snap-mandatory scroll-smooth pb-4 scrollbar-hide">
-      <!-- Guide Card Template -->
-      <div onclick="openModal(this)" 
-        data-guide-name="lucie – Guide culturel" 
-        data-guide-desc="Explorez les quartiers historiques et les marchés artisanaux de Kinshasa." 
-        data-guide-langues="Français, Lingala" 
-        data-guide-comp="Histoire, Culture urbaine, Artisanat" 
-        class="cursor-pointer snap-center shrink-0 w-[260px] sm:w-[300px] bg-white bg-opacity-10 hover:bg-opacity-20 transition-all rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/11 (1).jpg" alt="Guide lucie" class="w-full h-44 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg sm:text-xl font-semibold">Lucie – Guide culturel</h3>
-          <p class="text-gray-300 text-sm mt-1">Explorez les quartiers historiques et les marchés artisanaux de Kinshasa.</p>
-        </div>
-      </div>
-
-      <div onclick="openModal(this)" 
-        data-guide-name="Esther – Guide nature" 
-        data-guide-desc="Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus encore." 
-        data-guide-langues="Français, Anglais" 
-        data-guide-comp="Randonnée, Faune, Botanique" 
-        class="cursor-pointer snap-center shrink-0 w-[260px] sm:w-[300px] bg-white bg-opacity-10 hover:bg-opacity-20 transition-all rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/11 (5).jpg" alt="Guide Esther" class="w-full h-44 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg sm:text-xl font-semibold">Esther – Guide nature</h3>
-          <p class="text-gray-300 text-sm mt-1">Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus encore.</p>
-        </div>
-      </div>
-
-      <div onclick="openModal(this)" 
-        data-guide-name="jonathan – Guide nature" 
-        data-guide-desc="Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus encore." 
-        data-guide-langues="Français, Anglais" 
-        data-guide-comp="Randonnée, Faune, Botanique" 
-        class="cursor-pointer snap-center shrink-0 w-[260px] sm:w-[300px] bg-white bg-opacity-10 hover:bg-opacity-20 transition-all rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/11 (4).jpg" alt="Guide Esther" class="w-full h-44 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg sm:text-xl font-semibold">jonathan – Guide nature</h3>
-          <p class="text-gray-300 text-sm mt-1">Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus encore.</p>
-        </div>
-      </div>
-
-      <div onclick="openModal(this)" 
-        data-guide-name="David – Guide nature" 
-        data-guide-desc="Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus encore." 
-        data-guide-langues="Français, Anglais" 
-        data-guide-comp="Randonnée, Faune, Botanique" 
-        class="cursor-pointer snap-center shrink-0 w-[260px] sm:w-[300px] bg-white bg-opacity-10 hover:bg-opacity-20 transition-all rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/11 (3).jpg" alt="Guide david" class="w-full h-44 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg sm:text-xl font-semibold">David – Guide nature</h3>
-          <p class="text-gray-300 text-sm mt-1">Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus encore.</p>
-        </div>
-      </div>
-
-      <div onclick="openModal(this)" 
-        data-guide-name="fils – Guide nature" 
-        data-guide-desc="Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus encore." 
-        data-guide-langues="Français, Anglais" 
-        data-guide-comp="Randonnée, Faune, Botanique" 
-        class="cursor-pointer snap-center shrink-0 w-[260px] sm:w-[300px] bg-white bg-opacity-10 hover:bg-opacity-20 transition-all rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/11 (6).jpg" alt="Guide fils" class="w-full h-44 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg sm:text-xl font-semibold">Fils – Guide nature</h3>
-          <p class="text-gray-300 text-sm mt-1">Randonnées au Mont Mangengenge, visite du Jardin Zoologique et plus encore.</p>
-        </div>
-      </div>
-
-      <div onclick="openModal(this)" 
-        data-guide-name="Daniella – Guide urbain" 
-        data-guide-desc="Découvrez Kinshasa la nuit : concerts, bars et ambiance urbaine." 
-        data-guide-langues="Français, Lingala" 
-        data-guide-comp="Vie nocturne, Musique, Art contemporain" 
-        class="cursor-pointer snap-center shrink-0 w-[260px] sm:w-[300px] bg-white bg-opacity-10 hover:bg-opacity-20 transition-all rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/11 (2).jpg" alt="Guide Daniella" class="w-full h-44 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg sm:text-xl font-semibold">Daniella – Guide urbain</h3>
-          <p class="text-gray-300 text-sm mt-1">Découvrez Kinshasa la nuit : concerts, bars et ambiance urbaine.</p>
-        </div>
-      </div>
-    </div>
-
-   <!-- Bouton Réserver -->
-    <div class="text-center mt-10">
-      <button onclick="openReservationModal()" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full transition">
-        Réserver un Guide
-      </button>
+  <!-- Modale -->
+  <div id="guideModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60">
+    <div class="bg-white text-black rounded-xl p-6 max-w-md w-full relative animate-fadeIn">
+      <button onclick="closeModal()"
+        class="absolute top-3 right-3 text-gray-500 hover:text-black text-xl">&times;</button>
+      <h2 id="modalName" class="text-2xl font-bold mb-2"></h2>
+      <p id="modalDesc" class="text-gray-700 mb-4"></p>
+      <p><strong>Compétences :</strong> <span id="modalComp"></span></p>
+      <p><strong>Langues parlées :</strong> <span id="modalLangues"></span></p>
     </div>
   </div>
-</section>
 
-<!-- Modale -->
-<div id="guideModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60">
-  <div class="bg-white text-black rounded-xl p-6 max-w-md w-full relative animate-fadeIn">
-    <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-black text-xl">&times;</button>
-    <h2 id="modalName" class="text-2xl font-bold mb-2"></h2>
-    <p id="modalDesc" class="text-gray-700 mb-4"></p>
-    <p><strong>Compétences :</strong> <span id="modalComp"></span></p>
-    <p><strong>Langues parlées :</strong> <span id="modalLangues"></span></p>
+  <!-- Modale Réservation -->
+  <div id="reservationModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60">
+    <div class="bg-white text-black rounded-xl p-6 w-full max-w-lg relative animate-fadeIn">
+      <button onclick="closeReservationModal()"
+        class="absolute top-3 right-3 text-gray-500 hover:text-black text-xl">&times;</button>
+      <h2 class="text-2xl font-bold mb-4 text-center">📅 Réserver un Guide</h2>
+      <form id="whatsappForm" class="space-y-4">
+        <div>
+          <label class="block mb-1 font-semibold">Nom complet</label>
+          <input id="fullName" type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+            placeholder="Votre nom">
+        </div>
+        <div>
+          <label class="block mb-1 font-semibold">E-mail</label>
+          <input id="email" type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+            placeholder="email@exemple.com">
+        </div>
+        <div>
+          <label class="block mb-1 font-semibold">Date souhaitée</label>
+          <input id="date" type="date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+        </div>
+        <div>
+          <label class="block mb-1 font-semibold">Préférences ou remarques</label>
+          <textarea id="message" class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+            placeholder="Par exemple : Je souhaite une visite de nuit..."></textarea>
+        </div>
+        <button type="submit"
+          class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 rounded-lg">
+          Envoyer la réservation
+        </button>
+      </form>
+    </div>
   </div>
-</div>
 
-<!-- Modale Réservation -->
-<div id="reservationModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60">
-  <div class="bg-white text-black rounded-xl p-6 w-full max-w-lg relative animate-fadeIn">
-    <button onclick="closeReservationModal()" class="absolute top-3 right-3 text-gray-500 hover:text-black text-xl">&times;</button>
-    <h2 class="text-2xl font-bold mb-4 text-center">📅 Réserver un Guide</h2>
-    <form id="whatsappForm" class="space-y-4">
-  <div>
-    <label class="block mb-1 font-semibold">Nom complet</label>
-    <input id="fullName" type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Votre nom">
-  </div>
-  <div>
-    <label class="block mb-1 font-semibold">E-mail</label>
-    <input id="email" type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="email@exemple.com">
-  </div>
-  <div>
-    <label class="block mb-1 font-semibold">Date souhaitée</label>
-    <input id="date" type="date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
-  </div>
-  <div>
-    <label class="block mb-1 font-semibold">Préférences ou remarques</label>
-    <textarea id="message" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Par exemple : Je souhaite une visite de nuit..."></textarea>
-  </div>
-  <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 rounded-lg">
-    Envoyer la réservation
-  </button>
-</form>
-  </div>
-</div>
+  <!-- Script JS -->
+  <script>
+    function openModal(card) {
+      document.getElementById("modalName").textContent = card.dataset.guideName;
+      document.getElementById("modalDesc").textContent = card.dataset.guideDesc;
+      document.getElementById("modalComp").textContent = card.dataset.guideComp;
+      document.getElementById("modalLangues").textContent = card.dataset.guideLangues;
+      document.getElementById("guideModal").classList.remove("hidden");
+      document.getElementById("guideModal").classList.add("flex");
+    }
 
-<!-- Script JS -->
-<script>
-  function openModal(card) {
-    document.getElementById("modalName").textContent = card.dataset.guideName;
-    document.getElementById("modalDesc").textContent = card.dataset.guideDesc;
-    document.getElementById("modalComp").textContent = card.dataset.guideComp;
-    document.getElementById("modalLangues").textContent = card.dataset.guideLangues;
-    document.getElementById("guideModal").classList.remove("hidden");
-    document.getElementById("guideModal").classList.add("flex");
-  }
+    function closeModal() {
+      document.getElementById("guideModal").classList.remove("flex");
+      document.getElementById("guideModal").classList.add("hidden");
+    }
 
-  function closeModal() {
-    document.getElementById("guideModal").classList.remove("flex");
-    document.getElementById("guideModal").classList.add("hidden");
-  }
+    function closeGuideModal() {
+      document.getElementById("guideModal").classList.remove("flex");
+      document.getElementById("guideModal").classList.add("hidden");
+    }
 
-  function closeGuideModal() {
-    document.getElementById("guideModal").classList.remove("flex");
-    document.getElementById("guideModal").classList.add("hidden");
-  }
+    function openReservationModal() {
+      document.getElementById("reservationModal").classList.remove("hidden");
+      document.getElementById("reservationModal").classList.add("flex");
+    }
 
-  function openReservationModal() {
-    document.getElementById("reservationModal").classList.remove("hidden");
-    document.getElementById("reservationModal").classList.add("flex");
-  }
+    function closeReservationModal() {
+      document.getElementById("reservationModal").classList.remove("flex");
+      document.getElementById("reservationModal").classList.add("hidden");
+    }
+    document.getElementById("whatsappForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Empêche l'envoi classique
 
-  function closeReservationModal() {
-    document.getElementById("reservationModal").classList.remove("flex");
-    document.getElementById("reservationModal").classList.add("hidden");
-  }
-   document.getElementById("whatsappForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // Empêche l'envoi classique
+      // Récupère les données du formulaire
+      const name = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+      const date = document.getElementById("date").value;
+      const message = document.getElementById("message").value;
 
-    // Récupère les données du formulaire
-    const name = document.getElementById("fullName").value;
-    const email = document.getElementById("email").value;
-    const date = document.getElementById("date").value;
-    const message = document.getElementById("message").value;
+      // Numéro WhatsApp 
+      const phoneNumber = "243854532435";
 
-    // Numéro WhatsApp 
-    const phoneNumber = "243854532435";
+      // Message à envoyer
+      const text = `Bonjour, je souhaite réserver un guide.\n\nNom: ${name}\nEmail: ${email}\nDate: ${date}\nRemarques: ${message}`;
 
-    // Message à envoyer
-    const text = `Bonjour, je souhaite réserver un guide.\n\nNom: ${name}\nEmail: ${email}\nDate: ${date}\nRemarques: ${message}`;
+      // URL WhatsApp avec message encodé
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
 
-    // URL WhatsApp avec message encodé
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+      // Redirige vers WhatsApp
+      window.open(url, '_blank');
+    });
+  </script>
 
-    // Redirige vers WhatsApp
-    window.open(url, '_blank');
-  });
-</script>
+  <!-- Animations & Scrollbar Hide -->
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
 
-<!-- Animations & Scrollbar Hide -->
-<style>
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-  .animate-fadeIn {
-    animation: fadeIn 0.3s ease-out forwards;
-  }
+    .animate-fadeIn {
+      animation: fadeIn 0.3s ease-out forwards;
+    }
 
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
 
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-</style>
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-10">
