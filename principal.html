@@ -614,13 +614,18 @@
 
 <!-- Script JS -->
 <script>
-  function openGuideModal(card) {
+  function openModal(card) {
     document.getElementById("modalName").textContent = card.dataset.guideName;
     document.getElementById("modalDesc").textContent = card.dataset.guideDesc;
     document.getElementById("modalComp").textContent = card.dataset.guideComp;
     document.getElementById("modalLangues").textContent = card.dataset.guideLangues;
     document.getElementById("guideModal").classList.remove("hidden");
     document.getElementById("guideModal").classList.add("flex");
+  }
+
+  function closeModal() {
+    document.getElementById("guideModal").classList.remove("flex");
+    document.getElementById("guideModal").classList.add("hidden");
   }
 
   function closeGuideModal() {
