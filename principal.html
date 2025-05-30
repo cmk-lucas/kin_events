@@ -216,13 +216,13 @@
     </div>
   </section>
 
-    <!-- SECTION LOCATION DE VOITURES -->
+   <!-- SECTION LOCATION DE VOITURES -->
 <section class="py-24 bg-gradient-to-b from-white to-blue-50" id="location-voiture">
   <div class="max-w-7xl mx-auto px-4">
     <h2 class="text-5xl font-extrabold text-blue-800 text-center mb-16 animate-fade-in-up">
       🚗 Louez une voiture d'exception pour vos événements
     </h2>
-    <div id="voitureGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
+    <div id="voitureGrid" class="flex gap-6 overflow-x-auto scroll-smooth px-1 pb-2 snap-x snap-mandatory"></div>
   </div>
 </section>
 
@@ -285,7 +285,7 @@
 
   voitures.forEach((voiture, i) => {
     grid.innerHTML += `
-      <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition hover:scale-[1.03] hover:shadow-2xl group cursor-pointer" onclick="openVoitureModal(${i})">
+      <div class="min-w-[300px] snap-center bg-white rounded-xl shadow-xl overflow-hidden transform transition hover:scale-[1.03] hover:shadow-2xl group cursor-pointer" onclick="openVoitureModal(${i})">
         <div class="relative">
           <img src="${voiture.images[0]}" alt="${voiture.title}" class="w-full h-60 object-cover rounded-t-xl group-hover:brightness-75 transition">
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/40 text-white text-xl font-semibold">Voir détails</div>
@@ -346,8 +346,15 @@
   .animate-zoomIn {
     animation: zoomIn 0.3s ease-out forwards;
   }
+  /* Scrollbar personnalisée */
+  #voitureGrid::-webkit-scrollbar {
+    height: 6px;
+  }
+  #voitureGrid::-webkit-scrollbar-thumb {
+    background: #93c5fd;
+    border-radius: 10px;
+  }
 </style>
-
 
   
   <section class="bg-white py-4 overflow-hidden border-t border-blue-200">
