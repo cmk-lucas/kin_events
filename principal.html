@@ -216,6 +216,140 @@
     </div>
   </section>
 
+    <!-- SECTION LOCATION DE VOITURES -->
+<section class="py-24 bg-gradient-to-b from-white to-blue-50" id="location-voiture">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-5xl font-extrabold text-blue-800 text-center mb-16 animate-fade-in-up">
+      🚗 Louez une voiture d'exception pour vos événements
+    </h2>
+    <div id="voitureGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
+  </div>
+</section>
+
+<!-- MODALE VOITURE -->
+<div id="voitureModal" class="fixed inset-0 bg-black/70 flex items-center justify-center hidden z-50 px-4 backdrop-blur-sm">
+  <!-- Arrière-plan cliquable pour fermer -->
+  <div id="voitureModalBackdrop" class="absolute inset-0"></div>
+
+  <!-- Contenu du modal -->
+  <div class="bg-white rounded-xl max-w-2xl w-full relative overflow-hidden shadow-2xl animate-zoomIn z-10">
+    <button onclick="closeVoitureModal()" class="absolute top-3 right-3 text-3xl text-gray-500 hover:text-black transition">&times;</button>
+
+    <!-- Slider d'images -->
+    <div class="relative">
+      <img id="modalSlide" src="" class="w-full h-64 object-cover rounded-t-xl transition duration-300" alt="Voiture">
+      <button onclick="prevSlide()" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-3 py-1 rounded-full">&larr;</button>
+      <button onclick="nextSlide()" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-3 py-1 rounded-full">&rarr;</button>
+    </div>
+
+    <!-- Contenu texte -->
+    <div class="p-6">
+      <h3 id="voitureModalTitle" class="text-3xl font-bold text-blue-800 mb-4">Titre</h3>
+      <p id="voitureModalDesc" class="text-gray-700 mb-4 leading-relaxed">Description</p>
+      <div class="flex gap-4 text-xl mb-6">
+        <span>🛋️</span>
+        <span>📶</span>
+        <span>🚘</span>
+        <span>❄️</span>
+      </div>
+      <button class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition">
+        Réserver cette voiture
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  const voitures = [
+    {
+      title: "SUV Luxe - Confort & Style",
+      desc: "Profitez d’un confort haut de gamme pour vos déplacements VIP à Kinshasa. Chauffeur privé, Wi-Fi, climatisation, sièges cuir et ambiance lumineuse.",
+      images: ["img/suv (1).jpg", "img/suv (2).jpg", "img/suv (3).jpg"]
+    },
+    {
+      title: "Berline Élégante - Discrétion assurée",
+      desc: "La voiture idéale pour vos cérémonies, réunions d'affaires ou rendez-vous de prestige. Élégance, silence et raffinement au rendez-vous.",
+      images: ["img/berling (1).jpg", "img/berling (2).jpg", "img/berling (3).jpg"]
+    },
+    {
+      title: "4x4 Urbain - Routes et aventures",
+      desc: "Explorez Kinshasa et ses environs en toute sécurité avec un 4x4 robuste et confortable. Parfait pour les terrains irréguliers et les longues distances.",
+      images: ["img/4X4 (1).jpg", "img/4X4 (2).jpg", "img/4X4 (3).jpg"]
+    }
+  ];
+
+  const grid = document.getElementById("voitureGrid");
+  const modal = document.getElementById("voitureModal");
+  const modalBackdrop = document.getElementById("voitureModalBackdrop");
+
+  voitures.forEach((voiture, i) => {
+    grid.innerHTML += `
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition hover:scale-[1.03] hover:shadow-2xl group cursor-pointer" onclick="openVoitureModal(${i})">
+        <div class="relative">
+          <img src="${voiture.images[0]}" alt="${voiture.title}" class="w-full h-60 object-cover rounded-t-xl group-hover:brightness-75 transition">
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/40 text-white text-xl font-semibold">Voir détails</div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">${voiture.title}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">${voiture.desc.slice(0, 90)}...</p>
+        </div>
+      </div>
+    `;
+  });
+
+  let currentVoitureIndex = 0;
+  let currentSlideIndex = 0;
+
+  function openVoitureModal(index) {
+    currentVoitureIndex = index;
+    currentSlideIndex = 0;
+    const voiture = voitures[index];
+
+    document.getElementById('voitureModalTitle').textContent = voiture.title;
+    document.getElementById('voitureModalDesc').textContent = voiture.desc;
+    document.getElementById('modalSlide').src = voiture.images[0];
+    modal.classList.remove('hidden');
+  }
+
+  function closeVoitureModal() {
+    modal.classList.add('hidden');
+  }
+
+  function nextSlide() {
+    const voiture = voitures[currentVoitureIndex];
+    currentSlideIndex = (currentSlideIndex + 1) % voiture.images.length;
+    document.getElementById('modalSlide').src = voiture.images[currentSlideIndex];
+  }
+
+  function prevSlide() {
+    const voiture = voitures[currentVoitureIndex];
+    currentSlideIndex = (currentSlideIndex - 1 + voiture.images.length) % voiture.images.length;
+    document.getElementById('modalSlide').src = voiture.images[currentSlideIndex];
+  }
+
+  // BONUS UX : fermer si on clique hors de la boîte
+  modalBackdrop.addEventListener('click', closeVoitureModal);
+
+  // BONUS UX : appui sur ÉCHAP ferme la modale
+  document.addEventListener('keydown', function (e) {
+    if (e.key === "Escape") closeVoitureModal();
+  });
+</script>
+
+<!-- STYLES -->
+<style>
+  @keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .animate-zoomIn {
+    animation: zoomIn 0.3s ease-out forwards;
+  }
+</style>
+
+
+  
   <section class="bg-white py-4 overflow-hidden border-t border-blue-200">
     <div id="communes-track"
       class="flex space-x-10 text-blue-900 font-semibold text-sm sm:text-base tracking-wide uppercase whitespace-nowrap will-change-transform">
