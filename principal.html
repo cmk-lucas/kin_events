@@ -14,98 +14,102 @@
 
 <body class="font-sans bg-gray-100">
 
-<!-- Header Amélioré avec heure de Kinshasa stylisée -->
-<header class="bg-white/80 backdrop-blur-md shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <!-- Logo -->
-    <h1 class="text-3xl font-extrabold text-blue-600 tracking-wide flex items-center space-x-2">
-      <span>Kin<span class="text-gray-900">Events</span></span>
-    </h1>
+  <!-- Header Amélioré avec heure de Kinshasa stylisée -->
+  <header class="bg-white/80 backdrop-blur-md shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <h1 class="text-3xl font-extrabold text-blue-600 tracking-wide flex items-center space-x-2">
+        <span>Kin<span class="text-gray-900">Events</span></span>
+      </h1>
 
-    <!-- Heure + Icône utilisateur -->
-    <div class="flex items-center space-x-3 ml-4">
-      <!-- Heure de Kinshasa stylisée -->
-      <div class="flex items-center gap-2 text-sm text-blue-900 border border-blue-300 rounded-full px-3 py-1 backdrop-blur-md bg-white/20 shadow-sm">
-        <i class="fas fa-clock text-blue-600"></i>
-        <span id="kinshasaTime" class="tracking-wider font-medium">--:--:--</span>
+      <!-- Heure + Icône utilisateur -->
+      <div class="flex items-center space-x-3 ml-4">
+        <!-- Heure de Kinshasa stylisée -->
+        <div class="flex items-center gap-2 text-sm text-blue-900 border border-blue-300 rounded-full px-3 py-1 backdrop-blur-md bg-white/20 shadow-sm
+            max-w-full sm:max-w-[180px] sm:px-3 px-2 text-xs sm:text-sm">
+          <i class="fas fa-clock text-blue-600 text-sm sm:text-base"></i>
+          <span id="kinshasaTime" class="tracking-wider font-medium truncate">--:--:--</span>
+        </div>
+
+
+        <!-- Icône utilisateur -->
+        <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors text-xl" aria-label="Profil utilisateur">
+          <i class="fas fa-user"></i>
+        </a>
       </div>
 
-      <!-- Icône utilisateur -->
-      <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors text-xl" aria-label="Profil utilisateur">
-        <i class="fas fa-user"></i>
-      </a>
+      <!-- Navigation Desktop -->
+      <nav class="hidden md:flex items-center space-x-8 ml-auto">
+        <a href="principal.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Accueil</a>
+        <a href="evenements.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Événements</a>
+        <a href="astuce.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Trucs &
+          Astuces</a>
+        <a href="abaout.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">À propos</a>
+      </nav>
+
+      <!-- Menu Mobile -->
+      <button id="menuBtn" class="md:hidden text-blue-600 focus:outline-none ml-4" aria-label="Menu mobile">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
 
-    <!-- Navigation Desktop -->
-    <nav class="hidden md:flex items-center space-x-8 ml-auto">
-      <a href="principal.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Accueil</a>
-      <a href="evenements.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Événements</a>
-      <a href="astuce.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Trucs & Astuces</a>
-      <a href="abaout.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">À propos</a>
-    </nav>
+    <!-- Navigation Mobile -->
+    <div id="mobileMenu"
+      class="md:hidden hidden px-6 pt-2 pb-4 bg-white border-t border-gray-200 animate-fade-in-down space-y-2">
+      <a href="principal.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
+      <a href="evenements.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Événements</a>
+      <a href="astuce.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Trucs & Astuces</a>
+      <a href="abaout.html" class="block text-gray-700 hover:text-blue-600 transition-colors">À propos</a>
+    </div>
 
-    <!-- Menu Mobile -->
-    <button id="menuBtn" class="md:hidden text-blue-600 focus:outline-none ml-4" aria-label="Menu mobile">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-  </div>
+    <!-- Styles animations -->
+    <style>
+      @keyframes fade-in-down {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
 
-  <!-- Navigation Mobile -->
-  <div id="mobileMenu"
-    class="md:hidden hidden px-6 pt-2 pb-4 bg-white border-t border-gray-200 animate-fade-in-down space-y-2">
-    <a href="principal.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
-    <a href="evenements.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Événements</a>
-    <a href="astuce.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Trucs & Astuces</a>
-    <a href="abaout.html" class="block text-gray-700 hover:text-blue-600 transition-colors">À propos</a>
-  </div>
-
-  <!-- Styles animations -->
-  <style>
-    @keyframes fade-in-down {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      .animate-fade-in-down {
+        animation: fade-in-down 0.3s ease-out;
       }
-    }
+    </style>
 
-    .animate-fade-in-down {
-      animation: fade-in-down 0.3s ease-out;
-    }
-  </style>
+    <!-- Script JavaScript -->
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
 
-  <!-- Script JavaScript -->
-  <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        menuBtn.classList.toggle("open");
+      });
 
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      menuBtn.classList.toggle("open");
-    });
+      function updateKinshasaTime() {
+        const options = {
+          timeZone: 'Africa/Kinshasa',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        };
+        const formatter = new Intl.DateTimeFormat([], options);
+        document.getElementById("kinshasaTime").textContent = formatter.format(new Date());
+      }
 
-    function updateKinshasaTime() {
-      const options = {
-        timeZone: 'Africa/Kinshasa',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-      };
-      const formatter = new Intl.DateTimeFormat([], options);
-      document.getElementById("kinshasaTime").textContent = formatter.format(new Date());
-    }
-
-    setInterval(updateKinshasaTime, 1000);
-    updateKinshasaTime();
-  </script>
-</header>
+      setInterval(updateKinshasaTime, 1000);
+      updateKinshasaTime();
+    </script>
+  </header>
 
 
 
