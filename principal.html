@@ -545,6 +545,30 @@
     </div>
   </section>
 
+  <script>
+    const communeTrack = document.getElementById('communes-track');
+    const communeSpeed = 0.6; // Pixels par frame, ajuste la vitesse ici
+
+    // Cloner les spans pour la boucle infinie
+    const communes = Array.from(communeTrack.children);
+    communes.forEach(commune => {
+      const clone = commune.cloneNode(true);
+      communeTrack.appendChild(clone);
+    });
+
+    let x = 0;
+
+    function scrollCommunes() {
+      x -= communeSpeed;
+      if (x <= -communeTrack.scrollWidth / 2) {
+        x = 0;
+      }
+      communeTrack.style.transform = `translateX(${x}px)`;
+      requestAnimationFrame(scrollCommunes);
+    }
+
+    scrollCommunes();
+  </script>
 
   <!-- Carrousel Kin Events -->
   <section class="w-full max-w-6xl mx-auto overflow-hidden rounded-2xl relative mt-10" id="carousel"
@@ -679,7 +703,90 @@
     }
   </style>
 
-  
+  <script>
+    const slide = document.getElementById('carouselSlide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slidesCount = slide.children.length;
+    let index = 0;
+
+    function showSlide(i) {
+      slide.style.transform = `translateX(-${i * 100}%)`;
+    }
+
+    function autoSlide() {
+      index = (index + 1) % slidesCount;
+      showSlide(index);
+    }
+
+    let interval = setInterval(autoSlide, 4000); // 4s entre chaque slide
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slidesCount) % slidesCount;
+      showSlide(index);
+      resetInterval();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % slidesCount;
+      showSlide(index);
+      resetInterval();
+    });
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(autoSlide, 4000);
+    }
+
+    // Données des événements
+    const events = [
+      {
+        img: 'img/Kinshasa _paris.jpg',
+        title: 'Kinshasa - Paris',
+        desc: 'Un voyage culturel entre Kinshasa et Paris avec musique, mode et gastronomie.'
+      },
+      {
+        img: 'img/deux.jpg',
+        title: 'Soirée Afro à Kin',
+        desc: 'Danse, networking et ambiance afrobeat au cœur de Kinshasa.'
+      },
+      {
+        img: 'img/martyr.jpg',
+        title: 'Concert au Stade des Martyrs',
+        desc: 'Grand concert live avec les plus grands artistes de la RDC.'
+      },
+      {
+        img: 'img/Kinshasa , Congo.jpg',
+        title: 'Congo kinshasa',
+        desc: 'Grand guides live avec les plus grands artistes de la RDC.'
+      },
+      {
+        img: 'img/Congo Kinshasa.jpg',
+        title: 'belle kinshasa',
+        desc: 'belle ville !.'
+      },
+      {
+        img: 'img/Kinshasa 🇨🇩.jpg',
+        title: 'Découverte de Kinshasa 🇨🇩',
+        desc: 'Explore la capitale en profondeur : art, culture, et lieux incontournables.'
+      }
+    ];
+
+    function openModal(i) {
+      document.getElementById('modal').classList.remove('hidden');
+      document.getElementById('modalImg').src = events[i].img;
+      document.getElementById('modalTitle').textContent = events[i].title;
+      document.getElementById('modalDesc').textContent = events[i].desc;
+      clearInterval(interval); // Stop auto slide when modal is open
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+      resetInterval();
+    }
+  </script>
+
+
 
 
   <!-- Commentaires et Évaluations Section -->
@@ -899,7 +1006,59 @@
     </div>
   </div>
 
-  
+  <!-- Script JS -->
+  <script>
+    function openModal(card) {
+      document.getElementById("modalName").textContent = card.dataset.guideName;
+      document.getElementById("modalDesc").textContent = card.dataset.guideDesc;
+      document.getElementById("modalComp").textContent = card.dataset.guideComp;
+      document.getElementById("modalLangues").textContent = card.dataset.guideLangues;
+      document.getElementById("guideModal").classList.remove("hidden");
+      document.getElementById("guideModal").classList.add("flex");
+    }
+
+    function closeModal() {
+      document.getElementById("guideModal").classList.remove("flex");
+      document.getElementById("guideModal").classList.add("hidden");
+    }
+
+    function closeGuideModal() {
+      document.getElementById("guideModal").classList.remove("flex");
+      document.getElementById("guideModal").classList.add("hidden");
+    }
+
+    function openReservationModal() {
+      document.getElementById("reservationModal").classList.remove("hidden");
+      document.getElementById("reservationModal").classList.add("flex");
+    }
+
+    function closeReservationModal() {
+      document.getElementById("reservationModal").classList.remove("flex");
+      document.getElementById("reservationModal").classList.add("hidden");
+    }
+    document.getElementById("whatsappForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Empêche l'envoi classique
+
+      // Récupère les données du formulaire
+      const name = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+      const date = document.getElementById("date").value;
+      const message = document.getElementById("message").value;
+
+      // Numéro WhatsApp 
+      const phoneNumber = "243854532435";
+
+      // Message à envoyer
+      const text = `Bonjour, je souhaite réserver un guide.\n\nNom: ${name}\nEmail: ${email}\nDate: ${date}\nRemarques: ${message}`;
+
+      // URL WhatsApp avec message encodé
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+      // Redirige vers WhatsApp
+      window.open(url, '_blank');
+    });
+  </script>
+
   <!-- Animations & Scrollbar Hide -->
   <style>
     @keyframes fadeIn {
@@ -968,191 +1127,6 @@
     </div>
   </footer>
 
-<!-- Script JavaScript -->
-    <script>
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-        menuBtn.classList.toggle("open");
-      });
-
-      function updateKinshasaTime() {
-        const options = {
-          timeZone: 'Africa/Kinshasa',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false
-        };
-        const formatter = new Intl.DateTimeFormat([], options);
-        document.getElementById("kinshasaTime").textContent = formatter.format(new Date());
-      }
-
-      setInterval(updateKinshasaTime, 1000);
-      updateKinshasaTime();
-    </script>
-
-    <!-- Script JS -->
-  <script>
-    function openModal(card) {
-      document.getElementById("modalName").textContent = card.dataset.guideName;
-      document.getElementById("modalDesc").textContent = card.dataset.guideDesc;
-      document.getElementById("modalComp").textContent = card.dataset.guideComp;
-      document.getElementById("modalLangues").textContent = card.dataset.guideLangues;
-      document.getElementById("guideModal").classList.remove("hidden");
-      document.getElementById("guideModal").classList.add("flex");
-    }
-
-    function closeModal() {
-      document.getElementById("guideModal").classList.remove("flex");
-      document.getElementById("guideModal").classList.add("hidden");
-    }
-
-    function closeGuideModal() {
-      document.getElementById("guideModal").classList.remove("flex");
-      document.getElementById("guideModal").classList.add("hidden");
-    }
-
-    function openReservationModal() {
-      document.getElementById("reservationModal").classList.remove("hidden");
-      document.getElementById("reservationModal").classList.add("flex");
-    }
-
-    function closeReservationModal() {
-      document.getElementById("reservationModal").classList.remove("flex");
-      document.getElementById("reservationModal").classList.add("hidden");
-    }
-    document.getElementById("whatsappForm").addEventListener("submit", function (e) {
-      e.preventDefault(); // Empêche l'envoi classique
-
-      // Récupère les données du formulaire
-      const name = document.getElementById("fullName").value;
-      const email = document.getElementById("email").value;
-      const date = document.getElementById("date").value;
-      const message = document.getElementById("message").value;
-
-      // Numéro WhatsApp 
-      const phoneNumber = "243854532435";
-
-      // Message à envoyer
-      const text = `Bonjour, je souhaite réserver un guide.\n\nNom: ${name}\nEmail: ${email}\nDate: ${date}\nRemarques: ${message}`;
-
-      // URL WhatsApp avec message encodé
-      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-
-      // Redirige vers WhatsApp
-      window.open(url, '_blank');
-    });
-  </script>
-
-<script>
-    const slide = document.getElementById('carouselSlide');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const slidesCount = slide.children.length;
-    let index = 0;
-
-    function showSlide(i) {
-      slide.style.transform = `translateX(-${i * 100}%)`;
-    }
-
-    function autoSlide() {
-      index = (index + 1) % slidesCount;
-      showSlide(index);
-    }
-
-    let interval = setInterval(autoSlide, 4000); // 4s entre chaque slide
-
-    prevBtn.addEventListener('click', () => {
-      index = (index - 1 + slidesCount) % slidesCount;
-      showSlide(index);
-      resetInterval();
-    });
-
-    nextBtn.addEventListener('click', () => {
-      index = (index + 1) % slidesCount;
-      showSlide(index);
-      resetInterval();
-    });
-
-    function resetInterval() {
-      clearInterval(interval);
-      interval = setInterval(autoSlide, 4000);
-    }
-
-    // Données des événements
-    const events = [
-      {
-        img: 'img/Kinshasa _paris.jpg',
-        title: 'Kinshasa - Paris',
-        desc: 'Un voyage culturel entre Kinshasa et Paris avec musique, mode et gastronomie.'
-      },
-      {
-        img: 'img/deux.jpg',
-        title: 'Soirée Afro à Kin',
-        desc: 'Danse, networking et ambiance afrobeat au cœur de Kinshasa.'
-      },
-      {
-        img: 'img/martyr.jpg',
-        title: 'Concert au Stade des Martyrs',
-        desc: 'Grand concert live avec les plus grands artistes de la RDC.'
-      },
-      {
-        img: 'img/Kinshasa , Congo.jpg',
-        title: 'Congo kinshasa',
-        desc: 'Grand guides live avec les plus grands artistes de la RDC.'
-      },
-      {
-        img: 'img/Congo Kinshasa.jpg',
-        title: 'belle kinshasa',
-        desc: 'belle ville !.'
-      },
-      {
-        img: 'img/Kinshasa 🇨🇩.jpg',
-        title: 'Découverte de Kinshasa 🇨🇩',
-        desc: 'Explore la capitale en profondeur : art, culture, et lieux incontournables.'
-      }
-    ];
-
-    function openModal(i) {
-      document.getElementById('modal').classList.remove('hidden');
-      document.getElementById('modalImg').src = events[i].img;
-      document.getElementById('modalTitle').textContent = events[i].title;
-      document.getElementById('modalDesc').textContent = events[i].desc;
-      clearInterval(interval); // Stop auto slide when modal is open
-    }
-
-    function closeModal() {
-      document.getElementById('modal').classList.add('hidden');
-      resetInterval();
-    }
-  </script>
-<script>
-    const communeTrack = document.getElementById('communes-track');
-    const communeSpeed = 0.6; // Pixels par frame, ajuste la vitesse ici
-
-    // Cloner les spans pour la boucle infinie
-    const communes = Array.from(communeTrack.children);
-    communes.forEach(commune => {
-      const clone = commune.cloneNode(true);
-      communeTrack.appendChild(clone);
-    });
-
-    let x = 0;
-
-    function scrollCommunes() {
-      x -= communeSpeed;
-      if (x <= -communeTrack.scrollWidth / 2) {
-        x = 0;
-      }
-      communeTrack.style.transform = `translateX(${x}px)`;
-      requestAnimationFrame(scrollCommunes);
-    }
-
-    scrollCommunes();
-  </script>
 
 </body>
 
