@@ -545,30 +545,6 @@
     </div>
   </section>
 
-  <script>
-    const communeTrack = document.getElementById('communes-track');
-    const communeSpeed = 0.6; // Pixels par frame, ajuste la vitesse ici
-
-    // Cloner les spans pour la boucle infinie
-    const communes = Array.from(communeTrack.children);
-    communes.forEach(commune => {
-      const clone = commune.cloneNode(true);
-      communeTrack.appendChild(clone);
-    });
-
-    let x = 0;
-
-    function scrollCommunes() {
-      x -= communeSpeed;
-      if (x <= -communeTrack.scrollWidth / 2) {
-        x = 0;
-      }
-      communeTrack.style.transform = `translateX(${x}px)`;
-      requestAnimationFrame(scrollCommunes);
-    }
-
-    scrollCommunes();
-  </script>
 
   <!-- Carrousel Kin Events -->
   <section class="w-full max-w-6xl mx-auto overflow-hidden rounded-2xl relative mt-10" id="carousel"
@@ -1153,7 +1129,30 @@
       resetInterval();
     }
   </script>
+<script>
+    const communeTrack = document.getElementById('communes-track');
+    const communeSpeed = 0.6; // Pixels par frame, ajuste la vitesse ici
 
+    // Cloner les spans pour la boucle infinie
+    const communes = Array.from(communeTrack.children);
+    communes.forEach(commune => {
+      const clone = commune.cloneNode(true);
+      communeTrack.appendChild(clone);
+    });
+
+    let x = 0;
+
+    function scrollCommunes() {
+      x -= communeSpeed;
+      if (x <= -communeTrack.scrollWidth / 2) {
+        x = 0;
+      }
+      communeTrack.style.transform = `translateX(${x}px)`;
+      requestAnimationFrame(scrollCommunes);
+    }
+
+    scrollCommunes();
+  </script>
 
 </body>
 
