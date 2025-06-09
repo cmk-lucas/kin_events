@@ -85,32 +85,6 @@
         animation: fade-in-down 0.3s ease-out;
       }
     </style>
-
-    <!-- Script JavaScript -->
-    <script>
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-        menuBtn.classList.toggle("open");
-      });
-
-      function updateKinshasaTime() {
-        const options = {
-          timeZone: 'Africa/Kinshasa',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false
-        };
-        const formatter = new Intl.DateTimeFormat([], options);
-        document.getElementById("kinshasaTime").textContent = formatter.format(new Date());
-      }
-
-      setInterval(updateKinshasaTime, 1000);
-      updateKinshasaTime();
-    </script>
   </header>
 
   <!-- Hero Section avec image d’ambiance -->
@@ -1032,59 +1006,7 @@
     </div>
   </div>
 
-  <!-- Script JS -->
-  <script>
-    function openModal(card) {
-      document.getElementById("modalName").textContent = card.dataset.guideName;
-      document.getElementById("modalDesc").textContent = card.dataset.guideDesc;
-      document.getElementById("modalComp").textContent = card.dataset.guideComp;
-      document.getElementById("modalLangues").textContent = card.dataset.guideLangues;
-      document.getElementById("guideModal").classList.remove("hidden");
-      document.getElementById("guideModal").classList.add("flex");
-    }
-
-    function closeModal() {
-      document.getElementById("guideModal").classList.remove("flex");
-      document.getElementById("guideModal").classList.add("hidden");
-    }
-
-    function closeGuideModal() {
-      document.getElementById("guideModal").classList.remove("flex");
-      document.getElementById("guideModal").classList.add("hidden");
-    }
-
-    function openReservationModal() {
-      document.getElementById("reservationModal").classList.remove("hidden");
-      document.getElementById("reservationModal").classList.add("flex");
-    }
-
-    function closeReservationModal() {
-      document.getElementById("reservationModal").classList.remove("flex");
-      document.getElementById("reservationModal").classList.add("hidden");
-    }
-    document.getElementById("whatsappForm").addEventListener("submit", function (e) {
-      e.preventDefault(); // Empêche l'envoi classique
-
-      // Récupère les données du formulaire
-      const name = document.getElementById("fullName").value;
-      const email = document.getElementById("email").value;
-      const date = document.getElementById("date").value;
-      const message = document.getElementById("message").value;
-
-      // Numéro WhatsApp 
-      const phoneNumber = "243854532435";
-
-      // Message à envoyer
-      const text = `Bonjour, je souhaite réserver un guide.\n\nNom: ${name}\nEmail: ${email}\nDate: ${date}\nRemarques: ${message}`;
-
-      // URL WhatsApp avec message encodé
-      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-
-      // Redirige vers WhatsApp
-      window.open(url, '_blank');
-    });
-  </script>
-
+  
   <!-- Animations & Scrollbar Hide -->
   <style>
     @keyframes fadeIn {
@@ -1153,6 +1075,84 @@
     </div>
   </footer>
 
+<!-- Script JavaScript -->
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        menuBtn.classList.toggle("open");
+      });
+
+      function updateKinshasaTime() {
+        const options = {
+          timeZone: 'Africa/Kinshasa',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        };
+        const formatter = new Intl.DateTimeFormat([], options);
+        document.getElementById("kinshasaTime").textContent = formatter.format(new Date());
+      }
+
+      setInterval(updateKinshasaTime, 1000);
+      updateKinshasaTime();
+    </script>
+
+    <!-- Script JS -->
+  <script>
+    function openModal(card) {
+      document.getElementById("modalName").textContent = card.dataset.guideName;
+      document.getElementById("modalDesc").textContent = card.dataset.guideDesc;
+      document.getElementById("modalComp").textContent = card.dataset.guideComp;
+      document.getElementById("modalLangues").textContent = card.dataset.guideLangues;
+      document.getElementById("guideModal").classList.remove("hidden");
+      document.getElementById("guideModal").classList.add("flex");
+    }
+
+    function closeModal() {
+      document.getElementById("guideModal").classList.remove("flex");
+      document.getElementById("guideModal").classList.add("hidden");
+    }
+
+    function closeGuideModal() {
+      document.getElementById("guideModal").classList.remove("flex");
+      document.getElementById("guideModal").classList.add("hidden");
+    }
+
+    function openReservationModal() {
+      document.getElementById("reservationModal").classList.remove("hidden");
+      document.getElementById("reservationModal").classList.add("flex");
+    }
+
+    function closeReservationModal() {
+      document.getElementById("reservationModal").classList.remove("flex");
+      document.getElementById("reservationModal").classList.add("hidden");
+    }
+    document.getElementById("whatsappForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Empêche l'envoi classique
+
+      // Récupère les données du formulaire
+      const name = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+      const date = document.getElementById("date").value;
+      const message = document.getElementById("message").value;
+
+      // Numéro WhatsApp 
+      const phoneNumber = "243854532435";
+
+      // Message à envoyer
+      const text = `Bonjour, je souhaite réserver un guide.\n\nNom: ${name}\nEmail: ${email}\nDate: ${date}\nRemarques: ${message}`;
+
+      // URL WhatsApp avec message encodé
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+      // Redirige vers WhatsApp
+      window.open(url, '_blank');
+    });
+  </script>
 
 </body>
 
