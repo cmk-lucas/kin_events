@@ -703,90 +703,7 @@
     }
   </style>
 
-  <script>
-    const slide = document.getElementById('carouselSlide');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const slidesCount = slide.children.length;
-    let index = 0;
-
-    function showSlide(i) {
-      slide.style.transform = `translateX(-${i * 100}%)`;
-    }
-
-    function autoSlide() {
-      index = (index + 1) % slidesCount;
-      showSlide(index);
-    }
-
-    let interval = setInterval(autoSlide, 4000); // 4s entre chaque slide
-
-    prevBtn.addEventListener('click', () => {
-      index = (index - 1 + slidesCount) % slidesCount;
-      showSlide(index);
-      resetInterval();
-    });
-
-    nextBtn.addEventListener('click', () => {
-      index = (index + 1) % slidesCount;
-      showSlide(index);
-      resetInterval();
-    });
-
-    function resetInterval() {
-      clearInterval(interval);
-      interval = setInterval(autoSlide, 4000);
-    }
-
-    // Données des événements
-    const events = [
-      {
-        img: 'img/Kinshasa _paris.jpg',
-        title: 'Kinshasa - Paris',
-        desc: 'Un voyage culturel entre Kinshasa et Paris avec musique, mode et gastronomie.'
-      },
-      {
-        img: 'img/deux.jpg',
-        title: 'Soirée Afro à Kin',
-        desc: 'Danse, networking et ambiance afrobeat au cœur de Kinshasa.'
-      },
-      {
-        img: 'img/martyr.jpg',
-        title: 'Concert au Stade des Martyrs',
-        desc: 'Grand concert live avec les plus grands artistes de la RDC.'
-      },
-      {
-        img: 'img/Kinshasa , Congo.jpg',
-        title: 'Congo kinshasa',
-        desc: 'Grand guides live avec les plus grands artistes de la RDC.'
-      },
-      {
-        img: 'img/Congo Kinshasa.jpg',
-        title: 'belle kinshasa',
-        desc: 'belle ville !.'
-      },
-      {
-        img: 'img/Kinshasa 🇨🇩.jpg',
-        title: 'Découverte de Kinshasa 🇨🇩',
-        desc: 'Explore la capitale en profondeur : art, culture, et lieux incontournables.'
-      }
-    ];
-
-    function openModal(i) {
-      document.getElementById('modal').classList.remove('hidden');
-      document.getElementById('modalImg').src = events[i].img;
-      document.getElementById('modalTitle').textContent = events[i].title;
-      document.getElementById('modalDesc').textContent = events[i].desc;
-      clearInterval(interval); // Stop auto slide when modal is open
-    }
-
-    function closeModal() {
-      document.getElementById('modal').classList.add('hidden');
-      resetInterval();
-    }
-  </script>
-
-
+  
 
 
   <!-- Commentaires et Évaluations Section -->
@@ -1153,6 +1070,90 @@
       window.open(url, '_blank');
     });
   </script>
+
+<script>
+    const slide = document.getElementById('carouselSlide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slidesCount = slide.children.length;
+    let index = 0;
+
+    function showSlide(i) {
+      slide.style.transform = `translateX(-${i * 100}%)`;
+    }
+
+    function autoSlide() {
+      index = (index + 1) % slidesCount;
+      showSlide(index);
+    }
+
+    let interval = setInterval(autoSlide, 4000); // 4s entre chaque slide
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slidesCount) % slidesCount;
+      showSlide(index);
+      resetInterval();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % slidesCount;
+      showSlide(index);
+      resetInterval();
+    });
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(autoSlide, 4000);
+    }
+
+    // Données des événements
+    const events = [
+      {
+        img: 'img/Kinshasa _paris.jpg',
+        title: 'Kinshasa - Paris',
+        desc: 'Un voyage culturel entre Kinshasa et Paris avec musique, mode et gastronomie.'
+      },
+      {
+        img: 'img/deux.jpg',
+        title: 'Soirée Afro à Kin',
+        desc: 'Danse, networking et ambiance afrobeat au cœur de Kinshasa.'
+      },
+      {
+        img: 'img/martyr.jpg',
+        title: 'Concert au Stade des Martyrs',
+        desc: 'Grand concert live avec les plus grands artistes de la RDC.'
+      },
+      {
+        img: 'img/Kinshasa , Congo.jpg',
+        title: 'Congo kinshasa',
+        desc: 'Grand guides live avec les plus grands artistes de la RDC.'
+      },
+      {
+        img: 'img/Congo Kinshasa.jpg',
+        title: 'belle kinshasa',
+        desc: 'belle ville !.'
+      },
+      {
+        img: 'img/Kinshasa 🇨🇩.jpg',
+        title: 'Découverte de Kinshasa 🇨🇩',
+        desc: 'Explore la capitale en profondeur : art, culture, et lieux incontournables.'
+      }
+    ];
+
+    function openModal(i) {
+      document.getElementById('modal').classList.remove('hidden');
+      document.getElementById('modalImg').src = events[i].img;
+      document.getElementById('modalTitle').textContent = events[i].title;
+      document.getElementById('modalDesc').textContent = events[i].desc;
+      clearInterval(interval); // Stop auto slide when modal is open
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+      resetInterval();
+    }
+  </script>
+
 
 </body>
 
