@@ -85,6 +85,32 @@
         animation: fade-in-down 0.3s ease-out;
       }
     </style>
+
+    <!-- Script JavaScript -->
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        menuBtn.classList.toggle("open");
+      });
+
+      function updateKinshasaTime() {
+        const options = {
+          timeZone: 'Africa/Kinshasa',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        };
+        const formatter = new Intl.DateTimeFormat([], options);
+        document.getElementById("kinshasaTime").textContent = formatter.format(new Date());
+      }
+
+      setInterval(updateKinshasaTime, 1000);
+      updateKinshasaTime();
+    </script>
   </header>
 
   <!-- Hero Section avec image d’ambiance -->
