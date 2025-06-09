@@ -164,21 +164,25 @@
 
 
 
-  <!-- Section Événements à venir -->
-  <section id="events" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center text-blue-700 mb-2 flex items-center justify-center gap-3">
-        <ion-icon name="calendar-outline" class="w-7 h-7 text-blue-700"></ion-icon>
-        Événements à venir
-      </h2>
+ <!-- Section Événements à venir -->
+<section id="events" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2
+      class="text-3xl sm:text-4xl font-bold text-center text-blue-700 mb-2 flex items-center justify-center gap-3">
+      <ion-icon name="calendar-outline" class="w-7 h-7 text-blue-700"></ion-icon>
+      Événements à venir
+    </h2>
 
-      <p class="text-center text-gray-500 text-lg">Ne ratez rien de ce qui se passe en ville</p>
+    <p class="text-center text-gray-500 text-lg">Ne ratez rien de ce qui se passe en ville</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
+    <!-- Conteneur de scroll horizontal -->
+    <div id="scroll-container" class="overflow-hidden mt-12">
+      <div class="scroll-track flex gap-10">
 
-        <!-- Carte Événement -->
+        <!-- Carte 1 -->
         <div
-          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1">
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1 flex-shrink-0"
+          style="width: 300px;">
           <span
             class="absolute top-4 left-4 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full z-10">Populaire</span>
           <img src="img/hack.jpg" alt="Concert de Jazz"
@@ -194,9 +198,10 @@
           </div>
         </div>
 
-        <!-- Carte Événement -->
+        <!-- Carte 2 (identique à Carte 1 pour l’exemple) -->
         <div
-          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1">
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1 flex-shrink-0"
+          style="width: 300px;">
           <span
             class="absolute top-4 left-4 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full z-10">Populaire</span>
           <img src="img/hack.jpg" alt="Concert de Jazz"
@@ -212,12 +217,12 @@
           </div>
         </div>
 
-        <!-- Carte Événement -->
+        <!-- Carte 3 -->
         <div
-          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1">
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1 flex-shrink-0"
+          style="width: 300px;">
           <span
-            class="absolute top-4 left-4 bg-red-100 text-red-600 text-xs font-semibold px-3 py-1 rounded-full z-10">🔥
-            Nouveau</span>
+            class="absolute top-4 left-4 bg-red-100 text-red-600 text-xs font-semibold px-3 py-1 rounded-full z-10">🔥 Nouveau</span>
           <img src="img/ev2.jpg" alt="Soirée Hip-Hop"
             class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
           <div class="p-6">
@@ -232,12 +237,92 @@
           </div>
         </div>
 
-        <!-- Carte Événement -->
+        <!-- Carte 4 -->
         <div
-          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1">
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1 flex-shrink-0"
+          style="width: 300px;">
           <span
-            class="absolute top-4 left-4 bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full z-10">🌟
-            Recommandé</span>
+            class="absolute top-4 left-4 bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full z-10">🌟 Recommandé</span>
+          <img src="img/festival.jpeg" alt="Festival de Musique"
+            class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-blue-600">🎶 Festival de Musique</h3>
+            <p class="text-gray-600 mt-2">Trois jours de vibes avec des artistes locaux, food trucks et activités
+              culturelles.</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="text-lg font-bold text-green-600">Gratuit</span>
+              <a href="detail_festival.html"
+                class="bg-blue-600 text-white py-2 px-5 rounded-xl hover:bg-blue-700 transition">Voir Détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- === DUPLICATION POUR EFFET INFINI === -->
+
+        <!-- Carte 1 (clonée) -->
+        <div
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1 flex-shrink-0"
+          style="width: 300px;">
+          <span
+            class="absolute top-4 left-4 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full z-10">Populaire</span>
+          <img src="img/hack.jpg" alt="Concert de Jazz"
+            class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-blue-600">semaine du hacking</h3>
+            <p class="text-gray-600 mt-2">🚀 Plongez dans l’univers du hacking avec SAVOIRA !</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="text-lg font-bold text-yellow-500">17 000 CDF</span>
+              <a href="detail_jazz.html"
+                class="bg-blue-600 text-white py-2 px-5 rounded-xl hover:bg-blue-700 transition">Voir Détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 2 (clonée) -->
+        <div
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1 flex-shrink-0"
+          style="width: 300px;">
+          <span
+            class="absolute top-4 left-4 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full z-10">Populaire</span>
+          <img src="img/hack.jpg" alt="Concert de Jazz"
+            class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-blue-600">semaine du hacking</h3>
+            <p class="text-gray-600 mt-2">🚀 Plongez dans l’univers du hacking avec SAVOIRA !</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="text-lg font-bold text-yellow-500">17 000 CDF</span>
+              <a href="detail_jazz.html"
+                class="bg-blue-600 text-white py-2 px-5 rounded-xl hover:bg-blue-700 transition">Voir Détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 3 (clonée) -->
+        <div
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1 flex-shrink-0"
+          style="width: 300px;">
+          <span
+            class="absolute top-4 left-4 bg-red-100 text-red-600 text-xs font-semibold px-3 py-1 rounded-full z-10">🔥 Nouveau</span>
+          <img src="img/ev2.jpg" alt="Soirée Hip-Hop"
+            class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-blue-600">🎤 AFTERWORK</h3>
+            <p class="text-gray-600 mt-2">Venez vivre une expérience inoubliable lors de notre SOIRÉE AFTERWORK dédiée
+              aux jeunes entrepreneurs catholiques.</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="text-lg font-bold text-yellow-500">Gratuit</span>
+              <a href="detail_hip.html"
+                class="bg-blue-600 text-white py-2 px-5 rounded-xl hover:bg-blue-700 transition">Voir Détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 4 (clonée) -->
+        <div
+          class="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1 flex-shrink-0"
+          style="width: 300px;">
+          <span
+            class="absolute top-4 left-4 bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full z-10">🌟 Recommandé</span>
           <img src="img/festival.jpeg" alt="Festival de Musique"
             class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105">
           <div class="p-6">
@@ -254,7 +339,45 @@
 
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Ionicons CDN (pour les icônes) -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<style>
+  /* Conteneur du scroll */
+  #scroll-container {
+    /* On masque le scroll natif */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  #scroll-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  /* Animation de défilement infini */
+  .scroll-track {
+    animation: scroll-left 40s linear infinite;
+  }
+
+  .scroll-track:hover {
+    animation-play-state: paused; /* Pause au survol */
+  }
+
+  /* Animation keyframes */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
 
   <!-- SECTION LOCATION DE VOITURES -->
   <section class="py-24 bg-gradient-to-b from-white to-blue-50" id="location-voiture">
